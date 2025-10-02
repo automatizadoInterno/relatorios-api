@@ -1,0 +1,219 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-02T17:22:33.804Z",
+    "end": "2025-10-02T17:23:00.692Z",
+    "duration": 26888,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a6dddf09-2b1f-42c1-8523-086d6c6bf251",
+      "title": "",
+      "fullFile": "cypress/e2e/api/002 - API Integração Clientes/001 - API Ficha Profisssional/002.api-inclusao-ficha-erros-soap.cy.js",
+      "file": "cypress/e2e/api/002 - API Integração Clientes/001 - API Ficha Profisssional/002.api-inclusao-ficha-erros-soap.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ab2e0d12-f57c-4319-ac42-9f7d227c5be8",
+          "title": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validação de erro: Corpo da requisição (vazio)",
+              "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros Validação de erro: Corpo da requisição (vazio)",
+              "timedOut": null,
+              "duration": 1278,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: \"\",\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"SOAP-ENV:Client\");\n  expect(faultstring).to.eq(\"Bad Request\");\n});",
+              "err": {},
+              "uuid": "204adb24-4df4-4b1f-88a9-26577830b126",
+              "parentUUID": "ab2e0d12-f57c-4319-ac42-9f7d227c5be8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validação de erro: CNPJ do Cliente (vazio)",
+              "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros Validação de erro: CNPJ do Cliente (vazio)",
+              "timedOut": null,
+              "duration": 2536,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payloadModificado = soapPayload.replace(`<inc:cnpj_cliente>${cnpjCliente}</inc:cnpj_cliente>`, `<inc:cnpj_cliente></inc:cnpj_cliente>`);\ncy.api({\n  method: \"POST\",\n  url: url,\n  body: payloadModificado,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  cy.log(r.body);\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"ns1:1\");\n  expect(faultstring).to.be.oneOf([\"CNPJ Cliente não informado ou XML Inválido\", \"O token informado não confere com o cnpj do cliente\"]);\n});",
+              "err": {},
+              "uuid": "95891166-94cf-4672-904f-df454e291247",
+              "parentUUID": "ab2e0d12-f57c-4319-ac42-9f7d227c5be8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validação de erro: CNPJ do Embarcador (vazio) ou (inválido)",
+              "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros Validação de erro: CNPJ do Embarcador (vazio) ou (inválido)",
+              "timedOut": null,
+              "duration": 3576,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const cnpjs = [\"\", \"abc\"];\nconst cnpj_aleatorio = cnpjs[Math.floor(Math.random() * cnpjs.length)];\nconst payloadModificado = soapPayload.replace(`<inc:cnpj_embarcador>${cnpjCliente}</inc:cnpj_embarcador>`, `<inc:cnpj_embarcador>${cnpj_aleatorio}</inc:cnpj_embarcador>`);\ncy.api({\n  method: \"POST\",\n  url: url,\n  body: payloadModificado,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"ns1:1\");\n  expect(faultstring).to.be.oneOf([\"CNPJ Embarcador não informado\", \"O CNPJ Embarcador não está cadastrado\"]);\n});",
+              "err": {},
+              "uuid": "8b7af403-1406-4c84-8104-54d51dfbd837",
+              "parentUUID": "ab2e0d12-f57c-4319-ac42-9f7d227c5be8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validação de erro: CNPJ do Transportador (vazio) ou (inválido)",
+              "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros Validação de erro: CNPJ do Transportador (vazio) ou (inválido)",
+              "timedOut": null,
+              "duration": 3204,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const cnpj = [\"abc\"];\nconst payloadModificado = soapPayload.replace(`<inc:cnpj_transportador>${cnpjTransportador}</inc:cnpj_transportador>`, ` <inc:cnpj_transportador>${cnpj}</inc:cnpj_transportador>`);\ncy.api({\n  method: \"POST\",\n  url: url,\n  body: payloadModificado,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"ns1:1\");\n  expect(faultstring).to.be.oneOf([\"O CNPJ Transportador não informado ou XML Inválido\", \"O CNPJ Transportador não está cadastrado\"]);\n});",
+              "err": {},
+              "uuid": "f2b90fc0-20df-4a04-b583-7c3e540027f7",
+              "parentUUID": "ab2e0d12-f57c-4319-ac42-9f7d227c5be8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validação de erro: Foto do profissional (vazio)",
+              "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros Validação de erro: Foto do profissional (vazio)",
+              "timedOut": null,
+              "duration": 4219,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payloadModificado = soapPayload.replace(`${imagemBase64}`, \"\");\ncy.api({\n  method: \"POST\",\n  url: url,\n  body: payloadModificado,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"ns1:1\");\n  expect(faultstring).to.eq(\"Foto Profissional não informado\");\n});",
+              "err": {},
+              "uuid": "d2ff0d18-f4e2-4f47-a419-d1b36c4edc8f",
+              "parentUUID": "ab2e0d12-f57c-4319-ac42-9f7d227c5be8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validação de erro: Foto do profissional (maior que 5MB)",
+              "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros Validação de erro: Foto do profissional (maior que 5MB)",
+              "timedOut": null,
+              "duration": 8003,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payloadModificado = soapPayload.replace(`${imagemBase64}`, `${imagemBase64_5MB}`);\ncy.api({\n  method: \"POST\",\n  url: url,\n  body: payloadModificado,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"ns1:1\");\n  expect(faultstring).to.eq(\"Foto Profissional, a imagem deve ter no máximo 5MB.\");\n});",
+              "err": {},
+              "uuid": "ddd08099-8471-42fb-8733-b2d2bd9c0cbc",
+              "parentUUID": "ab2e0d12-f57c-4319-ac42-9f7d227c5be8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validação de erro: Documento do profissional (vazio) ou (inválido)",
+              "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros Validação de erro: Documento do profissional (vazio) ou (inválido)",
+              "timedOut": null,
+              "duration": 3345,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const documento = [\"\", \"123456789\"];\nconst docAleatorio = documento[Math.floor(Math.random() * documento.length)];\nconst payloadModificado = soapPayload.replace(`<inc:documento>${cpfAleatorio}</inc:documento>`, `<inc:documento>${docAleatorio}</inc:documento>`);\ncy.api({\n  method: \"POST\",\n  url: url,\n  body: payloadModificado,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"ns1:1\");\n  expect(faultstring).to.be.oneOf([\"CPF profissional não informado\", \"O CPF do profissional é inválido\"]);\n});",
+              "err": {},
+              "uuid": "2ea2ea76-c5e3-4daf-98a5-cb2ff2152ad0",
+              "parentUUID": "ab2e0d12-f57c-4319-ac42-9f7d227c5be8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "204adb24-4df4-4b1f-88a9-26577830b126",
+            "95891166-94cf-4672-904f-df454e291247",
+            "8b7af403-1406-4c84-8104-54d51dfbd837",
+            "f2b90fc0-20df-4a04-b583-7c3e540027f7",
+            "d2ff0d18-f4e2-4f47-a419-d1b36c4edc8f",
+            "ddd08099-8471-42fb-8733-b2d2bd9c0cbc",
+            "2ea2ea76-c5e3-4daf-98a5-cb2ff2152ad0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 26161,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}

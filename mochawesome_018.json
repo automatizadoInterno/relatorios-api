@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-02T17:28:26.672Z",
+    "end": "2025-10-02T17:28:32.802Z",
+    "duration": 6130,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bc84b7be-15f1-439d-8302-d0fffd85aa03",
+      "title": "",
+      "fullFile": "cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/001.api-acompanhamento-viagem.cy.js",
+      "file": "cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/001.api-acompanhamento-viagem.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f43cfb8d-ad3e-424d-9381-7e73514792df",
+          "title": "Integração Clientes - API Acompanhamento de viagem",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validação de retorno: Acompanhanmento de viagem com sucesso",
+              "fullTitle": "Integração Clientes - API Acompanhamento de viagem Validação de retorno: Acompanhanmento de viagem com sucesso",
+              "timedOut": null,
+              "duration": 3339,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: `${url}&limit=0`,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      CnpjCliente: cnpjCliente,\n      DataInicio: formatarDataV2(),\n      DataFim: formatarDataChegadaV2(),\n      status: [1, 2, 3, 4, 5, 6]\n    },\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(200);\n    expect(r.body).to.be.an(\"array\").and.not.to.be.empty;\n  });\n});",
+              "err": {},
+              "uuid": "b2e6eaf1-32c2-4aff-8aa4-d4829c4fb7e6",
+              "parentUUID": "f43cfb8d-ad3e-424d-9381-7e73514792df",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validação de retorno: Paginação offset e limit funcionando corretamente",
+              "fullTitle": "Integração Clientes - API Acompanhamento de viagem Validação de retorno: Paginação offset e limit funcionando corretamente",
+              "timedOut": null,
+              "duration": 1674,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: `${url}&limit=1`,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      CnpjCliente: cnpjCliente,\n      DataInicio: formatarDataV2(),\n      DataFim: formatarDataChegadaV2(),\n      status: [3]\n    },\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(200);\n    expect(r.body.length).to.equal(1);\n  });\n});",
+              "err": {},
+              "uuid": "2925d75f-0f2e-490c-9a7c-e1d4498b400e",
+              "parentUUID": "f43cfb8d-ad3e-424d-9381-7e73514792df",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b2e6eaf1-32c2-4aff-8aa4-d4829c4fb7e6",
+            "2925d75f-0f2e-490c-9a7c-e1d4498b400e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5013,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}
