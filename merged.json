@@ -12,13 +12,13 @@
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2025-10-02T15:50:37.209Z",
-    "end": "2025-10-02T15:50:39.199Z",
-    "duration": 1990
+    "start": "2025-10-02T15:57:16.715Z",
+    "end": "2025-10-02T15:57:18.369Z",
+    "duration": 1654
   },
   "results": [
     {
-      "uuid": "2557382a-5ec4-4336-8b8f-e41466a6f140",
+      "uuid": "6af05647-ee81-4e65-ba92-1e6662b8321c",
       "title": "",
       "fullFile": "cypress/e2e/api/001 - API Core V3/001 - API V3 - Login Buonny Check/002.apiV3-login-b.check-erros.cy.js",
       "file": "cypress/e2e/api/001 - API Core V3/001 - API V3 - Login Buonny Check/002.apiV3-login-b.check-erros.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c38b0d00-6c44-4b89-9382-a344aebce0b1",
+          "uuid": "58a0aeab-bd5f-4991-a3f2-0607ca70d723",
           "title": "API CORE V3 - Login Buonny Check - validação de erros ",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Login senha inválida",
               "fullTitle": "API CORE V3 - Login Buonny Check - validação de erros  Login senha inválida",
               "timedOut": null,
-              "duration": 805,
+              "duration": 588,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: {\n    usuario: Cypress.env(\"user_nameBC\"),\n    senha: \"123\"\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(404);\n  expect(r.body).to.have.nested.property(\"message.Usuario._warning\", \"Usuário ou senha inválidos.\");\n});",
               "err": {},
-              "uuid": "2b9e2673-d4c2-4888-ae42-5a4ec657a39e",
-              "parentUUID": "c38b0d00-6c44-4b89-9382-a344aebce0b1",
+              "uuid": "811affc1-ca41-4d3c-9713-f9191e69aea2",
+              "parentUUID": "58a0aeab-bd5f-4991-a3f2-0607ca70d723",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Login usuário inexistente",
               "fullTitle": "API CORE V3 - Login Buonny Check - validação de erros  Login usuário inexistente",
               "timedOut": null,
-              "duration": 515,
+              "duration": 394,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: {\n    usuario: \"/\",\n    senha: Cypress.env(\"user_passwordBC\")\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(404);\n  expect(r.body).to.have.nested.property(\"message.Usuario._warning\", \"Usuário não encontrado.\");\n});",
               "err": {},
-              "uuid": "fb0418bd-a4a8-4a0f-aa36-0f0ce929e51b",
-              "parentUUID": "c38b0d00-6c44-4b89-9382-a344aebce0b1",
+              "uuid": "8e7e3dd1-2632-4c66-80e0-2ef4a7524c88",
+              "parentUUID": "58a0aeab-bd5f-4991-a3f2-0607ca70d723",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Login com usuário vazio",
               "fullTitle": "API CORE V3 - Login Buonny Check - validação de erros  Login com usuário vazio",
               "timedOut": null,
-              "duration": 189,
+              "duration": 120,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,8 +83,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: {\n    usuario: \"\",\n    senha: Cypress.env(\"user_passwordBC\")\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(400);\n  expect(r.body).to.have.nested.property(\"message.usuario._error\", \"Usuario precisam ser preenchido.\");\n});",
               "err": {},
-              "uuid": "a81b8c44-9a16-421e-b5ff-09f120620ca5",
-              "parentUUID": "c38b0d00-6c44-4b89-9382-a344aebce0b1",
+              "uuid": "037002e5-325e-4d31-9aaa-5f0dfcb9335f",
+              "parentUUID": "58a0aeab-bd5f-4991-a3f2-0607ca70d723",
               "isHook": false,
               "skipped": false
             },
@@ -92,7 +92,7 @@
               "title": "Login com senha vazia",
               "fullTitle": "API CORE V3 - Login Buonny Check - validação de erros  Login com senha vazia",
               "timedOut": null,
-              "duration": 148,
+              "duration": 257,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -101,23 +101,23 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: {\n    usuario: Cypress.env(\"user_nameBC\"),\n    senha: \"\"\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(400);\n  expect(r.body).to.have.nested.property(\"message.senha._error\", \"Senha precisa ser prenchida.\");\n});",
               "err": {},
-              "uuid": "212e25bb-189e-42c4-8077-f9b2b94bce3e",
-              "parentUUID": "c38b0d00-6c44-4b89-9382-a344aebce0b1",
+              "uuid": "176725a5-14e0-45af-a123-f7059b7a28b5",
+              "parentUUID": "58a0aeab-bd5f-4991-a3f2-0607ca70d723",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "2b9e2673-d4c2-4888-ae42-5a4ec657a39e",
-            "fb0418bd-a4a8-4a0f-aa36-0f0ce929e51b",
-            "a81b8c44-9a16-421e-b5ff-09f120620ca5",
-            "212e25bb-189e-42c4-8077-f9b2b94bce3e"
+            "811affc1-ca41-4d3c-9713-f9191e69aea2",
+            "8e7e3dd1-2632-4c66-80e0-2ef4a7524c88",
+            "037002e5-325e-4d31-9aaa-5f0dfcb9335f",
+            "176725a5-14e0-45af-a123-f7059b7a28b5"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1657,
+          "duration": 1359,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
