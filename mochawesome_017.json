@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-03T14:13:01.779Z",
-    "end": "2025-10-03T14:13:14.058Z",
-    "duration": 12279,
+    "start": "2025-10-03T18:04:59.646Z",
+    "end": "2025-10-03T18:05:12.961Z",
+    "duration": 13315,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "0c42a464-4858-4f0e-bc31-3a76b0c5b5a5",
+      "uuid": "18a83217-505e-4d3b-905f-6a886391346e",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/006 - API Status Entrega V2/002.api-status-entregaV2-rest-erros.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/006 - API Status Entrega V2/002.api-status-entregaV2-rest-erros.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "0b4b15a7-6c6b-4257-8c5c-5d48dd40eda3",
+          "uuid": "2de91423-7a69-43d2-a310-7492f6bde5c0",
           "title": "Integração Clientes - Erros, API Status Entrega V2",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validação de Erro: Enviar Requisição com CNPJ  vazio",
               "fullTitle": "Integração Clientes - Erros, API Status Entrega V2 Validação de Erro: Enviar Requisição com CNPJ  vazio",
               "timedOut": null,
-              "duration": 1870,
+              "duration": 1403,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"GET\",\n  url: `${url}?cnpj_cliente=&token=${token}`,\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(401);\n});",
               "err": {},
-              "uuid": "76af6718-51ff-4d86-b58b-b7ef65be978a",
-              "parentUUID": "0b4b15a7-6c6b-4257-8c5c-5d48dd40eda3",
+              "uuid": "c2de6a1f-81ca-43d6-8806-d69a9209f613",
+              "parentUUID": "2de91423-7a69-43d2-a310-7492f6bde5c0",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Validação de Erro: Enviar Reqisição com Token vazio",
               "fullTitle": "Integração Clientes - Erros, API Status Entrega V2 Validação de Erro: Enviar Reqisição com Token vazio",
               "timedOut": null,
-              "duration": 873,
+              "duration": 661,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"GET\",\n  url: `${url}?cnpj_cliente=${cnpjCliente}&token=`,\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(401);\n});",
               "err": {},
-              "uuid": "d3ee36a8-a67d-412c-9748-8d32fe32ddfa",
-              "parentUUID": "0b4b15a7-6c6b-4257-8c5c-5d48dd40eda3",
+              "uuid": "3e8c85e8-9040-4445-af6f-4c978e5034be",
+              "parentUUID": "2de91423-7a69-43d2-a310-7492f6bde5c0",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Validação de Erro: Consultar com SM e pedido divergentes",
               "fullTitle": "Integração Clientes - Erros, API Status Entrega V2 Validação de Erro: Consultar com SM e pedido divergentes",
               "timedOut": null,
-              "duration": 3030,
+              "duration": 3139,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,22 +83,22 @@
               "context": null,
               "code": "cy.api({\n  method: \"GET\",\n  url: `${url}?cnpj_cliente=${cnpjCliente}&token=${token}&sm=31692655&pedido=123456`,\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(200);\n  expect(r.body.dados).to.be.an(\"array\").and.to.be.empty;\n});",
               "err": {},
-              "uuid": "ee7ee44c-eae9-41c3-9b0e-62f32d52e238",
-              "parentUUID": "0b4b15a7-6c6b-4257-8c5c-5d48dd40eda3",
+              "uuid": "25d557f6-ad1d-4370-8a99-09d13168f546",
+              "parentUUID": "2de91423-7a69-43d2-a310-7492f6bde5c0",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "76af6718-51ff-4d86-b58b-b7ef65be978a",
-            "d3ee36a8-a67d-412c-9748-8d32fe32ddfa",
-            "ee7ee44c-eae9-41c3-9b0e-62f32d52e238"
+            "c2de6a1f-81ca-43d6-8806-d69a9209f613",
+            "3e8c85e8-9040-4445-af6f-4c978e5034be",
+            "25d557f6-ad1d-4370-8a99-09d13168f546"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5773,
+          "duration": 5203,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
