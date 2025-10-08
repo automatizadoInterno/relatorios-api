@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2025-10-08T16:19:36.947Z",
-    "end": "2025-10-08T16:19:46.312Z",
-    "duration": 9365,
+    "failures": 0,
+    "start": "2025-10-08T16:35:05.748Z",
+    "end": "2025-10-08T16:35:14.796Z",
+    "duration": 9048,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "b8a48c80-3dc2-4ac3-9f0e-fcb9f621558e",
+      "uuid": "a760c547-1430-4150-a870-0816dce6e9ea",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/002 - API Consulta Profissional/001.api-consulta-profissional-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/002 - API Consulta Profissional/001.api-consulta-profissional-soap.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "2fc347ee-c0dd-4ca8-ad1e-fdf521659ed9",
+          "uuid": "6cbde03e-a964-4f27-8558-c87626d99e51",
           "title": "Integração Clientes - API Consulta de Profissional SOAP",
           "fullFile": "",
           "file": "",
@@ -38,33 +38,29 @@
               "title": "Realizar consulta com sucesso API",
               "fullTitle": "Integração Clientes - API Consulta de Profissional SOAP Realizar consulta com sucesso API",
               "timedOut": null,
-              "duration": 8249,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 8673,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: soapPayload,\n  timeout: 60000\n}).then(r => {\n  const status = r.body.match(/<status>([\\s\\S]*?)<\\/status>/)[1].trim();\n  expect(r.status).to.eq(200);\n  expect(status).to.be.oneOf([\"PERFIL ADEQUADO AO RISCO\", \"PERFIL ADEQUADO AO RISCO POR PRAZO\", \"PERFIL COM INSUFICIÊNCIA DE DADOS\", \"PERFIL DIVERGENTE\", \"PERFIL EXPIRADO\", \"EM ANALISE\", \"DESCONHECIDO\"]);\n});",
-              "err": {
-                "message": "CypressError: `cy.request()` failed on:\n\nhttps://tstapi.buonny.com.br/portal/soap/consulta_profissional_soap\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://tstapi.buonny.com.br/portal/soap/consulta_profissional_soap\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/14.5.4 Chrome/130.0.6723.137 Electron/33.2.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 1118\n}\nBody: <?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:con=\"https://tstapi.buonny.com.br/portal/wsdl/consulta_profissional\">\n    <soapenv:Header/>\n    <soapenv:Body>\n        <con:consulta>\n  <cnpj_cliente>03703854000122</cnpj_cliente>\n  <autenticacao>\n      <token>91bd84aac4e0f0a2aca6e063c1675921</token>\n  </autenticacao>\n  <produto>2</produto>\n  <profissional>\n      <documento>64614686095</documento>\n      <carreteiro>S</carreteiro>\n  </profissional>\n  <veiculos>\n      <placa>TST1A23</placa>\n  </veiculos>\n  <carga_tipo>1</carga_tipo>\n  <carga_valor>1000</carga_valor>\n  <pais_origem>BR</pais_origem>\n  <uf_origem>SP</uf_origem>\n  <cidade_origem>Adamantina</cidade_origem>\n  <pais_destino>BR</pais_destino>\n  <uf_destino>SP</uf_destino>\n  <cidade_destino>Adamantina</cidade_destino>\n        </con:consulta>\n    </soapenv:Body>\n</soapenv:Envelope>\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"server\": \"nginx/1.28.0\",\n  \"date\": \"Wed, 08 Oct 2025 16:16:48 GMT\",\n  \"content-type\": \"text/xml; charset=utf-8\",\n  \"content-length\": \"251\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"PHP/5.3.10-1ubuntu3.48\",\n  \"set-cookie\": [\n    \"Buonny=0n6ken5p1aods0jn08522uklc7; path=/; domain=.buonny.com.br; secure\"\n  ],\n  \"p3p\": \"CP=\\\"NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM\\\"\",\n  \"vary\": \"Accept-Encoding\",\n  \"content-encoding\": \"gzip\"\n}\nBody: <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"https://tstapi.buonny.com.br/portal/wsdl/consulta_profissional\"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>ns1:1</faultcode><faultstring></faultstring><faultactor></faultactor><detail><ns1:Exception><erro></erro></ns1:Exception></detail></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>\n\nhttps://on.cypress.io/request",
-                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://tstapi.buonny.com.br/portal/soap/consulta_profissional_soap\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://tstapi.buonny.com.br/portal/soap/consulta_profissional_soap\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/14.5.4 Chrome/130.0.6723.137 Electron/33.2.1 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 1118\n}\nBody: <?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:con=\"https://tstapi.buonny.com.br/portal/wsdl/consulta_profissional\">\n    <soapenv:Header/>\n    <soapenv:Body>\n        <con:consulta>\n  <cnpj_cliente>03703854000122</cnpj_cliente>\n  <autenticacao>\n      <token>91bd84aac4e0f0a2aca6e063c1675921</token>\n  </autenticacao>\n  <produto>2</produto>\n  <profissional>\n      <documento>64614686095</documento>\n      <carreteiro>S</carreteiro>\n  </profissional>\n  <veiculos>\n      <placa>TST1A23</placa>\n  </veiculos>\n  <carga_tipo>1</carga_tipo>\n  <carga_valor>1000</carga_valor>\n  <pais_origem>BR</pais_origem>\n  <uf_origem>SP</uf_origem>\n  <cidade_origem>Adamantina</cidade_origem>\n  <pais_destino>BR</pais_destino>\n  <uf_destino>SP</uf_destino>\n  <cidade_destino>Adamantina</cidade_destino>\n        </con:consulta>\n    </soapenv:Body>\n</soapenv:Envelope>\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"server\": \"nginx/1.28.0\",\n  \"date\": \"Wed, 08 Oct 2025 16:16:48 GMT\",\n  \"content-type\": \"text/xml; charset=utf-8\",\n  \"content-length\": \"251\",\n  \"connection\": \"keep-alive\",\n  \"x-powered-by\": \"PHP/5.3.10-1ubuntu3.48\",\n  \"set-cookie\": [\n    \"Buonny=0n6ken5p1aods0jn08522uklc7; path=/; domain=.buonny.com.br; secure\"\n  ],\n  \"p3p\": \"CP=\\\"NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM\\\"\",\n  \"vary\": \"Accept-Encoding\",\n  \"content-encoding\": \"gzip\"\n}\nBody: <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"https://tstapi.buonny.com.br/portal/wsdl/consulta_profissional\"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>ns1:1</faultcode><faultstring></faultstring><faultactor></faultactor><detail><ns1:Exception><erro></erro></ns1:Exception></detail></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>\n\nhttps://on.cypress.io/request\n    at <unknown> (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:136469:72)\n    at tryCatcher (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1671:18)\n    at _drainQueueStep (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.ee (webpack://test/./node_modules/cypress-plugin-api/dist/support.js:14:2002)\n    at wrapped (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:141663:43)",
-                "diff": null
-              },
-              "uuid": "60245182-912d-47b4-be36-19efa293e138",
-              "parentUUID": "2fc347ee-c0dd-4ca8-ad1e-fdf521659ed9",
+              "err": {},
+              "uuid": "7f70bfee-d7f2-4151-a706-fcaa15c2bb6b",
+              "parentUUID": "6cbde03e-a964-4f27-8558-c87626d99e51",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "60245182-912d-47b4-be36-19efa293e138"
+          "passes": [
+            "7f70bfee-d7f2-4151-a706-fcaa15c2bb6b"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8249,
+          "duration": 8673,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

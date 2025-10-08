@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-08T16:17:39.271Z",
-    "end": "2025-10-08T16:17:41.390Z",
-    "duration": 2119,
+    "start": "2025-10-08T16:33:13.890Z",
+    "end": "2025-10-08T16:33:16.031Z",
+    "duration": 2141,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "b553c274-b015-433a-862a-517069467e52",
+      "uuid": "8882740d-52ae-4f44-8510-2ca58223fdc0",
       "title": "",
       "fullFile": "cypress/e2e/api/001 - API Core V3/002 - API V3 -  Inclusão de ficha profissional/002.apiV3-inclusaoFicha-b.check-erros.cy.js",
       "file": "cypress/e2e/api/001 - API Core V3/002 - API V3 -  Inclusão de ficha profissional/002.apiV3-inclusaoFicha-b.check-erros.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "3aaf825b-b57e-4f90-a563-b14b07bc45b2",
+          "uuid": "aceb72bb-0a28-4004-860b-fbc0b2f88aed",
           "title": "API CORE V3 - Inclusão ficha do profissional BC - erros",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Inclusão de ficha com body inválido",
               "fullTitle": "API CORE V3 - Inclusão ficha do profissional BC - erros Inclusão de ficha com body inválido",
               "timedOut": null,
-              "duration": 1059,
+              "duration": 1013,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: url,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {},\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(400);\n  });\n});",
               "err": {},
-              "uuid": "6b7fad29-b391-447e-82e5-5f2a10c159af",
-              "parentUUID": "3aaf825b-b57e-4f90-a563-b14b07bc45b2",
+              "uuid": "1a97567d-cb55-4616-859f-39a59b43d6be",
+              "parentUUID": "aceb72bb-0a28-4004-860b-fbc0b2f88aed",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Inclusão de ficha com token expirado",
               "fullTitle": "API CORE V3 - Inclusão ficha do profissional BC - erros Inclusão de ficha com token expirado",
               "timedOut": null,
-              "duration": 766,
+              "duration": 843,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  headers: {\n    Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb2RpZ28iOjIzODY1OCwiYXBlbGlkbyI6ImF1dG9tYXRpemFkby5iY2hlY2siLCJjb2RpZ29fY2xpZW50ZSI6NTgwMSwidGlwb191c3VhcmlvIjoiZXh0ZXJubyIsImNvZGlnb19kb2N1bWVudG8iOiIwNjMyNjAyNTAwMDE2NiIsImNvZGlnb19zZWd1cmFkb3JhIjoiMjciLCJjb2RpZ29fY29ycmV0b3JhIjoiNDQzMiIsImNvZGlnb19maWxpYWwiOm51bGwsImRvY3VtZW50b19iYXNlIjoiMDYzMjYwMjUiLCJ0b2tlbiI6ImY3MzNhZTczYjNhYjc5NzJkNjNhYTg5YTQ0NzEwNjk0IiwibnN0ZWNoIjoiIiwiYXR1YWxpemFyIjpmYWxzZSwic2lzdGVtYSI6bnVsbCwiZXhwIjoxNzQyNDE3MDc2fQ.QISjNzMNoHEinEkh4VhhqHBu327WQHVh7X6n8gYa8Hk`\n  },\n  body: {},\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(401);\n  expect(r.body).to.include(\"Token Expirado\");\n});",
               "err": {},
-              "uuid": "ee9710cd-a721-4767-88d3-1e9fbf855710",
-              "parentUUID": "3aaf825b-b57e-4f90-a563-b14b07bc45b2",
+              "uuid": "29ae3ea6-d845-4ecc-8cb5-104b8417ea19",
+              "parentUUID": "aceb72bb-0a28-4004-860b-fbc0b2f88aed",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "6b7fad29-b391-447e-82e5-5f2a10c159af",
-            "ee9710cd-a721-4767-88d3-1e9fbf855710"
+            "1a97567d-cb55-4616-859f-39a59b43d6be",
+            "29ae3ea6-d845-4ecc-8cb5-104b8417ea19"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1825,
+          "duration": 1856,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
