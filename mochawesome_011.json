@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-08T17:46:13.945Z",
-    "end": "2025-10-08T17:46:20.686Z",
-    "duration": 6741,
+    "start": "2025-10-08T18:49:24.742Z",
+    "end": "2025-10-08T18:49:30.954Z",
+    "duration": 6212,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "2ac874de-15da-4ad1-bc00-ae072b4afb5b",
+      "uuid": "2f96de62-022a-482e-92a6-347d7f99d291",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/003 - API Consulta entrega/002.api-consulta-entrega-erros-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/003 - API Consulta entrega/002.api-consulta-entrega-erros-soap.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "2fa3ea96-ae81-4611-9037-d225f7e70034",
+          "uuid": "c6d723a6-6c54-4a57-ad39-f25f7fcb4bb7",
           "title": "Integração Clientes - API Consulta entrega erros SOAP",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Requisição com corpo vazio",
               "fullTitle": "Integração Clientes - API Consulta entrega erros SOAP Requisição com corpo vazio",
               "timedOut": null,
-              "duration": 1641,
+              "duration": 1598,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: ``,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"SOAP-ENV:Client\");\n  expect(faultstring).to.eq(\"Bad Request\");\n});",
               "err": {},
-              "uuid": "aef2102a-b3e9-4fb6-8fc6-c60a3776dad8",
-              "parentUUID": "2fa3ea96-ae81-4611-9037-d225f7e70034",
+              "uuid": "c2c14290-dbac-4c85-8606-3ae7b60d60d7",
+              "parentUUID": "c6d723a6-6c54-4a57-ad39-f25f7fcb4bb7",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Requisição com token vazio",
               "fullTitle": "Integração Clientes - API Consulta entrega erros SOAP Requisição com token vazio",
               "timedOut": null,
-              "duration": 2461,
+              "duration": 1975,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: `<x:Envelope\nxmlns:x=\"http://schemas.xmlsoap.org/soap/envelope/\"\nxmlns:sta=\"https://tstapi.buonny.com.br/portal/wsdl/status_entrega\">\n<x:Header/>\n<x:Body>\n    <sta:consulta>\n        <sta:autenticacao>\n            <sta:token></sta:token>\n        </sta:autenticacao>\n        <sta:cnpj_cliente>${cnpjCliente}</sta:cnpj_cliente>\n        <sta:alvo></sta:alvo>\n        <sta:nota_fiscal></sta:nota_fiscal>\n        <sta:pedido_nota_fiscal></sta:pedido_nota_fiscal>\n        <sta:placa>${placa}</sta:placa>\n        <sta:pedido_cliente></sta:pedido_cliente>\n    </sta:consulta>\n</x:Body>\n</x:Envelope>`,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"1\");\n  expect(faultstring).to.eq(\"Informe o token\");\n});",
               "err": {},
-              "uuid": "2092dc27-3159-4088-ae14-470e3db76b4d",
-              "parentUUID": "2fa3ea96-ae81-4611-9037-d225f7e70034",
+              "uuid": "d6a4e237-c65e-4b2a-bff8-bbacf4826c64",
+              "parentUUID": "c6d723a6-6c54-4a57-ad39-f25f7fcb4bb7",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Requisição com CNPJ vazio",
               "fullTitle": "Integração Clientes - API Consulta entrega erros SOAP Requisição com CNPJ vazio",
               "timedOut": null,
-              "duration": 2296,
+              "duration": 2368,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,22 +83,22 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: `<x:Envelope\nxmlns:x=\"http://schemas.xmlsoap.org/soap/envelope/\"\nxmlns:sta=\"https://tstapi.buonny.com.br/portal/wsdl/status_entrega\">\n<x:Header/>\n<x:Body>\n    <sta:consulta>\n        <sta:autenticacao>\n            <sta:token>${token}</sta:token>\n        </sta:autenticacao>\n        <sta:cnpj_cliente></sta:cnpj_cliente>\n        <sta:alvo></sta:alvo>\n        <sta:nota_fiscal></sta:nota_fiscal>\n        <sta:pedido_nota_fiscal></sta:pedido_nota_fiscal>\n        <sta:placa>${placa}</sta:placa>\n        <sta:pedido_cliente></sta:pedido_cliente>\n    </sta:consulta>\n</x:Body>\n</x:Envelope>`,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"1\");\n  expect(faultstring).to.eq(\"Informe o Cnpj\");\n});",
               "err": {},
-              "uuid": "354a2791-d890-4af7-b66c-75edeb23c1c6",
-              "parentUUID": "2fa3ea96-ae81-4611-9037-d225f7e70034",
+              "uuid": "20dc765a-8a17-4313-b7c9-6377b6fbeeb3",
+              "parentUUID": "c6d723a6-6c54-4a57-ad39-f25f7fcb4bb7",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "aef2102a-b3e9-4fb6-8fc6-c60a3776dad8",
-            "2092dc27-3159-4088-ae14-470e3db76b4d",
-            "354a2791-d890-4af7-b66c-75edeb23c1c6"
+            "c2c14290-dbac-4c85-8606-3ae7b60d60d7",
+            "d6a4e237-c65e-4b2a-bff8-bbacf4826c64",
+            "20dc765a-8a17-4313-b7c9-6377b6fbeeb3"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6398,
+          "duration": 5941,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

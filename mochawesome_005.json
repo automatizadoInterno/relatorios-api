@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-08T17:44:12.436Z",
-    "end": "2025-10-08T17:44:14.443Z",
-    "duration": 2007,
+    "start": "2025-10-08T18:47:19.194Z",
+    "end": "2025-10-08T18:47:21.259Z",
+    "duration": 2065,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "8a8a68dc-ac03-4de2-b248-38ac1674f7a3",
+      "uuid": "fca34eb8-5655-4c96-8efe-42bfacb04010",
       "title": "",
       "fullFile": "cypress/e2e/api/001 - API Core V3/003 - API V3 - Consulta profissional/002.apiV3-consulta-b.check-erros.cy.js",
       "file": "cypress/e2e/api/001 - API Core V3/003 - API V3 - Consulta profissional/002.apiV3-consulta-b.check-erros.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "9361f96f-88e2-4903-aeda-bf1265ddb940",
+          "uuid": "87c34f44-edca-4931-88d1-ba77bf36b8a4",
           "title": "API CORE V3 - Consulta profissional Buonny Check - erros",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Consulta com corpo inválido",
               "fullTitle": "API CORE V3 - Consulta profissional Buonny Check - erros Consulta com corpo inválido",
               "timedOut": null,
-              "duration": 900,
+              "duration": 996,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: url,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      codigo_cliente: \"\",\n      codigo_usuario_inclusao: \"\",\n      codigo_produto: 1,\n      codigo_corporacao: 1,\n      categoria: 1,\n      codigo_carga_tipo: \"\",\n      codigo_carga_valor: 1,\n      codigo_cidade_destino: \"\",\n      codigo_cidade_origem: 5190,\n      codigo_documento: \"01180160169\",\n      placa_veiculo: \"AKX0E00\",\n      departamento: \"T\"\n    },\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(500);\n  });\n});",
               "err": {},
-              "uuid": "26f966f8-0db0-4470-89e6-ba332ede2f60",
-              "parentUUID": "9361f96f-88e2-4903-aeda-bf1265ddb940",
+              "uuid": "dc241665-7035-4cf6-af6a-c9c4f9244476",
+              "parentUUID": "87c34f44-edca-4931-88d1-ba77bf36b8a4",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Consulta com token inválido",
               "fullTitle": "API CORE V3 - Consulta profissional Buonny Check - erros Consulta com token inválido",
               "timedOut": null,
-              "duration": 764,
+              "duration": 723,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  headers: {\n    Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb2RpZ28iOjIzODY1OCwiYXBlbGlkbyI6ImF1dG9tYXRpemFkby5iY2hlY2siLCJjb2RpZ29fY2xpZW50ZSI6NTgwMSwidGlwb191c3VhcmlvIjoiZXh0ZXJubyIsImNvZGlnb19kb2N1bWVudG8iOiIwNjMyNjAyNTAwMDE2NiIsImNvZGlnb19zZWd1cmFkb3JhIjoiMjciLCJjb2RpZ29fY29ycmV0b3JhIjoiNDQzMiIsImNvZGlnb19maWxpYWwiOm51bGwsImRvY3VtZW50b19iYXNlIjoiMDYzMjYwMjUiLCJ0b2tlbiI6ImY3MzNhZTczYjNhYjc5NzJkNjNhYTg5YTQ0NzEwNjk0IiwibnN0ZWNoIjoiIiwiYXR1YWxpemFyIjpmYWxzZSwic2lzdGVtYSI6bnVsbCwiZXhwIjoxNzQyMjQyMzAzfQ.DYb6lE3GzTSgIpq8itbcmHPSHaK1jvxW_-H4k1AWQM0`\n  },\n  body: {\n    codigo_cliente: \"\",\n    codigo_usuario_inclusao: \"\",\n    codigo_produto: 1,\n    codigo_corporacao: 1,\n    categoria: 1,\n    codigo_carga_tipo: \"\",\n    codigo_carga_valor: 1,\n    codigo_cidade_destino: \"\",\n    codigo_cidade_origem: 5190,\n    codigo_documento: \"01180160169\",\n    placa_veiculo: \"AKX0E00\",\n    departamento: \"T\"\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(401);\n});",
               "err": {},
-              "uuid": "15f442f9-b06b-4936-9729-1324c4f91452",
-              "parentUUID": "9361f96f-88e2-4903-aeda-bf1265ddb940",
+              "uuid": "c6ebcb62-2e9e-4dbc-b3e5-0ceaeb68ff84",
+              "parentUUID": "87c34f44-edca-4931-88d1-ba77bf36b8a4",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "26f966f8-0db0-4470-89e6-ba332ede2f60",
-            "15f442f9-b06b-4936-9729-1324c4f91452"
+            "dc241665-7035-4cf6-af6a-c9c4f9244476",
+            "c6ebcb62-2e9e-4dbc-b3e5-0ceaeb68ff84"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1664,
+          "duration": 1719,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
