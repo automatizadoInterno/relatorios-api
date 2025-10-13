@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-13T15:43:04.795Z",
-    "end": "2025-10-13T15:43:13.982Z",
-    "duration": 9187,
+    "start": "2025-10-13T16:05:12.203Z",
+    "end": "2025-10-13T16:05:21.294Z",
+    "duration": 9091,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c4fb52f2-5562-4a80-a6b6-c53f1b5ce118",
+      "uuid": "920c72bd-4e12-4274-bc39-0afc9c4e86c9",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/002 - API Consulta Profissional/001.api-consulta-profissional-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/002 - API Consulta Profissional/001.api-consulta-profissional-soap.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c2996830-6e32-41d9-9813-0ccac5da0a4f",
+          "uuid": "cccaa278-2482-4b30-ae50-754246d319fe",
           "title": "Integração Clientes - API Consulta de Profissional SOAP",
           "fullFile": "",
           "file": "",
@@ -47,15 +47,15 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: soapPayload,\n  timeout: 60000\n}).then(r => {\n  const status = r.body.match(/<status>([\\s\\S]*?)<\\/status>/)[1].trim();\n  expect(r.status).to.eq(200);\n  expect(status).to.be.oneOf([\"PERFIL ADEQUADO AO RISCO\", \"PERFIL ADEQUADO AO RISCO POR PRAZO\", \"PERFIL COM INSUFICIÊNCIA DE DADOS\", \"PERFIL DIVERGENTE\", \"PERFIL EXPIRADO\", \"EM ANALISE\", \"DESCONHECIDO\"]);\n});",
               "err": {},
-              "uuid": "a1f11068-e222-4ddb-a6cf-cfc5a5fb719f",
-              "parentUUID": "c2996830-6e32-41d9-9813-0ccac5da0a4f",
+              "uuid": "1ebbd09c-4505-46da-8ff1-0b1d24221ee4",
+              "parentUUID": "cccaa278-2482-4b30-ae50-754246d319fe",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a1f11068-e222-4ddb-a6cf-cfc5a5fb719f"
+            "1ebbd09c-4505-46da-8ff1-0b1d24221ee4"
           ],
           "failures": [],
           "pending": [],
