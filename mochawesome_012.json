@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-15T14:32:59.656Z",
-    "end": "2025-10-15T14:33:52.022Z",
-    "duration": 52366,
+    "start": "2025-10-15T17:34:06.687Z",
+    "end": "2025-10-15T17:34:56.945Z",
+    "duration": 50258,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "75f5271c-09a3-4e52-8770-9027462d0d78",
+      "uuid": "a35f967a-5f98-4f17-88ce-3aedeee6a4bb",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/004 - API Inclusão de SM REST/001.api-inclusao-sm-rest.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/004 - API Inclusão de SM REST/001.api-inclusao-sm-rest.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "f6292a9a-103b-472e-b1dd-9e94361b52df",
+          "uuid": "98cb0fdc-5106-4c1d-b408-f5e84f888371",
           "title": "Integração Clientes - API Inclusão de SM REST",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validação de retorno 200OK, criar sm com sucesso API",
               "fullTitle": "Integração Clientes - API Inclusão de SM REST Validação de retorno 200OK, criar sm com sucesso API",
               "timedOut": null,
-              "duration": 52051,
+              "duration": 50152,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: APIclientes.InclusãoSmRest,\n  timeout: 120000,\n  body: payload\n}).then(r => {\n  expect(r.status).to.eq(200);\n  cy.log(r.body);\n  expect(r.body.sucesso).to.match(/^\\d{8}$/);\n  cy.log(\"A chave 'sucesso' está no formato esperado: 8 números.\");\n});",
               "err": {},
-              "uuid": "cf94eb96-3b98-4ed4-8445-2a72fe206542",
-              "parentUUID": "f6292a9a-103b-472e-b1dd-9e94361b52df",
+              "uuid": "b4b07295-78c2-4bea-9741-5aa21435a5d4",
+              "parentUUID": "98cb0fdc-5106-4c1d-b408-f5e84f888371",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "cf94eb96-3b98-4ed4-8445-2a72fe206542"
+            "b4b07295-78c2-4bea-9741-5aa21435a5d4"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 52051,
+          "duration": 50152,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
