@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 5,
-    "start": "2025-10-14T20:59:22.347Z",
-    "end": "2025-10-14T20:59:29.292Z",
-    "duration": 6945,
+    "start": "2025-10-15T11:51:27.534Z",
+    "end": "2025-10-15T11:51:34.006Z",
+    "duration": 6472,
     "testsRegistered": 5,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "da0054b5-f724-4402-9372-cdc182c3c754",
+      "uuid": "1a6b2668-6771-466a-af32-e82b68013edc",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/002.api-acompanhamento-viagem-erros.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/002.api-acompanhamento-viagem-erros.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d5188997-f51d-498d-afa8-9c75a3846976",
+          "uuid": "a2edea3f-fea8-4fa1-b322-261e921cfb8a",
           "title": "Integração Clientes - API Acompanhamento de viagem erros,",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validação de retorno: Buscar acompanhamento com token expirado ou inválido",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem erros, Validação de retorno: Buscar acompanhamento com token expirado ou inválido",
               "timedOut": null,
-              "duration": 1358,
+              "duration": 788,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "AssertionError: expected 502 to equal 401\n    at Context.eval (webpack://test/./cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/002.api-acompanhamento-viagem-erros.cy.js:40:32)\n    at getRet (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121066:20)\n    at tryCatcher (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121077:66)\n    at Context.then (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121328:21)",
                 "diff": "- 502\n+ 401\n"
               },
-              "uuid": "508bcde3-da16-4404-90f6-0373111d6cbf",
-              "parentUUID": "d5188997-f51d-498d-afa8-9c75a3846976",
+              "uuid": "dc9df47b-d88a-4f34-967a-194c555e04ce",
+              "parentUUID": "a2edea3f-fea8-4fa1-b322-261e921cfb8a",
               "isHook": false,
               "skipped": false
             },
@@ -60,7 +60,7 @@
               "title": "Validação de retorno: Buscar acompanhamento com body vazio",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem erros, Validação de retorno: Buscar acompanhamento com body vazio",
               "timedOut": null,
-              "duration": 1547,
+              "duration": 1468,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -73,8 +73,8 @@
                 "estack": "AssertionError: expected 502 to equal 415\n    at Context.eval (webpack://test/./cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/002.api-acompanhamento-viagem-erros.cy.js:54:36)\n    at getRet (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121066:20)\n    at tryCatcher (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121077:66)\n    at Context.then (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121328:21)",
                 "diff": "- 502\n+ 415\n"
               },
-              "uuid": "9e5cca05-bbd4-45d5-b27e-ac0cb3c4855e",
-              "parentUUID": "d5188997-f51d-498d-afa8-9c75a3846976",
+              "uuid": "c94791c7-2e1c-4c27-a00b-bf073ea11713",
+              "parentUUID": "a2edea3f-fea8-4fa1-b322-261e921cfb8a",
               "isHook": false,
               "skipped": false
             },
@@ -82,7 +82,7 @@
               "title": "Validação de retorno: Buscar acompanhamento com body vazio II",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem erros, Validação de retorno: Buscar acompanhamento com body vazio II",
               "timedOut": null,
-              "duration": 1118,
+              "duration": 1261,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -95,8 +95,8 @@
                 "estack": "AssertionError: expected 502 to equal 400\n    at Context.eval (webpack://test/./cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/002.api-acompanhamento-viagem-erros.cy.js:70:36)\n    at getRet (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121066:20)\n    at tryCatcher (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121077:66)\n    at Context.then (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121328:21)",
                 "diff": "- 502\n+ 400\n"
               },
-              "uuid": "ada73792-1ff2-4104-b90f-34e8a2fdc3d0",
-              "parentUUID": "d5188997-f51d-498d-afa8-9c75a3846976",
+              "uuid": "3ff38e3a-5746-4491-9cbf-f9faf186955c",
+              "parentUUID": "a2edea3f-fea8-4fa1-b322-261e921cfb8a",
               "isHook": false,
               "skipped": false
             },
@@ -104,7 +104,7 @@
               "title": "Validação de retorno: Payload com campos obrigatórios ausentes",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem erros, Validação de retorno: Payload com campos obrigatórios ausentes",
               "timedOut": null,
-              "duration": 965,
+              "duration": 1351,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -117,8 +117,8 @@
                 "estack": "AssertionError: expected 502 to equal 404\n    at Context.eval (webpack://test/./cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/002.api-acompanhamento-viagem-erros.cy.js:89:36)\n    at getRet (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121066:20)\n    at tryCatcher (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121077:66)\n    at Context.then (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121328:21)",
                 "diff": "- 502\n+ 404\n"
               },
-              "uuid": "2344dc62-2806-41e4-84a1-9b956e8fa0b3",
-              "parentUUID": "d5188997-f51d-498d-afa8-9c75a3846976",
+              "uuid": "35aea906-1123-4fdf-8bf7-ea2c7fb25482",
+              "parentUUID": "a2edea3f-fea8-4fa1-b322-261e921cfb8a",
               "isHook": false,
               "skipped": false
             },
@@ -126,7 +126,7 @@
               "title": "Validação de retorno: Payload com campos obrigatórios vazios",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem erros, Validação de retorno: Payload com campos obrigatórios vazios",
               "timedOut": null,
-              "duration": 819,
+              "duration": 730,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -139,8 +139,8 @@
                 "estack": "AssertionError: expected 502 to equal 500\n    at Context.eval (webpack://test/./cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/002.api-acompanhamento-viagem-erros.cy.js:108:36)\n    at getRet (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121066:20)\n    at tryCatcher (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121077:66)\n    at Context.then (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121328:21)",
                 "diff": "- 502\n+ 500\n"
               },
-              "uuid": "92f8b946-c5a5-41f0-98ff-15ac14f32621",
-              "parentUUID": "d5188997-f51d-498d-afa8-9c75a3846976",
+              "uuid": "39e858fe-ced5-40f1-bb1c-854deee18b39",
+              "parentUUID": "a2edea3f-fea8-4fa1-b322-261e921cfb8a",
               "isHook": false,
               "skipped": false
             }
@@ -148,15 +148,15 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "508bcde3-da16-4404-90f6-0373111d6cbf",
-            "9e5cca05-bbd4-45d5-b27e-ac0cb3c4855e",
-            "ada73792-1ff2-4104-b90f-34e8a2fdc3d0",
-            "2344dc62-2806-41e4-84a1-9b956e8fa0b3",
-            "92f8b946-c5a5-41f0-98ff-15ac14f32621"
+            "dc9df47b-d88a-4f34-967a-194c555e04ce",
+            "c94791c7-2e1c-4c27-a00b-bf073ea11713",
+            "3ff38e3a-5746-4491-9cbf-f9faf186955c",
+            "35aea906-1123-4fdf-8bf7-ea2c7fb25482",
+            "39e858fe-ced5-40f1-bb1c-854deee18b39"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 5807,
+          "duration": 5598,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 2,
-    "start": "2025-10-14T20:59:10.475Z",
-    "end": "2025-10-14T20:59:14.095Z",
-    "duration": 3620,
+    "start": "2025-10-15T11:51:14.341Z",
+    "end": "2025-10-15T11:51:16.557Z",
+    "duration": 2216,
     "testsRegistered": 2,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "bba64e93-04b8-47fb-ae5f-8e5e0d51abbf",
+      "uuid": "0ffbb789-68d1-4d1e-99e6-1a8f3dd53be2",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/001.api-acompanhamento-viagem.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/001.api-acompanhamento-viagem.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "f20a6173-ee22-4923-89ae-0442a3c39c7b",
+          "uuid": "6a97aa60-7857-4bb9-afcc-a45186abbfdc",
           "title": "Integração Clientes - API Acompanhamento de viagem",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validação de retorno: Acompanhanmento de viagem com sucesso",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem Validação de retorno: Acompanhanmento de viagem com sucesso",
               "timedOut": null,
-              "duration": 1497,
+              "duration": 1171,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "AssertionError: expected 502 to equal 200\n    at Context.eval (webpack://test/./cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/001.api-acompanhamento-viagem.cy.js:41:36)\n    at getRet (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121066:20)\n    at tryCatcher (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121077:66)\n    at Context.then (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121328:21)",
                 "diff": "- 502\n+ 200\n"
               },
-              "uuid": "76c48f30-bfb6-4728-8a5d-2595d1d22ec1",
-              "parentUUID": "f20a6173-ee22-4923-89ae-0442a3c39c7b",
+              "uuid": "f2e2c883-2045-4906-a6d1-b6552605c3da",
+              "parentUUID": "6a97aa60-7857-4bb9-afcc-a45186abbfdc",
               "isHook": false,
               "skipped": false
             },
@@ -60,7 +60,7 @@
               "title": "Validação de retorno: Paginação offset e limit funcionando corretamente",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem Validação de retorno: Paginação offset e limit funcionando corretamente",
               "timedOut": null,
-              "duration": 1675,
+              "duration": 717,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -73,8 +73,8 @@
                 "estack": "AssertionError: expected 502 to equal 200\n    at Context.eval (webpack://test/./cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/001.api-acompanhamento-viagem.cy.js:62:36)\n    at getRet (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121066:20)\n    at tryCatcher (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121077:66)\n    at Context.then (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:121328:21)",
                 "diff": "- 502\n+ 200\n"
               },
-              "uuid": "44dcbfea-ec83-4ea6-9020-6808a4d0f5c2",
-              "parentUUID": "f20a6173-ee22-4923-89ae-0442a3c39c7b",
+              "uuid": "55f89d34-9cc9-48b4-bb38-ed125255696b",
+              "parentUUID": "6a97aa60-7857-4bb9-afcc-a45186abbfdc",
               "isHook": false,
               "skipped": false
             }
@@ -82,12 +82,12 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "76c48f30-bfb6-4728-8a5d-2595d1d22ec1",
-            "44dcbfea-ec83-4ea6-9020-6808a4d0f5c2"
+            "f2e2c883-2045-4906-a6d1-b6552605c3da",
+            "55f89d34-9cc9-48b4-bb38-ed125255696b"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 3172,
+          "duration": 1888,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
