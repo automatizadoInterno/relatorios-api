@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-17T19:47:53.539Z",
-    "end": "2025-10-17T19:48:00.342Z",
-    "duration": 6803,
+    "start": "2025-10-17T20:08:02.967Z",
+    "end": "2025-10-17T20:08:09.849Z",
+    "duration": 6882,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "7d138114-3c1a-4553-846f-b9a9afe15745",
+      "uuid": "cf1c9091-1a0f-44e5-82f5-23b232f7652d",
       "title": "",
       "fullFile": "cypress/e2e/api/001 - API Core V3/003 - API V3 - Consulta profissional/001.apiV3-consulta-b.check.cy.js",
       "file": "cypress/e2e/api/001 - API Core V3/003 - API V3 - Consulta profissional/001.apiV3-consulta-b.check.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "41f03f07-6070-4edb-9b8c-9abd1950cf3f",
+          "uuid": "3a383154-3288-4b43-ae50-4f6d719f5422",
           "title": "API CORE V3 - Consulta profissional Buonny Check - sucesso",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Consulta com sucesso",
               "fullTitle": "API CORE V3 - Consulta profissional Buonny Check - sucesso Consulta com sucesso",
               "timedOut": null,
-              "duration": 6333,
+              "duration": 6699,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const codigoCliente = 87906;\nconst documentoMotorista = \"646.146.860-95\";\nconst placa = \"TST1A23\";\ncy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: url,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      codigo_cliente: codigoCliente,\n      codigo_usuario_inclusao: 238658,\n      codigo_produto: 2,\n      codigo_corporacao: 1,\n      categoria: 1,\n      codigo_carga_tipo: 32,\n      codigo_carga_valor: 1,\n      codigo_cidade_destino: 5190,\n      codigo_cidade_origem: 5190,\n      codigo_documento: documentoMotorista,\n      placa_veiculo: placa,\n      departamento: \"T\"\n    }\n  }).then(r => {\n    expect(r.status).to.eq(200);\n    expect(r.body.data.fichas.Ficha.observacao).to.eq(\"Profissional sem cadastro com o veículo. Enviar ficha para análise\");\n  });\n});",
               "err": {},
-              "uuid": "afc2498b-c9a4-462e-812d-134fc30fc541",
-              "parentUUID": "41f03f07-6070-4edb-9b8c-9abd1950cf3f",
+              "uuid": "e4359791-1097-42cf-af5e-e664ecbc2faf",
+              "parentUUID": "3a383154-3288-4b43-ae50-4f6d719f5422",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "afc2498b-c9a4-462e-812d-134fc30fc541"
+            "e4359791-1097-42cf-af5e-e664ecbc2faf"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6333,
+          "duration": 6699,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
