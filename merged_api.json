@@ -12,13 +12,13 @@
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2025-10-17T20:06:58.466Z",
-    "end": "2025-10-17T20:15:45.280Z",
-    "duration": 526814
+    "start": "2025-10-17T21:23:13.997Z",
+    "end": "2025-10-17T21:33:14.674Z",
+    "duration": 600677
   },
   "results": [
     {
-      "uuid": "7c72a313-fb74-460e-b3f3-acec0ea0e68d",
+      "uuid": "d8b9eec1-9ff2-47e0-a38d-a26860b15a8a",
       "title": "",
       "fullFile": "cypress/e2e/api/001 - API Core V3/001 - API V3 - Login Buonny Check/001.apiV3-login-b.check-sucesso.cy.js",
       "file": "cypress/e2e/api/001 - API Core V3/001 - API V3 - Login Buonny Check/001.apiV3-login-b.check-sucesso.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "4001b5d7-ddd4-4a11-8e5e-57d10194ff4c",
+          "uuid": "2aa2fac8-2912-4574-94b7-8306cca69354",
           "title": "API CORE V3 - Login Buonny Check - sucesso",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Login com sucesso",
               "fullTitle": "API CORE V3 - Login Buonny Check - sucesso Login com sucesso",
               "timedOut": null,
-              "duration": 736,
+              "duration": 716,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: {\n    usuario: Cypress.env(\"user_nameBC\"),\n    senha: Cypress.env(\"user_passwordBC\")\n  }\n}).then(r => {\n  expect(r.status).to.eq(200);\n  expect(r.body).to.have.property(\"data\");\n  expect(r.body.data).to.have.property(\"token\").and.not.be.empty;\n});",
               "err": {},
-              "uuid": "7ca04656-8174-4e01-8e9d-c5d81a051196",
-              "parentUUID": "4001b5d7-ddd4-4a11-8e5e-57d10194ff4c",
+              "uuid": "2976887e-8d8d-4585-bd27-ae7bcb58b619",
+              "parentUUID": "2aa2fac8-2912-4574-94b7-8306cca69354",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "7ca04656-8174-4e01-8e9d-c5d81a051196"
+            "2976887e-8d8d-4585-bd27-ae7bcb58b619"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 736,
+          "duration": 716,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -76,7 +76,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "007f78fd-15f9-47c2-9a55-b5d7e2e84ad3",
+      "uuid": "7b86ee25-b046-4038-b163-7c4e58cb6206",
       "title": "",
       "fullFile": "cypress/e2e/api/001 - API Core V3/001 - API V3 - Login Buonny Check/002.apiV3-login-b.check-erros.cy.js",
       "file": "cypress/e2e/api/001 - API Core V3/001 - API V3 - Login Buonny Check/002.apiV3-login-b.check-erros.cy.js",
@@ -85,7 +85,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "9eea442b-5a9c-4cae-b175-2349f4f9ac5d",
+          "uuid": "f34c6491-fab1-4011-9413-60021fa3b7bf",
           "title": "API CORE V3 - Login Buonny Check - validação de erros ",
           "fullFile": "",
           "file": "",
@@ -96,7 +96,7 @@
               "title": "Login senha inválida",
               "fullTitle": "API CORE V3 - Login Buonny Check - validação de erros  Login senha inválida",
               "timedOut": null,
-              "duration": 1307,
+              "duration": 939,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -105,8 +105,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: {\n    usuario: Cypress.env(\"user_nameBC\"),\n    senha: \"123\"\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(404);\n  expect(r.body).to.have.nested.property(\"message.Usuario._warning\", \"Usuário ou senha inválidos.\");\n});",
               "err": {},
-              "uuid": "0fba38bc-bd29-4628-ae7a-db1f0d27a6bf",
-              "parentUUID": "9eea442b-5a9c-4cae-b175-2349f4f9ac5d",
+              "uuid": "3c650327-b4bf-477c-a299-fda90caf8fd9",
+              "parentUUID": "f34c6491-fab1-4011-9413-60021fa3b7bf",
               "isHook": false,
               "skipped": false
             },
@@ -114,7 +114,7 @@
               "title": "Login usuário inexistente",
               "fullTitle": "API CORE V3 - Login Buonny Check - validação de erros  Login usuário inexistente",
               "timedOut": null,
-              "duration": 616,
+              "duration": 783,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -123,8 +123,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: {\n    usuario: \"/\",\n    senha: Cypress.env(\"user_passwordBC\")\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(404);\n  expect(r.body).to.have.nested.property(\"message.Usuario._warning\", \"Usuário não encontrado.\");\n});",
               "err": {},
-              "uuid": "f7a0364d-bd32-49c1-812d-257194abd1b2",
-              "parentUUID": "9eea442b-5a9c-4cae-b175-2349f4f9ac5d",
+              "uuid": "c5170338-0ebf-4709-8949-88712c8a2925",
+              "parentUUID": "f34c6491-fab1-4011-9413-60021fa3b7bf",
               "isHook": false,
               "skipped": false
             },
@@ -132,7 +132,7 @@
               "title": "Login com usuário vazio",
               "fullTitle": "API CORE V3 - Login Buonny Check - validação de erros  Login com usuário vazio",
               "timedOut": null,
-              "duration": 261,
+              "duration": 274,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -141,8 +141,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: {\n    usuario: \"\",\n    senha: Cypress.env(\"user_passwordBC\")\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(400);\n  expect(r.body).to.have.nested.property(\"message.usuario._error\", \"Usuario precisam ser preenchido.\");\n});",
               "err": {},
-              "uuid": "02a4f3ad-d01b-4253-8a74-f2d14f71855d",
-              "parentUUID": "9eea442b-5a9c-4cae-b175-2349f4f9ac5d",
+              "uuid": "19df97ef-9a78-4ec8-bb41-14a8e0201d6a",
+              "parentUUID": "f34c6491-fab1-4011-9413-60021fa3b7bf",
               "isHook": false,
               "skipped": false
             },
@@ -150,7 +150,7 @@
               "title": "Login com senha vazia",
               "fullTitle": "API CORE V3 - Login Buonny Check - validação de erros  Login com senha vazia",
               "timedOut": null,
-              "duration": 276,
+              "duration": 314,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -159,23 +159,23 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: {\n    usuario: Cypress.env(\"user_nameBC\"),\n    senha: \"\"\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(400);\n  expect(r.body).to.have.nested.property(\"message.senha._error\", \"Senha precisa ser prenchida.\");\n});",
               "err": {},
-              "uuid": "cfec0235-9456-49b8-a8ca-1429c964b5aa",
-              "parentUUID": "9eea442b-5a9c-4cae-b175-2349f4f9ac5d",
+              "uuid": "f952fee7-d3cd-4782-b991-2aa9459fd52a",
+              "parentUUID": "f34c6491-fab1-4011-9413-60021fa3b7bf",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "0fba38bc-bd29-4628-ae7a-db1f0d27a6bf",
-            "f7a0364d-bd32-49c1-812d-257194abd1b2",
-            "02a4f3ad-d01b-4253-8a74-f2d14f71855d",
-            "cfec0235-9456-49b8-a8ca-1429c964b5aa"
+            "3c650327-b4bf-477c-a299-fda90caf8fd9",
+            "c5170338-0ebf-4709-8949-88712c8a2925",
+            "19df97ef-9a78-4ec8-bb41-14a8e0201d6a",
+            "f952fee7-d3cd-4782-b991-2aa9459fd52a"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2460,
+          "duration": 2310,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -191,7 +191,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "6970de49-8ca6-451b-bb06-72d856caedac",
+      "uuid": "fd210298-df5e-4939-9e6b-81159ad4c296",
       "title": "",
       "fullFile": "cypress/e2e/api/001 - API Core V3/002 - API V3 -  Inclusão de ficha profissional/001.apiV3inclusaoFichab.check.cy.js",
       "file": "cypress/e2e/api/001 - API Core V3/002 - API V3 -  Inclusão de ficha profissional/001.apiV3inclusaoFichab.check.cy.js",
@@ -200,7 +200,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "62382211-79fa-47fd-a0b8-b87df3caaabb",
+          "uuid": "8e4774ca-1708-4437-95bc-810464719a42",
           "title": "API CORE V3 - Inclusão ficha do profissional Buonny Check - sucesso",
           "fullFile": "",
           "file": "",
@@ -211,7 +211,7 @@
               "title": "Inclusão de ficha com sucesso",
               "fullTitle": "API CORE V3 - Inclusão ficha do profissional Buonny Check - sucesso Inclusão de ficha com sucesso",
               "timedOut": null,
-              "duration": 9074,
+              "duration": 8622,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -220,20 +220,20 @@
               "context": null,
               "code": "const codigoCliente = 87906;\nconst cnpjCliente = \"03703854000122\";\nconst codigoTransportador = 87907;\nconst placa = \"TST1A23\";\ncy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: url,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      ficha: {\n        data_inicio: \"2024-06-27 11:34:26\"\n      },\n      cliente: {\n        contatos: [{\n          nome: \"cypress\",\n          codigo_tipo_retorno: 2,\n          descricao: \"testeautomatizado@buonny.com.br\"\n        }, {\n          nome: \"Teste\",\n          codigo_tipo_retorno: 1,\n          descricao: \"11985875874\"\n        }],\n        codigo_cliente: codigoCliente,\n        codigo_documento: cnpjCliente,\n        codigo_embarcador: \"\",\n        codigo_transportadora: codigoTransportador,\n        codigo_produto: 2\n      },\n      categoria: {\n        codigo_categoria: 2\n      },\n      profissional: {\n        imagem: {},\n        documentos: {\n          rg: {\n            numero: \"366816056\",\n            codigo_uf: 26\n          },\n          cnh: {\n            mopp: {\n              possui_mopp: false,\n              data_inicio: null,\n              mopp_vencimento: null,\n              mopp: null\n            },\n            numero: \"00750817510\",\n            codigo_categoria: 3,\n            data_vencimento: \"30/07/2033\",\n            codigo_uf: 26,\n            data_emissao_primeira_cnh: \"27/10/1988\",\n            codigo_seguranca: \"56085952930\"\n          },\n          cpf: `${cpfAleatorio}`\n        },\n        naturalidade: {\n          codigo_pais: 1,\n          codigo_estado: 15,\n          descricao: \"Cajazeiras\",\n          codigo_cidade: 2775,\n          data_nascimento: \"24/05/1959\"\n        },\n        endereco: {\n          cep: \"02560000\",\n          logradouro: \"R Dr Bernardino Gomes\",\n          numero: \"264\",\n          complemento: null,\n          codigo: 443904\n        },\n        contatos: [{\n          nome: \"asda sd\",\n          codigo_tipo_contato: 16,\n          codigo_tipo_retorno: 1,\n          descricao: \"31919191919\"\n        }, {\n          codigo_tipo_contato: 7,\n          codigo_tipo_retorno: 5,\n          descricao: \"11952812629\",\n          nome: \"Celular do Profissional\"\n        }],\n        nome: \"TESTE AUTOMATIZADO\",\n        nome_mae: \"FRANCISCA RICARTA DE OLIVEIRA\",\n        nome_pai: \"HERCULANO CAMPOS DE OLIVEIRA\"\n      },\n      veiculo: {\n        tecnologias: {\n          codigo_tecnologia: 1\n        },\n        emplacamento: {\n          placa: placa,\n          codigo_pais: 1,\n          codigo_estado: 26,\n          codigo_cidade: 4867\n        },\n        fabricacao: {\n          ano: 2012,\n          ano_modelo: 2011,\n          codigo_marca: 46,\n          codigo_modelo: 785\n        },\n        proprietario: {\n          documentos: {\n            cpf_cnpj: \"02185152866\",\n            rg_ie: \"366816056\"\n          },\n          endereco: {\n            cep: \"02560000\",\n            logradouro: \"R Dr Bernardino Gomes\",\n            numero: \"264\",\n            complemento: null,\n            codigo: 443904\n          },\n          contatos: [{\n            codigo_tipo_contato: 7,\n            codigo_tipo_retorno: 1,\n            descricao: \"11952812629\",\n            nome: \"Telefone do Proprietário\"\n          }],\n          proprietario: 0,\n          nome_razao_social: \"CORIOLANO RICARDO DE OLIVEIRA\",\n          nome_mae: \"FRANCISCA RICARTA DE OLIVEIRA\",\n          nome_pai: \"HERCULANO CAMPOS DE OLIVEIRA\",\n          data_nascimento: \"1959-05-24 00:00:00.000\"\n        },\n        chassi: \"KNC5HX73AC626873\",\n        renavam: \"00475524110\",\n        codigo_cor: 3,\n        codigo_veiculo_classe: 13\n      },\n      carreta: {\n        tecnologias: {},\n        emplacamento: {},\n        fabricacao: {},\n        proprietario: {\n          documentos: {},\n          endereco: {},\n          contatos: []\n        }\n      },\n      carreta2: {\n        tecnologias: {},\n        emplacamento: {},\n        fabricacao: {},\n        proprietario: {\n          documentos: {},\n          endereco: {},\n          contatos: []\n        }\n      },\n      carreta3: {\n        tecnologias: {},\n        emplacamento: {},\n        fabricacao: {},\n        proprietario: {\n          documentos: {},\n          endereco: {},\n          contatos: []\n        }\n      },\n      carga: {\n        origem: {},\n        destino: {}\n      },\n      complementares: {\n        questionario: [{\n          codigo_questao: 1,\n          codigo_resposta: 2,\n          resposta_auxiliar: null\n        }, {\n          codigo_questao: 2,\n          codigo_resposta: 4,\n          resposta_auxiliar: null\n        }, {\n          codigo_questao: 3,\n          codigo_resposta: 5,\n          resposta_auxiliar: \"5\"\n        }, {\n          codigo_questao: 4,\n          codigo_resposta: 8,\n          resposta_auxiliar: \"OMNILINK\"\n        }, {\n          codigo_questao: 24,\n          codigo_resposta: 56,\n          resposta_auxiliar: null\n        }]\n      }\n    }\n  }).then(r => {\n    expect(r.status).to.eq(200);\n    expect(r.body.message).to.eq(\"Ficha cadastrada com sucesso.\");\n  });\n});",
               "err": {},
-              "uuid": "1e362e37-ab48-4932-8cb0-1c6d7128641a",
-              "parentUUID": "62382211-79fa-47fd-a0b8-b87df3caaabb",
+              "uuid": "f3a449c3-1f74-4553-91bf-bb62810c3686",
+              "parentUUID": "8e4774ca-1708-4437-95bc-810464719a42",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "1e362e37-ab48-4932-8cb0-1c6d7128641a"
+            "f3a449c3-1f74-4553-91bf-bb62810c3686"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 9074,
+          "duration": 8622,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -249,7 +249,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "0a67f701-6afc-4a9c-ae41-c4cc0e9b9349",
+      "uuid": "ed429b7d-cd1e-49b9-8f1b-ab2894af586a",
       "title": "",
       "fullFile": "cypress/e2e/api/001 - API Core V3/002 - API V3 -  Inclusão de ficha profissional/002.apiV3-inclusaoFicha-b.check-erros.cy.js",
       "file": "cypress/e2e/api/001 - API Core V3/002 - API V3 -  Inclusão de ficha profissional/002.apiV3-inclusaoFicha-b.check-erros.cy.js",
@@ -258,7 +258,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c72fe64c-8760-4222-97b5-1b74c84a6d46",
+          "uuid": "3fe29529-a03e-4636-adc8-33444215ffd4",
           "title": "API CORE V3 - Inclusão ficha do profissional BC - erros",
           "fullFile": "",
           "file": "",
@@ -269,7 +269,7 @@
               "title": "Inclusão de ficha com body inválido",
               "fullTitle": "API CORE V3 - Inclusão ficha do profissional BC - erros Inclusão de ficha com body inválido",
               "timedOut": null,
-              "duration": 1121,
+              "duration": 1271,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -278,8 +278,8 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: url,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {},\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(400);\n  });\n});",
               "err": {},
-              "uuid": "d8c61605-b319-4b68-ac18-f274da69b402",
-              "parentUUID": "c72fe64c-8760-4222-97b5-1b74c84a6d46",
+              "uuid": "0e474e4b-a7dc-48b7-80ed-5bd1d29fab57",
+              "parentUUID": "3fe29529-a03e-4636-adc8-33444215ffd4",
               "isHook": false,
               "skipped": false
             },
@@ -287,7 +287,7 @@
               "title": "Inclusão de ficha com token expirado",
               "fullTitle": "API CORE V3 - Inclusão ficha do profissional BC - erros Inclusão de ficha com token expirado",
               "timedOut": null,
-              "duration": 546,
+              "duration": 836,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -296,21 +296,21 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  headers: {\n    Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb2RpZ28iOjIzODY1OCwiYXBlbGlkbyI6ImF1dG9tYXRpemFkby5iY2hlY2siLCJjb2RpZ29fY2xpZW50ZSI6NTgwMSwidGlwb191c3VhcmlvIjoiZXh0ZXJubyIsImNvZGlnb19kb2N1bWVudG8iOiIwNjMyNjAyNTAwMDE2NiIsImNvZGlnb19zZWd1cmFkb3JhIjoiMjciLCJjb2RpZ29fY29ycmV0b3JhIjoiNDQzMiIsImNvZGlnb19maWxpYWwiOm51bGwsImRvY3VtZW50b19iYXNlIjoiMDYzMjYwMjUiLCJ0b2tlbiI6ImY3MzNhZTczYjNhYjc5NzJkNjNhYTg5YTQ0NzEwNjk0IiwibnN0ZWNoIjoiIiwiYXR1YWxpemFyIjpmYWxzZSwic2lzdGVtYSI6bnVsbCwiZXhwIjoxNzQyNDE3MDc2fQ.QISjNzMNoHEinEkh4VhhqHBu327WQHVh7X6n8gYa8Hk`\n  },\n  body: {},\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(401);\n  expect(r.body).to.include(\"Token Expirado\");\n});",
               "err": {},
-              "uuid": "51ae2df1-6726-4ea7-8b2a-33ef183c8e8d",
-              "parentUUID": "c72fe64c-8760-4222-97b5-1b74c84a6d46",
+              "uuid": "c7bf049c-8baf-449a-b8d8-579beba46154",
+              "parentUUID": "3fe29529-a03e-4636-adc8-33444215ffd4",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d8c61605-b319-4b68-ac18-f274da69b402",
-            "51ae2df1-6726-4ea7-8b2a-33ef183c8e8d"
+            "0e474e4b-a7dc-48b7-80ed-5bd1d29fab57",
+            "c7bf049c-8baf-449a-b8d8-579beba46154"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1667,
+          "duration": 2107,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -326,7 +326,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "cf1c9091-1a0f-44e5-82f5-23b232f7652d",
+      "uuid": "bf04dd6e-f4f6-4809-910e-a3c9a5024c2c",
       "title": "",
       "fullFile": "cypress/e2e/api/001 - API Core V3/003 - API V3 - Consulta profissional/001.apiV3-consulta-b.check.cy.js",
       "file": "cypress/e2e/api/001 - API Core V3/003 - API V3 - Consulta profissional/001.apiV3-consulta-b.check.cy.js",
@@ -335,7 +335,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "3a383154-3288-4b43-ae50-4f6d719f5422",
+          "uuid": "280f76b6-8a82-4136-b999-d53a6265c162",
           "title": "API CORE V3 - Consulta profissional Buonny Check - sucesso",
           "fullFile": "",
           "file": "",
@@ -346,7 +346,7 @@
               "title": "Consulta com sucesso",
               "fullTitle": "API CORE V3 - Consulta profissional Buonny Check - sucesso Consulta com sucesso",
               "timedOut": null,
-              "duration": 6699,
+              "duration": 6843,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -355,20 +355,20 @@
               "context": null,
               "code": "const codigoCliente = 87906;\nconst documentoMotorista = \"646.146.860-95\";\nconst placa = \"TST1A23\";\ncy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: url,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      codigo_cliente: codigoCliente,\n      codigo_usuario_inclusao: 238658,\n      codigo_produto: 2,\n      codigo_corporacao: 1,\n      categoria: 1,\n      codigo_carga_tipo: 32,\n      codigo_carga_valor: 1,\n      codigo_cidade_destino: 5190,\n      codigo_cidade_origem: 5190,\n      codigo_documento: documentoMotorista,\n      placa_veiculo: placa,\n      departamento: \"T\"\n    }\n  }).then(r => {\n    expect(r.status).to.eq(200);\n    expect(r.body.data.fichas.Ficha.observacao).to.eq(\"Profissional sem cadastro com o veículo. Enviar ficha para análise\");\n  });\n});",
               "err": {},
-              "uuid": "e4359791-1097-42cf-af5e-e664ecbc2faf",
-              "parentUUID": "3a383154-3288-4b43-ae50-4f6d719f5422",
+              "uuid": "5d3c6ac5-ddd9-4c6e-a70a-ce51354c3a28",
+              "parentUUID": "280f76b6-8a82-4136-b999-d53a6265c162",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "e4359791-1097-42cf-af5e-e664ecbc2faf"
+            "5d3c6ac5-ddd9-4c6e-a70a-ce51354c3a28"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6699,
+          "duration": 6843,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -384,7 +384,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "1ea2c415-bad3-4205-be84-8ff18a68afa0",
+      "uuid": "2ba32208-a268-41ac-aa9f-7b7d9affc27b",
       "title": "",
       "fullFile": "cypress/e2e/api/001 - API Core V3/003 - API V3 - Consulta profissional/002.apiV3-consulta-b.check-erros.cy.js",
       "file": "cypress/e2e/api/001 - API Core V3/003 - API V3 - Consulta profissional/002.apiV3-consulta-b.check-erros.cy.js",
@@ -393,7 +393,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "4d6c42d6-fdba-416f-9bc7-2dff748bf41b",
+          "uuid": "74f9e64e-4b9e-4087-91ce-d64102b04d89",
           "title": "API CORE V3 - Consulta profissional Buonny Check - erros",
           "fullFile": "",
           "file": "",
@@ -404,7 +404,7 @@
               "title": "Consulta com corpo inválido",
               "fullTitle": "API CORE V3 - Consulta profissional Buonny Check - erros Consulta com corpo inválido",
               "timedOut": null,
-              "duration": 882,
+              "duration": 1250,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -413,8 +413,8 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: url,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      codigo_cliente: \"\",\n      codigo_usuario_inclusao: \"\",\n      codigo_produto: 1,\n      codigo_corporacao: 1,\n      categoria: 1,\n      codigo_carga_tipo: \"\",\n      codigo_carga_valor: 1,\n      codigo_cidade_destino: \"\",\n      codigo_cidade_origem: 5190,\n      codigo_documento: \"01180160169\",\n      placa_veiculo: \"AKX0E00\",\n      departamento: \"T\"\n    },\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(500);\n  });\n});",
               "err": {},
-              "uuid": "bb2592e9-8468-49ad-bdc9-2c1c858bc86c",
-              "parentUUID": "4d6c42d6-fdba-416f-9bc7-2dff748bf41b",
+              "uuid": "a9ae1372-82d0-42e8-ab50-1324e9070e13",
+              "parentUUID": "74f9e64e-4b9e-4087-91ce-d64102b04d89",
               "isHook": false,
               "skipped": false
             },
@@ -422,7 +422,7 @@
               "title": "Consulta com token inválido",
               "fullTitle": "API CORE V3 - Consulta profissional Buonny Check - erros Consulta com token inválido",
               "timedOut": null,
-              "duration": 708,
+              "duration": 729,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -431,21 +431,21 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  headers: {\n    Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb2RpZ28iOjIzODY1OCwiYXBlbGlkbyI6ImF1dG9tYXRpemFkby5iY2hlY2siLCJjb2RpZ29fY2xpZW50ZSI6NTgwMSwidGlwb191c3VhcmlvIjoiZXh0ZXJubyIsImNvZGlnb19kb2N1bWVudG8iOiIwNjMyNjAyNTAwMDE2NiIsImNvZGlnb19zZWd1cmFkb3JhIjoiMjciLCJjb2RpZ29fY29ycmV0b3JhIjoiNDQzMiIsImNvZGlnb19maWxpYWwiOm51bGwsImRvY3VtZW50b19iYXNlIjoiMDYzMjYwMjUiLCJ0b2tlbiI6ImY3MzNhZTczYjNhYjc5NzJkNjNhYTg5YTQ0NzEwNjk0IiwibnN0ZWNoIjoiIiwiYXR1YWxpemFyIjpmYWxzZSwic2lzdGVtYSI6bnVsbCwiZXhwIjoxNzQyMjQyMzAzfQ.DYb6lE3GzTSgIpq8itbcmHPSHaK1jvxW_-H4k1AWQM0`\n  },\n  body: {\n    codigo_cliente: \"\",\n    codigo_usuario_inclusao: \"\",\n    codigo_produto: 1,\n    codigo_corporacao: 1,\n    categoria: 1,\n    codigo_carga_tipo: \"\",\n    codigo_carga_valor: 1,\n    codigo_cidade_destino: \"\",\n    codigo_cidade_origem: 5190,\n    codigo_documento: \"01180160169\",\n    placa_veiculo: \"AKX0E00\",\n    departamento: \"T\"\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(401);\n});",
               "err": {},
-              "uuid": "4130ff62-216c-477d-a01e-f86381ebcb55",
-              "parentUUID": "4d6c42d6-fdba-416f-9bc7-2dff748bf41b",
+              "uuid": "2776217c-9080-49a9-ad8e-f01a838c3468",
+              "parentUUID": "74f9e64e-4b9e-4087-91ce-d64102b04d89",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "bb2592e9-8468-49ad-bdc9-2c1c858bc86c",
-            "4130ff62-216c-477d-a01e-f86381ebcb55"
+            "a9ae1372-82d0-42e8-ab50-1324e9070e13",
+            "2776217c-9080-49a9-ad8e-f01a838c3468"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1590,
+          "duration": 1979,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -461,7 +461,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "18112103-f62e-4d3a-a217-81005f6fe7f1",
+      "uuid": "330e6272-64a5-4ed1-a6ae-f9d6c16b9574",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/001 - API Ficha Profisssional/001.api-inclusao-ficha-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/001 - API Ficha Profisssional/001.api-inclusao-ficha-soap.cy.js",
@@ -470,7 +470,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "6b67a6fc-19dc-4ea3-9c79-9b3234867182",
+          "uuid": "44e3b382-df1a-4c57-9cec-b301aea737fb",
           "title": "Integração Clientes - API Inclusão de Ficha do Profissional - Casos de Sucesso",
           "fullFile": "",
           "file": "",
@@ -481,7 +481,7 @@
               "title": "Incluir ficha com sucesso API",
               "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Casos de Sucesso Incluir ficha com sucesso API",
               "timedOut": null,
-              "duration": 12055,
+              "duration": 11631,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -490,20 +490,20 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: soapPayload,\n  failOnStatusCode: false\n}).then(r => {\n  const mensagem = r.body.match(/ns1:sucesso>([\\s\\S]*?)<\\/ns1:sucesso>/)[1].trim();\n  cy.log(r.body);\n  expect(r.status).to.eq(200);\n  expect(mensagem).to.eq(\"Ficha de Profissional incluida com sucesso\");\n});",
               "err": {},
-              "uuid": "d67a6d65-e1ef-4092-91a8-bc5198b6c4d9",
-              "parentUUID": "6b67a6fc-19dc-4ea3-9c79-9b3234867182",
+              "uuid": "fdf3f02f-2f85-4f23-802f-9735ed666d00",
+              "parentUUID": "44e3b382-df1a-4c57-9cec-b301aea737fb",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d67a6d65-e1ef-4092-91a8-bc5198b6c4d9"
+            "fdf3f02f-2f85-4f23-802f-9735ed666d00"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 12055,
+          "duration": 11631,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -519,7 +519,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "b19b038d-9971-4771-a8a0-472d1b03a1a8",
+      "uuid": "f0a0d6e0-d796-409d-9d2c-4c84ce441a1b",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/001 - API Ficha Profisssional/002.api-inclusao-ficha-erros-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/001 - API Ficha Profisssional/002.api-inclusao-ficha-erros-soap.cy.js",
@@ -528,7 +528,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "2969375c-54c4-480b-afdb-aab721e8e345",
+          "uuid": "2799de83-bde9-4d76-9680-8ff331ce683e",
           "title": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros",
           "fullFile": "",
           "file": "",
@@ -539,7 +539,7 @@
               "title": "Validação de erro: Corpo da requisição (vazio)",
               "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros Validação de erro: Corpo da requisição (vazio)",
               "timedOut": null,
-              "duration": 2280,
+              "duration": 2328,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -548,8 +548,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: \"\",\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"SOAP-ENV:Client\");\n  expect(faultstring).to.eq(\"Bad Request\");\n});",
               "err": {},
-              "uuid": "d598468f-c28d-45d1-b26a-7beca2de0974",
-              "parentUUID": "2969375c-54c4-480b-afdb-aab721e8e345",
+              "uuid": "450790a6-aab0-42a8-8c9c-9d3d5805cec7",
+              "parentUUID": "2799de83-bde9-4d76-9680-8ff331ce683e",
               "isHook": false,
               "skipped": false
             },
@@ -557,7 +557,7 @@
               "title": "Validação de erro: CNPJ do Cliente (vazio)",
               "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros Validação de erro: CNPJ do Cliente (vazio)",
               "timedOut": null,
-              "duration": 2431,
+              "duration": 2943,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -566,8 +566,8 @@
               "context": null,
               "code": "const payloadModificado = soapPayload.replace(`<inc:cnpj_cliente>${cnpjCliente}</inc:cnpj_cliente>`, `<inc:cnpj_cliente></inc:cnpj_cliente>`);\ncy.api({\n  method: \"POST\",\n  url: url,\n  body: payloadModificado,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  cy.log(r.body);\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"ns1:1\");\n  expect(faultstring).to.be.oneOf([\"CNPJ Cliente não informado ou XML Inválido\", \"O token informado não confere com o cnpj do cliente\"]);\n});",
               "err": {},
-              "uuid": "39ad5c40-ec2d-4337-a612-3e2c3ec739b0",
-              "parentUUID": "2969375c-54c4-480b-afdb-aab721e8e345",
+              "uuid": "f40383ae-74d3-4b92-86c3-c8d26207a120",
+              "parentUUID": "2799de83-bde9-4d76-9680-8ff331ce683e",
               "isHook": false,
               "skipped": false
             },
@@ -575,7 +575,7 @@
               "title": "Validação de erro: CNPJ do Embarcador (vazio) ou (inválido)",
               "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros Validação de erro: CNPJ do Embarcador (vazio) ou (inválido)",
               "timedOut": null,
-              "duration": 3097,
+              "duration": 3835,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -584,8 +584,8 @@
               "context": null,
               "code": "const cnpjs = [\"\", \"abc\"];\nconst cnpj_aleatorio = cnpjs[Math.floor(Math.random() * cnpjs.length)];\nconst payloadModificado = soapPayload.replace(`<inc:cnpj_embarcador>${cnpjCliente}</inc:cnpj_embarcador>`, `<inc:cnpj_embarcador>${cnpj_aleatorio}</inc:cnpj_embarcador>`);\ncy.api({\n  method: \"POST\",\n  url: url,\n  body: payloadModificado,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"ns1:1\");\n  expect(faultstring).to.be.oneOf([\"CNPJ Embarcador não informado\", \"O CNPJ Embarcador não está cadastrado\"]);\n});",
               "err": {},
-              "uuid": "5bbbe8d8-173c-4eb0-b474-43bb123cd1c5",
-              "parentUUID": "2969375c-54c4-480b-afdb-aab721e8e345",
+              "uuid": "896f5dad-1014-4f1f-be80-74743daf9280",
+              "parentUUID": "2799de83-bde9-4d76-9680-8ff331ce683e",
               "isHook": false,
               "skipped": false
             },
@@ -593,7 +593,7 @@
               "title": "Validação de erro: CNPJ do Transportador (vazio) ou (inválido)",
               "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros Validação de erro: CNPJ do Transportador (vazio) ou (inválido)",
               "timedOut": null,
-              "duration": 3823,
+              "duration": 3775,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -602,8 +602,8 @@
               "context": null,
               "code": "const cnpj = [\"abc\"];\nconst payloadModificado = soapPayload.replace(`<inc:cnpj_transportador>${cnpjTransportador}</inc:cnpj_transportador>`, ` <inc:cnpj_transportador>${cnpj}</inc:cnpj_transportador>`);\ncy.api({\n  method: \"POST\",\n  url: url,\n  body: payloadModificado,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"ns1:1\");\n  expect(faultstring).to.be.oneOf([\"O CNPJ Transportador não informado ou XML Inválido\", \"O CNPJ Transportador não está cadastrado\"]);\n});",
               "err": {},
-              "uuid": "d749441d-75ea-437c-8c1e-2857407d84df",
-              "parentUUID": "2969375c-54c4-480b-afdb-aab721e8e345",
+              "uuid": "0df7c575-a131-41cd-abd5-cd42cf4491d6",
+              "parentUUID": "2799de83-bde9-4d76-9680-8ff331ce683e",
               "isHook": false,
               "skipped": false
             },
@@ -611,7 +611,7 @@
               "title": "Validação de erro: Foto do profissional (vazio)",
               "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros Validação de erro: Foto do profissional (vazio)",
               "timedOut": null,
-              "duration": 3795,
+              "duration": 4267,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -620,8 +620,8 @@
               "context": null,
               "code": "const payloadModificado = soapPayload.replace(`${imagemBase64}`, \"\");\ncy.api({\n  method: \"POST\",\n  url: url,\n  body: payloadModificado,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"ns1:1\");\n  expect(faultstring).to.eq(\"Foto Profissional não informado\");\n});",
               "err": {},
-              "uuid": "19a8ef50-4ae3-4cde-80b9-f2c0f43a3016",
-              "parentUUID": "2969375c-54c4-480b-afdb-aab721e8e345",
+              "uuid": "a9b8f83a-8628-471f-a4d9-599b68dab671",
+              "parentUUID": "2799de83-bde9-4d76-9680-8ff331ce683e",
               "isHook": false,
               "skipped": false
             },
@@ -629,17 +629,17 @@
               "title": "Validação de erro: Foto do profissional (maior que 5MB)",
               "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros Validação de erro: Foto do profissional (maior que 5MB)",
               "timedOut": null,
-              "duration": 9225,
+              "duration": 10905,
               "state": "passed",
-              "speed": "medium",
+              "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "const payloadModificado = soapPayload.replace(`${imagemBase64}`, `${imagemBase64_5MB}`);\ncy.api({\n  method: \"POST\",\n  url: url,\n  body: payloadModificado,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"ns1:1\");\n  expect(faultstring).to.eq(\"Foto Profissional, a imagem deve ter no máximo 5MB.\");\n});",
               "err": {},
-              "uuid": "ab37fbd4-9eda-4984-b880-3d7294ff7a35",
-              "parentUUID": "2969375c-54c4-480b-afdb-aab721e8e345",
+              "uuid": "c00ad9fd-d03e-4a47-bd15-68f7f7f7050c",
+              "parentUUID": "2799de83-bde9-4d76-9680-8ff331ce683e",
               "isHook": false,
               "skipped": false
             },
@@ -647,7 +647,7 @@
               "title": "Validação de erro: Documento do profissional (vazio) ou (inválido)",
               "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Validação de Erros Validação de erro: Documento do profissional (vazio) ou (inválido)",
               "timedOut": null,
-              "duration": 3503,
+              "duration": 4618,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -656,26 +656,26 @@
               "context": null,
               "code": "const documento = [\"\", \"123456789\"];\nconst docAleatorio = documento[Math.floor(Math.random() * documento.length)];\nconst payloadModificado = soapPayload.replace(`<inc:documento>${cpfAleatorio}</inc:documento>`, `<inc:documento>${docAleatorio}</inc:documento>`);\ncy.api({\n  method: \"POST\",\n  url: url,\n  body: payloadModificado,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"ns1:1\");\n  expect(faultstring).to.be.oneOf([\"CPF profissional não informado\", \"O CPF do profissional é inválido\"]);\n});",
               "err": {},
-              "uuid": "3994faa6-6234-47f9-b2ea-50a50ecb790c",
-              "parentUUID": "2969375c-54c4-480b-afdb-aab721e8e345",
+              "uuid": "5df813ba-ce1d-4f4a-956c-a5e89c4bc08a",
+              "parentUUID": "2799de83-bde9-4d76-9680-8ff331ce683e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d598468f-c28d-45d1-b26a-7beca2de0974",
-            "39ad5c40-ec2d-4337-a612-3e2c3ec739b0",
-            "5bbbe8d8-173c-4eb0-b474-43bb123cd1c5",
-            "d749441d-75ea-437c-8c1e-2857407d84df",
-            "19a8ef50-4ae3-4cde-80b9-f2c0f43a3016",
-            "ab37fbd4-9eda-4984-b880-3d7294ff7a35",
-            "3994faa6-6234-47f9-b2ea-50a50ecb790c"
+            "450790a6-aab0-42a8-8c9c-9d3d5805cec7",
+            "f40383ae-74d3-4b92-86c3-c8d26207a120",
+            "896f5dad-1014-4f1f-be80-74743daf9280",
+            "0df7c575-a131-41cd-abd5-cd42cf4491d6",
+            "a9b8f83a-8628-471f-a4d9-599b68dab671",
+            "c00ad9fd-d03e-4a47-bd15-68f7f7f7050c",
+            "5df813ba-ce1d-4f4a-956c-a5e89c4bc08a"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 28154,
+          "duration": 32671,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -691,7 +691,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "df3c10c1-48b3-45bf-9d78-7f586a9d1c81",
+      "uuid": "18b509e2-5afd-4cec-abba-e2c794bcfe7b",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/002 - API Consulta Profissional/001.api-consulta-profissional-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/002 - API Consulta Profissional/001.api-consulta-profissional-soap.cy.js",
@@ -700,7 +700,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "8f56c506-5b0c-4da8-9c8e-766037e966ad",
+          "uuid": "359a73e5-a51b-41f5-94c3-3493467dc524",
           "title": "Integração Clientes - API Consulta de Profissional SOAP",
           "fullFile": "",
           "file": "",
@@ -711,7 +711,7 @@
               "title": "Realizar consulta com sucesso API",
               "fullTitle": "Integração Clientes - API Consulta de Profissional SOAP Realizar consulta com sucesso API",
               "timedOut": null,
-              "duration": 9127,
+              "duration": 8946,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -720,20 +720,20 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: soapPayload,\n  timeout: 60000\n}).then(r => {\n  const status = r.body.match(/<status>([\\s\\S]*?)<\\/status>/)[1].trim();\n  expect(r.status).to.eq(200);\n  expect(status).to.be.oneOf([\"PERFIL ADEQUADO AO RISCO\", \"PERFIL ADEQUADO AO RISCO POR PRAZO\", \"PERFIL COM INSUFICIÊNCIA DE DADOS\", \"PERFIL DIVERGENTE\", \"PERFIL EXPIRADO\", \"EM ANALISE\", \"DESCONHECIDO\"]);\n});",
               "err": {},
-              "uuid": "af5f8833-a24f-4a1c-a34d-7ba6c4fc9329",
-              "parentUUID": "8f56c506-5b0c-4da8-9c8e-766037e966ad",
+              "uuid": "ee50a0b1-ac9e-48c6-8f8c-ece75b1e1279",
+              "parentUUID": "359a73e5-a51b-41f5-94c3-3493467dc524",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "af5f8833-a24f-4a1c-a34d-7ba6c4fc9329"
+            "ee50a0b1-ac9e-48c6-8f8c-ece75b1e1279"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 9127,
+          "duration": 8946,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -749,7 +749,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "9d013a7d-ab10-4afb-87bd-dfbf61626a1a",
+      "uuid": "0e3b5c90-491a-43ff-a897-a1c34594774b",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/002 - API Consulta Profissional/002.api-consulta-profissional-erros-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/002 - API Consulta Profissional/002.api-consulta-profissional-erros-soap.cy.js",
@@ -758,7 +758,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e81f1b91-8273-4a73-ba9f-0f033afa4fdc",
+          "uuid": "b03cea65-9fdf-4fce-848a-42bfbb62212f",
           "title": "Integração Clientes - Erros, API Consulta de Profissional SOAP",
           "fullFile": "",
           "file": "",
@@ -769,7 +769,7 @@
               "title": "Realizar requisição com corpo vazio",
               "fullTitle": "Integração Clientes - Erros, API Consulta de Profissional SOAP Realizar requisição com corpo vazio",
               "timedOut": null,
-              "duration": 1495,
+              "duration": 1858,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -778,8 +778,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: {},\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"SOAP-ENV:Client\");\n  expect(faultstring).to.eq(\"Bad Request\");\n});",
               "err": {},
-              "uuid": "03ee3445-88da-49ca-a775-5d5b83e5b732",
-              "parentUUID": "e81f1b91-8273-4a73-ba9f-0f033afa4fdc",
+              "uuid": "9d09938e-1254-41be-b53a-34ea6c5a2f18",
+              "parentUUID": "b03cea65-9fdf-4fce-848a-42bfbb62212f",
               "isHook": false,
               "skipped": false
             },
@@ -787,7 +787,7 @@
               "title": "Realizar requisição com CNPJ ausente",
               "fullTitle": "Integração Clientes - Erros, API Consulta de Profissional SOAP Realizar requisição com CNPJ ausente",
               "timedOut": null,
-              "duration": 2262,
+              "duration": 3053,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -796,8 +796,8 @@
               "context": null,
               "code": "const cnpjCliente = \"\";\nconst soapPayload = `<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:con=\"https://tstapi.buonny.com.br/portal/wsdl/consulta_profissional\">\n<soapenv:Header/>\n<soapenv:Body>\n    <con:consulta>\n        <cnpj_cliente>${cnpjCliente}</cnpj_cliente>\n        <autenticacao>\n            <token>${token}</token>\n        </autenticacao>\n        <produto>2</produto>\n        <profissional>\n            <documento>447.504.598-36</documento>\n            <carreteiro>S</carreteiro>\n        </profissional>\n        <veiculos>\n            <placa>${placa}</placa>\n        </veiculos>\n        <carga_tipo>1</carga_tipo>\n        <carga_valor>1000</carga_valor>\n        <pais_origem>BR</pais_origem>\n        <uf_origem>GO</uf_origem>\n        <cidade_origem>Ipameri</cidade_origem>\n        <pais_destino></pais_destino>\n        <uf_destino></uf_destino>\n        <cidade_destino>PARATI</cidade_destino>\n    </con:consulta>\n</soapenv:Body>\n</soapenv:Envelope>`;\ncy.api({\n  method: \"POST\",\n  url: url,\n  body: soapPayload,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"ns1:1\");\n  expect(faultstring).to.eq(\"CNPJ Cliente não informado ou XML Inválido\");\n});",
               "err": {},
-              "uuid": "8555b897-da93-4d0a-9c79-f9adddb6fa26",
-              "parentUUID": "e81f1b91-8273-4a73-ba9f-0f033afa4fdc",
+              "uuid": "4204b289-6c70-4774-9752-23bcbab98e22",
+              "parentUUID": "b03cea65-9fdf-4fce-848a-42bfbb62212f",
               "isHook": false,
               "skipped": false
             },
@@ -805,7 +805,7 @@
               "title": "Realizar requisição com token ausente ou inválido",
               "fullTitle": "Integração Clientes - Erros, API Consulta de Profissional SOAP Realizar requisição com token ausente ou inválido",
               "timedOut": null,
-              "duration": 2532,
+              "duration": 2657,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -814,8 +814,8 @@
               "context": null,
               "code": "const token = \"\";\nconst soapPayload = `<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:con=\"https://tstapi.buonny.com.br/portal/wsdl/consulta_profissional\">\n<soapenv:Header/>\n<soapenv:Body>\n    <con:consulta>\n        <cnpj_cliente>${cnpjCliente}</cnpj_cliente>\n        <autenticacao>\n            <token>${token}</token>\n        </autenticacao>\n        <produto>2</produto>\n        <profissional>\n            <documento>447.504.598-36</documento>\n            <carreteiro>S</carreteiro>\n        </profissional>\n        <veiculos>\n            <placa>${placa}</placa>\n        </veiculos>\n        <carga_tipo>1</carga_tipo>\n        <carga_valor>1000</carga_valor>\n        <pais_origem>BR</pais_origem>\n        <uf_origem>GO</uf_origem>\n        <cidade_origem>Ipameri</cidade_origem>\n        <pais_destino></pais_destino>\n        <uf_destino></uf_destino>\n        <cidade_destino>PARATI</cidade_destino>\n    </con:consulta>\n</soapenv:Body>\n</soapenv:Envelope>`;\ncy.api({\n  method: \"POST\",\n  url: url,\n  body: soapPayload,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"ns1:1\");\n  expect(faultstring).to.eq(`O token informado não confere com o cnpj do cliente\n - ${cnpjCliente}`);\n});",
               "err": {},
-              "uuid": "f7a75754-b135-4d70-956a-ac51a66568ad",
-              "parentUUID": "e81f1b91-8273-4a73-ba9f-0f033afa4fdc",
+              "uuid": "97dd9220-70e9-4e1a-9227-956cf6b80b9e",
+              "parentUUID": "b03cea65-9fdf-4fce-848a-42bfbb62212f",
               "isHook": false,
               "skipped": false
             },
@@ -823,7 +823,7 @@
               "title": "Realizar requisição com CPF profissional vazio",
               "fullTitle": "Integração Clientes - Erros, API Consulta de Profissional SOAP Realizar requisição com CPF profissional vazio",
               "timedOut": null,
-              "duration": 2866,
+              "duration": 2862,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -832,23 +832,23 @@
               "context": null,
               "code": "const soapPayload = `<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:con=\"https://tstapi.buonny.com.br/portal/wsdl/consulta_profissional\">\n<soapenv:Header/>\n<soapenv:Body>\n    <con:consulta>\n        <cnpj_cliente>${cnpjCliente}</cnpj_cliente>\n        <autenticacao>\n            <token>${token}</token>\n        </autenticacao>\n        <produto>2</produto>\n        <profissional>\n            <documento></documento>\n            <carreteiro>S</carreteiro>\n        </profissional>\n        <veiculos>\n            <placa>${placa}</placa>\n        </veiculos>\n        <carga_tipo>1</carga_tipo>\n        <carga_valor>1000</carga_valor>\n        <pais_origem>BR</pais_origem>\n        <uf_origem>GO</uf_origem>\n        <cidade_origem>Ipameri</cidade_origem>\n        <pais_destino></pais_destino>\n        <uf_destino></uf_destino>\n        <cidade_destino>PARATI</cidade_destino>\n    </con:consulta>\n</soapenv:Body>\n</soapenv:Envelope>`;\ncy.api({\n  method: \"POST\",\n  url: url,\n  body: soapPayload,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode>/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"ns1:1\");\n  expect(faultstring).to.eq(\"CPF profissional não informado\");\n});",
               "err": {},
-              "uuid": "38357b2e-cc2b-4dc3-aa05-4a1a8c573df6",
-              "parentUUID": "e81f1b91-8273-4a73-ba9f-0f033afa4fdc",
+              "uuid": "0d2df21c-eeaa-46fe-a646-d257af8d9478",
+              "parentUUID": "b03cea65-9fdf-4fce-848a-42bfbb62212f",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "03ee3445-88da-49ca-a775-5d5b83e5b732",
-            "8555b897-da93-4d0a-9c79-f9adddb6fa26",
-            "f7a75754-b135-4d70-956a-ac51a66568ad",
-            "38357b2e-cc2b-4dc3-aa05-4a1a8c573df6"
+            "9d09938e-1254-41be-b53a-34ea6c5a2f18",
+            "4204b289-6c70-4774-9752-23bcbab98e22",
+            "97dd9220-70e9-4e1a-9227-956cf6b80b9e",
+            "0d2df21c-eeaa-46fe-a646-d257af8d9478"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 9155,
+          "duration": 10430,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -864,7 +864,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "0d47fe46-e75e-496f-a7b6-cb946af7153e",
+      "uuid": "198806be-ad6a-435f-b341-09e569a4cf71",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/003 - API Consulta entrega/001.api-consulta-entrega-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/003 - API Consulta entrega/001.api-consulta-entrega-soap.cy.js",
@@ -873,7 +873,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "0b3835f9-6d63-4c2b-8edc-a57a52cb51c6",
+          "uuid": "52871137-0a6d-46c5-b62e-8a447a7555dd",
           "title": "Integração Clientes - API Consulta entrega SOAP",
           "fullFile": "",
           "file": "",
@@ -884,7 +884,7 @@
               "title": "Consulta entrega com sucesso",
               "fullTitle": "Integração Clientes - API Consulta entrega SOAP Consulta entrega com sucesso",
               "timedOut": null,
-              "duration": 6267,
+              "duration": 6491,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -893,20 +893,20 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: payload\n}).then(r => {\n  const viagem = r.body.match(/<status_viagem>([\\s\\S]*?)<\\/status_viagem>/)[1].trim();\n  const latitude = r.body.match(/<origem_latitude>([\\s\\S]*?)<\\/origem_latitude>/)[1].trim();\n  const longitude = r.body.match(/<origem_longitude>([\\s\\S]*?)<\\/origem_longitude>/)[1].trim();\n  expect(r.status).to.eq(200);\n  expect(viagem).to.be.oneOf([\"agendado\", \"Cancelado\"]);\n  expect(latitude).to.exist;\n  expect(latitude).to.not.be.empty;\n  expect(longitude).to.exist;\n  expect(longitude).to.not.be.empty;\n});",
               "err": {},
-              "uuid": "45f3629b-204f-4c7c-ab4c-22a2980df6b0",
-              "parentUUID": "0b3835f9-6d63-4c2b-8edc-a57a52cb51c6",
+              "uuid": "b8e7a6f5-8224-4897-9218-71fb1560cf9c",
+              "parentUUID": "52871137-0a6d-46c5-b62e-8a447a7555dd",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "45f3629b-204f-4c7c-ab4c-22a2980df6b0"
+            "b8e7a6f5-8224-4897-9218-71fb1560cf9c"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6267,
+          "duration": 6491,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -922,7 +922,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "0ab104f5-b7cf-4273-bef4-e0e46b2a0e2b",
+      "uuid": "56ae5a57-81f5-49ac-a024-5075c5d561ba",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/003 - API Consulta entrega/002.api-consulta-entrega-erros-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/003 - API Consulta entrega/002.api-consulta-entrega-erros-soap.cy.js",
@@ -931,7 +931,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "3424a9a8-b36b-46ca-a738-badfc3721886",
+          "uuid": "0cde71fb-db08-4f57-9480-4c6186fbc240",
           "title": "Integração Clientes - API Consulta entrega erros SOAP",
           "fullFile": "",
           "file": "",
@@ -942,7 +942,7 @@
               "title": "Requisição com corpo vazio",
               "fullTitle": "Integração Clientes - API Consulta entrega erros SOAP Requisição com corpo vazio",
               "timedOut": null,
-              "duration": 1713,
+              "duration": 1748,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -951,8 +951,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: ``,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"SOAP-ENV:Client\");\n  expect(faultstring).to.eq(\"Bad Request\");\n});",
               "err": {},
-              "uuid": "53c30abe-7796-4beb-8f31-efd0a50fba62",
-              "parentUUID": "3424a9a8-b36b-46ca-a738-badfc3721886",
+              "uuid": "ac27fbc4-3e9e-47af-88ea-fbc0004f569e",
+              "parentUUID": "0cde71fb-db08-4f57-9480-4c6186fbc240",
               "isHook": false,
               "skipped": false
             },
@@ -960,7 +960,7 @@
               "title": "Requisição com token vazio",
               "fullTitle": "Integração Clientes - API Consulta entrega erros SOAP Requisição com token vazio",
               "timedOut": null,
-              "duration": 2368,
+              "duration": 2357,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -969,8 +969,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: `<x:Envelope\nxmlns:x=\"http://schemas.xmlsoap.org/soap/envelope/\"\nxmlns:sta=\"https://tstapi.buonny.com.br/portal/wsdl/status_entrega\">\n<x:Header/>\n<x:Body>\n    <sta:consulta>\n        <sta:autenticacao>\n            <sta:token></sta:token>\n        </sta:autenticacao>\n        <sta:cnpj_cliente>${cnpjCliente}</sta:cnpj_cliente>\n        <sta:alvo></sta:alvo>\n        <sta:nota_fiscal></sta:nota_fiscal>\n        <sta:pedido_nota_fiscal></sta:pedido_nota_fiscal>\n        <sta:placa>${placa}</sta:placa>\n        <sta:pedido_cliente></sta:pedido_cliente>\n    </sta:consulta>\n</x:Body>\n</x:Envelope>`,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"1\");\n  expect(faultstring).to.eq(\"Informe o token\");\n});",
               "err": {},
-              "uuid": "f031ea61-ea62-4054-94b8-c7527aae58c7",
-              "parentUUID": "3424a9a8-b36b-46ca-a738-badfc3721886",
+              "uuid": "fea57545-412e-455a-93a0-3f5782ca512e",
+              "parentUUID": "0cde71fb-db08-4f57-9480-4c6186fbc240",
               "isHook": false,
               "skipped": false
             },
@@ -978,7 +978,7 @@
               "title": "Requisição com CNPJ vazio",
               "fullTitle": "Integração Clientes - API Consulta entrega erros SOAP Requisição com CNPJ vazio",
               "timedOut": null,
-              "duration": 2392,
+              "duration": 2419,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -987,22 +987,22 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: `<x:Envelope\nxmlns:x=\"http://schemas.xmlsoap.org/soap/envelope/\"\nxmlns:sta=\"https://tstapi.buonny.com.br/portal/wsdl/status_entrega\">\n<x:Header/>\n<x:Body>\n    <sta:consulta>\n        <sta:autenticacao>\n            <sta:token>${token}</sta:token>\n        </sta:autenticacao>\n        <sta:cnpj_cliente></sta:cnpj_cliente>\n        <sta:alvo></sta:alvo>\n        <sta:nota_fiscal></sta:nota_fiscal>\n        <sta:pedido_nota_fiscal></sta:pedido_nota_fiscal>\n        <sta:placa>${placa}</sta:placa>\n        <sta:pedido_cliente></sta:pedido_cliente>\n    </sta:consulta>\n</x:Body>\n</x:Envelope>`,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"1\");\n  expect(faultstring).to.eq(\"Informe o Cnpj\");\n});",
               "err": {},
-              "uuid": "a6b6e1cc-abdc-43a7-8887-e045d20f1670",
-              "parentUUID": "3424a9a8-b36b-46ca-a738-badfc3721886",
+              "uuid": "b6730eb8-de2c-4285-a9a2-02c3379a24b2",
+              "parentUUID": "0cde71fb-db08-4f57-9480-4c6186fbc240",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "53c30abe-7796-4beb-8f31-efd0a50fba62",
-            "f031ea61-ea62-4054-94b8-c7527aae58c7",
-            "a6b6e1cc-abdc-43a7-8887-e045d20f1670"
+            "ac27fbc4-3e9e-47af-88ea-fbc0004f569e",
+            "fea57545-412e-455a-93a0-3f5782ca512e",
+            "b6730eb8-de2c-4285-a9a2-02c3379a24b2"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6473,
+          "duration": 6524,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -1018,7 +1018,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "85942f11-ec6a-4e77-a954-81c35cd9c51a",
+      "uuid": "f48e9c9f-6f7c-4d3c-863a-39d0ada0a14a",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/004 - API Inclusão de SM REST/001.api-inclusao-sm-rest.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/004 - API Inclusão de SM REST/001.api-inclusao-sm-rest.cy.js",
@@ -1027,7 +1027,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "f51d8eb0-941a-4ca0-ae9f-27ffffd5acff",
+          "uuid": "1bdf3d1c-e017-49dd-915c-9c73da2a796e",
           "title": "Integração Clientes - API Inclusão de SM REST",
           "fullFile": "",
           "file": "",
@@ -1038,7 +1038,7 @@
               "title": "Validação de retorno 200OK, criar sm com sucesso API",
               "fullTitle": "Integração Clientes - API Inclusão de SM REST Validação de retorno 200OK, criar sm com sucesso API",
               "timedOut": null,
-              "duration": 52358,
+              "duration": 51836,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -1047,20 +1047,20 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: APIclientes.InclusãoSmRest,\n  timeout: 120000,\n  body: payload\n}).then(r => {\n  expect(r.status).to.eq(200);\n  cy.log(r.body);\n  expect(r.body.sucesso).to.match(/^\\d{8}$/);\n  cy.log(\"A chave 'sucesso' está no formato esperado: 8 números.\");\n});",
               "err": {},
-              "uuid": "a1a0e72b-be8c-4bb9-8b08-03825b24b898",
-              "parentUUID": "f51d8eb0-941a-4ca0-ae9f-27ffffd5acff",
+              "uuid": "89ab4845-aeb6-47fe-b7b7-e9949c5ebac9",
+              "parentUUID": "1bdf3d1c-e017-49dd-915c-9c73da2a796e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a1a0e72b-be8c-4bb9-8b08-03825b24b898"
+            "89ab4845-aeb6-47fe-b7b7-e9949c5ebac9"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 52358,
+          "duration": 51836,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -1076,7 +1076,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "afbc1bae-00f6-4eeb-9930-7d1cf5bb9a39",
+      "uuid": "ed651472-0f40-4187-9f89-03b6e8fe5ac3",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/004 - API Inclusão de SM REST/002.api-inclusao-SM-erros-rest.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/004 - API Inclusão de SM REST/002.api-inclusao-SM-erros-rest.cy.js",
@@ -1085,7 +1085,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "7bf01315-49f2-46ad-83d4-afd45193a41d",
+          "uuid": "069d6ba1-fb17-41ad-a433-89d939a04ad4",
           "title": "Integração Clientes - API Inclusão de SM REST erros",
           "fullFile": "",
           "file": "",
@@ -1096,7 +1096,7 @@
               "title": "Realizar requisição com corpo vazio",
               "fullTitle": "Integração Clientes - API Inclusão de SM REST erros Realizar requisição com corpo vazio",
               "timedOut": null,
-              "duration": 2486,
+              "duration": 2693,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1105,8 +1105,8 @@
               "context": null,
               "code": "return cy.api({\n  method: \"POST\",\n  url: APIclientes.InclusãoSmRest,\n  body: {}\n}).then(r => {\n  expect(r.body.sucesso).to.be.null;\n  expect(r.body.erros).to.include(\"Dados incorretos\");\n});",
               "err": {},
-              "uuid": "072e1e2a-fe2f-4bde-a8e4-26fd0ab09ba9",
-              "parentUUID": "7bf01315-49f2-46ad-83d4-afd45193a41d",
+              "uuid": "6dde8ea7-3555-4028-885d-68a763f55806",
+              "parentUUID": "069d6ba1-fb17-41ad-a433-89d939a04ad4",
               "isHook": false,
               "skipped": false
             },
@@ -1114,7 +1114,7 @@
               "title": "Realizar requisição com Token inválido",
               "fullTitle": "Integração Clientes - API Inclusão de SM REST erros Realizar requisição com Token inválido",
               "timedOut": null,
-              "duration": 2310,
+              "duration": 2549,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1123,8 +1123,8 @@
               "context": null,
               "code": "requisicaoPadrao({\n  token: \"123\"\n}).then(r => {\n  expect(r.body.sucesso).to.be.null;\n  expect(r.body.erros).to.include(\"O token informado não confere com o cnpj do cliente\");\n});",
               "err": {},
-              "uuid": "6afa0c87-e04e-44f6-9fe9-56493cba95c7",
-              "parentUUID": "7bf01315-49f2-46ad-83d4-afd45193a41d",
+              "uuid": "752035f5-3fb0-4c0b-95c3-82534981e92a",
+              "parentUUID": "069d6ba1-fb17-41ad-a433-89d939a04ad4",
               "isHook": false,
               "skipped": false
             },
@@ -1132,7 +1132,7 @@
               "title": "Realizar requisição com CNPJ inválido",
               "fullTitle": "Integração Clientes - API Inclusão de SM REST erros Realizar requisição com CNPJ inválido",
               "timedOut": null,
-              "duration": 2294,
+              "duration": 2671,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1141,8 +1141,8 @@
               "context": null,
               "code": "requisicaoPadrao({\n  cnpj: \"123\"\n}).then(r => {\n  expect(r.body.sucesso).to.be.null;\n  expect(r.body.erros).to.include(\"O token informado não confere com o cnpj do cliente\");\n});",
               "err": {},
-              "uuid": "f6748836-54e0-4698-bce4-560c6516865d",
-              "parentUUID": "7bf01315-49f2-46ad-83d4-afd45193a41d",
+              "uuid": "f28f5bb1-ffe9-4636-a9d9-3dc89f949fd1",
+              "parentUUID": "069d6ba1-fb17-41ad-a433-89d939a04ad4",
               "isHook": false,
               "skipped": false
             },
@@ -1150,7 +1150,7 @@
               "title": "Realizar requisição com a previsão de início sendo uma data no passado.",
               "fullTitle": "Integração Clientes - API Inclusão de SM REST erros Realizar requisição com a previsão de início sendo uma data no passado.",
               "timedOut": null,
-              "duration": 24754,
+              "duration": 24415,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -1159,8 +1159,8 @@
               "context": null,
               "code": "requisicaoPadrao({\n  prevInicio: \"03/01/2025 15:50:00\"\n}).then(r => {\n  expect(r.body.sucesso).to.be.null;\n  expect(r.body.erros).to.include(\"Previsão de início não deve ser menor que a data e hora atual;\\nA diferença entre a previsão de início e de fim não pode ultrapassar 120 dias\");\n});",
               "err": {},
-              "uuid": "1c279a33-28dc-41ee-ae03-f60bdcca0572",
-              "parentUUID": "7bf01315-49f2-46ad-83d4-afd45193a41d",
+              "uuid": "99664dca-63a2-49be-83cb-b3818eaa55db",
+              "parentUUID": "069d6ba1-fb17-41ad-a433-89d939a04ad4",
               "isHook": false,
               "skipped": false
             },
@@ -1168,7 +1168,7 @@
               "title": "Realizar requsição com a previsão de chegada sendo uma data no passado.",
               "fullTitle": "Integração Clientes - API Inclusão de SM REST erros Realizar requsição com a previsão de chegada sendo uma data no passado.",
               "timedOut": null,
-              "duration": 6005,
+              "duration": 5866,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -1177,24 +1177,24 @@
               "context": null,
               "code": "requisicaoPadrao({\n  prevChegada: \"03/01/2025 15:50:00\"\n}).then(r => {\n  expect(r.body.sucesso).to.be.null;\n  expect(r.body.erros).to.include(\"Data de previsão menor que a data de inicio\");\n});",
               "err": {},
-              "uuid": "ec536a0b-ac9e-4a4f-bc44-a5cb3b7c7f37",
-              "parentUUID": "7bf01315-49f2-46ad-83d4-afd45193a41d",
+              "uuid": "72ffd475-8a5f-4520-a2cf-253cfe54def9",
+              "parentUUID": "069d6ba1-fb17-41ad-a433-89d939a04ad4",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "072e1e2a-fe2f-4bde-a8e4-26fd0ab09ba9",
-            "6afa0c87-e04e-44f6-9fe9-56493cba95c7",
-            "f6748836-54e0-4698-bce4-560c6516865d",
-            "1c279a33-28dc-41ee-ae03-f60bdcca0572",
-            "ec536a0b-ac9e-4a4f-bc44-a5cb3b7c7f37"
+            "6dde8ea7-3555-4028-885d-68a763f55806",
+            "752035f5-3fb0-4c0b-95c3-82534981e92a",
+            "f28f5bb1-ffe9-4636-a9d9-3dc89f949fd1",
+            "99664dca-63a2-49be-83cb-b3818eaa55db",
+            "72ffd475-8a5f-4520-a2cf-253cfe54def9"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 37849,
+          "duration": 38194,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -1210,7 +1210,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "3d7f716d-3e7c-4a3f-a8de-2ffbd34a2bc1",
+      "uuid": "4c4177db-cdc3-40ae-a3c3-246e058eead2",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/005 - API Inclusão de SM SOAP/001.api-inclusao-sm-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/005 - API Inclusão de SM SOAP/001.api-inclusao-sm-soap.cy.js",
@@ -1219,7 +1219,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "49f9668d-6d71-4f87-ac4b-879878f782f5",
+          "uuid": "f8e01a13-489d-487f-a7af-432713e14ec1",
           "title": "Integração Clientes - Inclusão de SM via SOAP",
           "fullFile": "",
           "file": "",
@@ -1230,7 +1230,7 @@
               "title": "Validação de retorno 200 OK e sucesso da criação da SM",
               "fullTitle": "Integração Clientes - Inclusão de SM via SOAP Validação de retorno 200 OK e sucesso da criação da SM",
               "timedOut": null,
-              "duration": 53590,
+              "duration": 54742,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -1239,20 +1239,20 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: APIclientes.InclusãoSmSoap,\n  body: payload,\n  headers: {\n    \"Content-Type\": \"text/xml;charset=UTF-8\",\n    SOAPAction: \"https://tstapi.buonny.com.br/portal/wsdl/buonny/viagem\"\n  },\n  timeout: 120000,\n  failOnStatusCode: false\n}).then(response => {\n  var _response$body$match;\n  cy.log(\"Resposta completa:\", response.body);\n  expect(response.status).to.eq(200);\n  const codigoSM = (_response$body$match = response.body.match(/<codigo_sm>(\\d+)<\\/codigo_sm>/)) === null || _response$body$match === void 0 ? void 0 : _response$body$match[1];\n  expect(codigoSM, \"Valida chave <codigo_sm>\").to.match(/^\\d{8}$/);\n});",
               "err": {},
-              "uuid": "0fba63ae-0aea-4559-af5f-c56bc6e0f453",
-              "parentUUID": "49f9668d-6d71-4f87-ac4b-879878f782f5",
+              "uuid": "cecfdf3e-eae8-4fbe-b35b-5771388c6be0",
+              "parentUUID": "f8e01a13-489d-487f-a7af-432713e14ec1",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "0fba63ae-0aea-4559-af5f-c56bc6e0f453"
+            "cecfdf3e-eae8-4fbe-b35b-5771388c6be0"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 53590,
+          "duration": 54742,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -1268,7 +1268,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "9cd355b2-bc73-4708-a13c-830d2482aa32",
+      "uuid": "dc500589-5926-4ea7-a53c-f34a86aaf483",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/005 - API Inclusão de SM SOAP/002.api-inclusao-SM-erros-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/005 - API Inclusão de SM SOAP/002.api-inclusao-SM-erros-soap.cy.js",
@@ -1277,7 +1277,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a0da1460-b10f-43c0-ae36-77b3e7ab20b6",
+          "uuid": "5776b346-6683-447c-8c56-4b5d8ca69539",
           "title": "Integração Clientes - Inclusão de SM via SOAP - Validações de erro",
           "fullFile": "",
           "file": "",
@@ -1288,7 +1288,7 @@
               "title": "Requisição com corpo vazio",
               "fullTitle": "Integração Clientes - Inclusão de SM via SOAP - Validações de erro Requisição com corpo vazio",
               "timedOut": null,
-              "duration": 2496,
+              "duration": 3308,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1297,8 +1297,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: APIclientes.InclusãoSmSoap,\n  body: \"\",\n  headers: {\n    \"Content-Type\": \"text/xml;charset=UTF-8\",\n    SOAPAction: \"https://tstapi.buonny.com.br/portal/wsdl/buonny/viagem\"\n  },\n  timeout: 120000,\n  failOnStatusCode: false\n}).then(r => {\n  cy.log(r.body);\n  expect(r.status).to.eq(500);\n  expect(r.body).to.contain(\">Bad Request<\");\n});",
               "err": {},
-              "uuid": "3d275f1f-4659-4d27-a722-544141b4a658",
-              "parentUUID": "a0da1460-b10f-43c0-ae36-77b3e7ab20b6",
+              "uuid": "976d0df9-5f86-4d4a-97ba-6fcd128f8e5a",
+              "parentUUID": "5776b346-6683-447c-8c56-4b5d8ca69539",
               "isHook": false,
               "skipped": false
             },
@@ -1306,7 +1306,7 @@
               "title": "Requisição com token inválido",
               "fullTitle": "Integração Clientes - Inclusão de SM via SOAP - Validações de erro Requisição com token inválido",
               "timedOut": null,
-              "duration": 2002,
+              "duration": 2372,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1315,8 +1315,8 @@
               "context": null,
               "code": "const payloadTokenInvalido = payload.replace(/<token>.*?<\\/token>/, \"<token></token>\");\ncy.api({\n  method: \"POST\",\n  url: APIclientes.InclusãoSmSoap,\n  body: payloadTokenInvalido,\n  headers: {\n    \"Content-Type\": \"text/xml;charset=UTF-8\",\n    SOAPAction: \"https://tstapi.buonny.com.br/portal/wsdl/buonny/viagem\"\n  },\n  timeout: 120000,\n  failOnStatusCode: false\n}).then(r => {\n  cy.log(r.body);\n  expect(r.body).to.contain(\"O token informado não confere com o cnpj do cliente\");\n});",
               "err": {},
-              "uuid": "202146b1-b58f-4520-bf53-4ea731d30979",
-              "parentUUID": "a0da1460-b10f-43c0-ae36-77b3e7ab20b6",
+              "uuid": "ceb98d4b-b172-4941-888d-46627925ce1e",
+              "parentUUID": "5776b346-6683-447c-8c56-4b5d8ca69539",
               "isHook": false,
               "skipped": false
             },
@@ -1324,7 +1324,7 @@
               "title": "Requisição com data de início no passado",
               "fullTitle": "Integração Clientes - Inclusão de SM via SOAP - Validações de erro Requisição com data de início no passado",
               "timedOut": null,
-              "duration": 25186,
+              "duration": 26325,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -1333,8 +1333,8 @@
               "context": null,
               "code": "const payloadDataPassado = payload.replace(/<data_previsao_inicio>.*?<\\/data_previsao_inicio>/, \"<data_previsao_inicio>03/01/2025 15:50:00</data_previsao_inicio>\");\ncy.api({\n  method: \"POST\",\n  url: APIclientes.InclusãoSmSoap,\n  body: payloadDataPassado,\n  headers: {\n    \"Content-Type\": \"text/xml;charset=UTF-8\",\n    SOAPAction: \"https://tstapi.buonny.com.br/portal/wsdl/buonny/viagem\"\n  },\n  timeout: 120000,\n  failOnStatusCode: false\n}).then(r => {\n  cy.log(r.body);\n  expect(r.body).to.contain(\"Previsão de início não deve ser menor que a data e hora atual\");\n});",
               "err": {},
-              "uuid": "efbeb84e-ebc6-4fd6-b489-fd20011646b5",
-              "parentUUID": "a0da1460-b10f-43c0-ae36-77b3e7ab20b6",
+              "uuid": "32cfcfe4-448a-4c70-9a0e-e6dd8a4e0f3e",
+              "parentUUID": "5776b346-6683-447c-8c56-4b5d8ca69539",
               "isHook": false,
               "skipped": false
             },
@@ -1342,7 +1342,7 @@
               "title": "Requisição com data de chegada no passado",
               "fullTitle": "Integração Clientes - Inclusão de SM via SOAP - Validações de erro Requisição com data de chegada no passado",
               "timedOut": null,
-              "duration": 6630,
+              "duration": 7548,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -1351,23 +1351,23 @@
               "context": null,
               "code": "const payloadDataPassado = payload.replace(/<previsao_de_chegada>.*?<\\/previsao_de_chegada>/, \"<previsao_de_chegada>03/01/2025 15:50:00</previsao_de_chegada>\");\ncy.api({\n  method: \"POST\",\n  url: APIclientes.InclusãoSmSoap,\n  body: payloadDataPassado,\n  headers: {\n    \"Content-Type\": \"text/xml;charset=UTF-8\",\n    SOAPAction: \"https://tstapi.buonny.com.br/portal/wsdl/buonny/viagem\"\n  },\n  timeout: 120000,\n  failOnStatusCode: false\n}).then(r => {\n  cy.log(r.body);\n  expect(r.body).to.contain(\"Data de previsão menor que a data de inicio\");\n});",
               "err": {},
-              "uuid": "10ca206e-49b4-40f1-836a-d533e8975e28",
-              "parentUUID": "a0da1460-b10f-43c0-ae36-77b3e7ab20b6",
+              "uuid": "81749e2f-f931-49d5-b597-9c8226346111",
+              "parentUUID": "5776b346-6683-447c-8c56-4b5d8ca69539",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "3d275f1f-4659-4d27-a722-544141b4a658",
-            "202146b1-b58f-4520-bf53-4ea731d30979",
-            "efbeb84e-ebc6-4fd6-b489-fd20011646b5",
-            "10ca206e-49b4-40f1-836a-d533e8975e28"
+            "976d0df9-5f86-4d4a-97ba-6fcd128f8e5a",
+            "ceb98d4b-b172-4941-888d-46627925ce1e",
+            "32cfcfe4-448a-4c70-9a0e-e6dd8a4e0f3e",
+            "81749e2f-f931-49d5-b597-9c8226346111"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 36314,
+          "duration": 39553,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -1383,7 +1383,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "529be885-a5e3-49be-afeb-f3aa3d943182",
+      "uuid": "16045b5f-e9bf-4af1-8df6-452100efd909",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/006 - API Status Entrega V2/001.api-status-entregaV2-rest.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/006 - API Status Entrega V2/001.api-status-entregaV2-rest.cy.js",
@@ -1392,7 +1392,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d349efb2-a99f-4ec9-8353-fcf787b63bdc",
+          "uuid": "d75c9e4b-4c37-4f60-856f-f70f840311e4",
           "title": "Integração Clientes - API Status Entrega V2",
           "fullFile": "",
           "file": "",
@@ -1403,7 +1403,7 @@
               "title": "Validação de retorno: Buscar viagens em andamento",
               "fullTitle": "Integração Clientes - API Status Entrega V2 Validação de retorno: Buscar viagens em andamento",
               "timedOut": null,
-              "duration": 18020,
+              "duration": 17911,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -1412,8 +1412,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"GET\",\n  url: `${url}?cnpj_cliente=${cnpjCliente}&token=${token}`\n}).then(r => {\n  expect(r.status).to.eq(200);\n  expect(r.body.dados).to.be.an(\"array\").and.not.to.be.empty;\n  expect(r.body.dados[0].inicio_real).to.eq(null);\n  expect(r.body.dados[0].fim_real).to.eq(null);\n});",
               "err": {},
-              "uuid": "15dcda76-3805-4dbf-a4bc-e4002060526d",
-              "parentUUID": "d349efb2-a99f-4ec9-8353-fcf787b63bdc",
+              "uuid": "37e1c97b-0185-40ed-ac25-fc626a7b7416",
+              "parentUUID": "d75c9e4b-4c37-4f60-856f-f70f840311e4",
               "isHook": false,
               "skipped": false
             },
@@ -1421,7 +1421,7 @@
               "title": "Validação de retorno: Buscar viagens por SM específica",
               "fullTitle": "Integração Clientes - API Status Entrega V2 Validação de retorno: Buscar viagens por SM específica",
               "timedOut": null,
-              "duration": 4219,
+              "duration": 4270,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1430,8 +1430,8 @@
               "context": null,
               "code": "cy.fixture(\"numeroSM\").then(data => {\n  const numeroSM = data.numeroSM;\n  cy.api({\n    method: \"GET\",\n    url: `${url}?cnpj_cliente=${cnpjCliente}&token=${token}&sm=${numeroSM}`\n  }).then(r => {\n    expect(r.status).to.eq(200);\n    expect(r.body.dados).to.be.an(\"array\").and.not.to.be.empty;\n    expect(r.body.dados[0].codigo_sm).to.eq(+numeroSM);\n  });\n});",
               "err": {},
-              "uuid": "56609ea1-0020-494c-85fb-1f4a4a5bb86c",
-              "parentUUID": "d349efb2-a99f-4ec9-8353-fcf787b63bdc",
+              "uuid": "f25b6732-9fca-4bf6-a7f6-051e773760dd",
+              "parentUUID": "d75c9e4b-4c37-4f60-856f-f70f840311e4",
               "isHook": false,
               "skipped": false
             },
@@ -1439,7 +1439,7 @@
               "title": "Validação de retorno: Buscar viagens por pedido específico",
               "fullTitle": "Integração Clientes - API Status Entrega V2 Validação de retorno: Buscar viagens por pedido específico",
               "timedOut": null,
-              "duration": 6561,
+              "duration": 6711,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -1448,22 +1448,22 @@
               "context": null,
               "code": "cy.api({\n  method: \"GET\",\n  url: `${url}?cnpj_cliente=${cnpjCliente}&token=${token}&pedido=45487`\n}).then(r => {\n  expect(r.status).to.eq(200);\n  expect(r.body.dados).to.be.an(\"array\").and.not.to.be.empty;\n  expect(r.body.dados[0].pedido).to.eq(\"45487\");\n});",
               "err": {},
-              "uuid": "66a8896e-18be-4f44-b87c-a94dc0c7bc6a",
-              "parentUUID": "d349efb2-a99f-4ec9-8353-fcf787b63bdc",
+              "uuid": "209626d0-2c33-473e-b701-f6395b8fb8cd",
+              "parentUUID": "d75c9e4b-4c37-4f60-856f-f70f840311e4",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "15dcda76-3805-4dbf-a4bc-e4002060526d",
-            "56609ea1-0020-494c-85fb-1f4a4a5bb86c",
-            "66a8896e-18be-4f44-b87c-a94dc0c7bc6a"
+            "37e1c97b-0185-40ed-ac25-fc626a7b7416",
+            "f25b6732-9fca-4bf6-a7f6-051e773760dd",
+            "209626d0-2c33-473e-b701-f6395b8fb8cd"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 28800,
+          "duration": 28892,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -1479,7 +1479,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "1773ef7f-9483-4ac6-bfcb-8670da6456c4",
+      "uuid": "85c07de5-3927-438b-9bb5-5a28c8e21d36",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/006 - API Status Entrega V2/002.api-status-entregaV2-rest-erros.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/006 - API Status Entrega V2/002.api-status-entregaV2-rest-erros.cy.js",
@@ -1488,7 +1488,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "cd5a5a79-98af-410a-8d9f-df22317985b9",
+          "uuid": "8c8df6d7-8972-437e-93dc-5f57f576ea4e",
           "title": "Integração Clientes - Erros, API Status Entrega V2",
           "fullFile": "",
           "file": "",
@@ -1499,7 +1499,7 @@
               "title": "Validação de Erro: Enviar Requisição com CNPJ  vazio",
               "fullTitle": "Integração Clientes - Erros, API Status Entrega V2 Validação de Erro: Enviar Requisição com CNPJ  vazio",
               "timedOut": null,
-              "duration": 674,
+              "duration": 1215,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1508,8 +1508,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"GET\",\n  url: `${url}?cnpj_cliente=&token=${token}`,\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(401);\n});",
               "err": {},
-              "uuid": "2062359e-fd67-4835-91c0-2a95728a60cf",
-              "parentUUID": "cd5a5a79-98af-410a-8d9f-df22317985b9",
+              "uuid": "25876a91-4d36-4aa8-80d0-3d674259ee2e",
+              "parentUUID": "8c8df6d7-8972-437e-93dc-5f57f576ea4e",
               "isHook": false,
               "skipped": false
             },
@@ -1517,7 +1517,7 @@
               "title": "Validação de Erro: Enviar Reqisição com Token vazio",
               "fullTitle": "Integração Clientes - Erros, API Status Entrega V2 Validação de Erro: Enviar Reqisição com Token vazio",
               "timedOut": null,
-              "duration": 572,
+              "duration": 1100,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1526,8 +1526,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"GET\",\n  url: `${url}?cnpj_cliente=${cnpjCliente}&token=`,\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(401);\n});",
               "err": {},
-              "uuid": "b8080c4e-6472-49d5-aafd-60faf332e6ed",
-              "parentUUID": "cd5a5a79-98af-410a-8d9f-df22317985b9",
+              "uuid": "5d9f4734-77cb-46db-a69e-335007be426c",
+              "parentUUID": "8c8df6d7-8972-437e-93dc-5f57f576ea4e",
               "isHook": false,
               "skipped": false
             },
@@ -1535,7 +1535,7 @@
               "title": "Validação de Erro: Consultar com SM e pedido divergentes",
               "fullTitle": "Integração Clientes - Erros, API Status Entrega V2 Validação de Erro: Consultar com SM e pedido divergentes",
               "timedOut": null,
-              "duration": 3119,
+              "duration": 3116,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1544,22 +1544,22 @@
               "context": null,
               "code": "cy.api({\n  method: \"GET\",\n  url: `${url}?cnpj_cliente=${cnpjCliente}&token=${token}&sm=31692655&pedido=123456`,\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(200);\n  expect(r.body.dados).to.be.an(\"array\").and.to.be.empty;\n});",
               "err": {},
-              "uuid": "c0f0e55d-6d91-4584-876f-eacaec1f277e",
-              "parentUUID": "cd5a5a79-98af-410a-8d9f-df22317985b9",
+              "uuid": "5c35cf2a-6212-4225-a267-4508b41bbe30",
+              "parentUUID": "8c8df6d7-8972-437e-93dc-5f57f576ea4e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "2062359e-fd67-4835-91c0-2a95728a60cf",
-            "b8080c4e-6472-49d5-aafd-60faf332e6ed",
-            "c0f0e55d-6d91-4584-876f-eacaec1f277e"
+            "25876a91-4d36-4aa8-80d0-3d674259ee2e",
+            "5d9f4734-77cb-46db-a69e-335007be426c",
+            "5c35cf2a-6212-4225-a267-4508b41bbe30"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4365,
+          "duration": 5431,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -1575,7 +1575,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "60bfe167-1742-4f4a-8d06-178146ed308b",
+      "uuid": "c897e645-7609-437a-9df2-a553985b415d",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/001.api-acompanhamento-viagem.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/001.api-acompanhamento-viagem.cy.js",
@@ -1584,7 +1584,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a2d197b4-32cf-4090-a6b2-37de153ecc3b",
+          "uuid": "184614f3-bf5a-4e60-859a-885b0dfe9c10",
           "title": "Integração Clientes - API Acompanhamento de viagem",
           "fullFile": "",
           "file": "",
@@ -1595,7 +1595,7 @@
               "title": "Validação de retorno: Acompanhanmento de viagem com sucesso",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem Validação de retorno: Acompanhanmento de viagem com sucesso",
               "timedOut": null,
-              "duration": 2697,
+              "duration": 3756,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1604,8 +1604,8 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: `${url}&limit=0`,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      CnpjCliente: cnpjCliente,\n      DataInicio: formatarDataV2(),\n      DataFim: formatarDataChegadaV2(),\n      status: [1, 2, 3, 4, 5, 6]\n    },\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(200);\n    expect(r.body).to.be.an(\"array\").and.not.to.be.empty;\n  });\n});",
               "err": {},
-              "uuid": "b5ffe0f9-1c1b-47b1-9d70-7651d7b246f4",
-              "parentUUID": "a2d197b4-32cf-4090-a6b2-37de153ecc3b",
+              "uuid": "370568df-94c3-40f0-94a0-6716245dcb7d",
+              "parentUUID": "184614f3-bf5a-4e60-859a-885b0dfe9c10",
               "isHook": false,
               "skipped": false
             },
@@ -1613,7 +1613,7 @@
               "title": "Validação de retorno: Paginação offset e limit funcionando corretamente",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem Validação de retorno: Paginação offset e limit funcionando corretamente",
               "timedOut": null,
-              "duration": 1379,
+              "duration": 1678,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1622,21 +1622,21 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: `${url}&limit=1`,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      CnpjCliente: cnpjCliente,\n      DataInicio: formatarDataV2(),\n      DataFim: formatarDataChegadaV2(),\n      status: [3]\n    },\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(200);\n    expect(r.body.length).to.equal(1);\n  });\n});",
               "err": {},
-              "uuid": "2f4ddd5b-45f1-4cfb-8980-860f1802ea85",
-              "parentUUID": "a2d197b4-32cf-4090-a6b2-37de153ecc3b",
+              "uuid": "9957a445-148b-4457-a99d-ec3f592b4ab1",
+              "parentUUID": "184614f3-bf5a-4e60-859a-885b0dfe9c10",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "b5ffe0f9-1c1b-47b1-9d70-7651d7b246f4",
-            "2f4ddd5b-45f1-4cfb-8980-860f1802ea85"
+            "370568df-94c3-40f0-94a0-6716245dcb7d",
+            "9957a445-148b-4457-a99d-ec3f592b4ab1"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4076,
+          "duration": 5434,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -1652,7 +1652,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "94c52d01-534b-4585-b3fa-4c839e826928",
+      "uuid": "5c92abba-454a-4c99-9a6f-ca359cbb3118",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/002.api-acompanhamento-viagem-erros.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/002.api-acompanhamento-viagem-erros.cy.js",
@@ -1661,7 +1661,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "af64d10e-d382-4722-b7aa-46376f51e9f5",
+          "uuid": "412859e5-f396-4d2e-990e-5a72116fc2f9",
           "title": "Integração Clientes - API Acompanhamento de viagem erros,",
           "fullFile": "",
           "file": "",
@@ -1672,7 +1672,7 @@
               "title": "Validação de retorno: Buscar acompanhamento com token expirado ou inválido",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem erros, Validação de retorno: Buscar acompanhamento com token expirado ou inválido",
               "timedOut": null,
-              "duration": 605,
+              "duration": 901,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1681,8 +1681,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: `${url}&limit=0`,\n  headers: {\n    Authorization: `Bearer 123`\n  },\n  body: {\n    CnpjCliente: cnpjCliente,\n    DataInicio: formatarDataV2(),\n    DataFim: formatarDataChegadaV2(),\n    status: [1, 2, 3, 4, 5, 6]\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(401);\n});",
               "err": {},
-              "uuid": "a157e01f-c55f-4a0a-bbfb-eed9d1f99e2e",
-              "parentUUID": "af64d10e-d382-4722-b7aa-46376f51e9f5",
+              "uuid": "66dcbc2b-731c-439a-9408-ac85d7634615",
+              "parentUUID": "412859e5-f396-4d2e-990e-5a72116fc2f9",
               "isHook": false,
               "skipped": false
             },
@@ -1690,7 +1690,7 @@
               "title": "Validação de retorno: Buscar acompanhamento com body vazio",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem erros, Validação de retorno: Buscar acompanhamento com body vazio",
               "timedOut": null,
-              "duration": 626,
+              "duration": 671,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1699,8 +1699,8 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: `${url}&limit=1`,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: \"\",\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(415);\n  });\n});",
               "err": {},
-              "uuid": "a0df8956-13cd-4640-b0e8-f9b8c3a0068b",
-              "parentUUID": "af64d10e-d382-4722-b7aa-46376f51e9f5",
+              "uuid": "4181ff33-8325-427a-bc92-36e7e173cb1f",
+              "parentUUID": "412859e5-f396-4d2e-990e-5a72116fc2f9",
               "isHook": false,
               "skipped": false
             },
@@ -1708,7 +1708,7 @@
               "title": "Validação de retorno: Buscar acompanhamento com body vazio II",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem erros, Validação de retorno: Buscar acompanhamento com body vazio II",
               "timedOut": null,
-              "duration": 571,
+              "duration": 577,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1717,8 +1717,8 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: `${url}&limit=1`,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {},\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(400);\n  });\n});",
               "err": {},
-              "uuid": "f9aaa600-73d8-4c02-bb63-8812604d5b72",
-              "parentUUID": "af64d10e-d382-4722-b7aa-46376f51e9f5",
+              "uuid": "20bb201c-ed3b-47df-b256-95c0eea54bfb",
+              "parentUUID": "412859e5-f396-4d2e-990e-5a72116fc2f9",
               "isHook": false,
               "skipped": false
             },
@@ -1726,7 +1726,7 @@
               "title": "Validação de retorno: Payload com campos obrigatórios ausentes",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem erros, Validação de retorno: Payload com campos obrigatórios ausentes",
               "timedOut": null,
-              "duration": 1362,
+              "duration": 1333,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1735,8 +1735,8 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: `${url}&limit=1`,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      DataInicio: formatarDataV2(),\n      DataFim: formatarDataChegadaV2(),\n      status: [1, 2, 3, 4, 5, 6]\n    },\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(404);\n  });\n});",
               "err": {},
-              "uuid": "c5cc457a-7f00-4f0b-a77b-cd97109273cd",
-              "parentUUID": "af64d10e-d382-4722-b7aa-46376f51e9f5",
+              "uuid": "d1d3b152-f002-4abe-93c8-7bddafce153c",
+              "parentUUID": "412859e5-f396-4d2e-990e-5a72116fc2f9",
               "isHook": false,
               "skipped": false
             },
@@ -1744,7 +1744,7 @@
               "title": "Validação de retorno: Payload com campos obrigatórios vazios",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem erros, Validação de retorno: Payload com campos obrigatórios vazios",
               "timedOut": null,
-              "duration": 701,
+              "duration": 647,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -1753,24 +1753,24 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: `${url}&limit=1`,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      DataInicio: \"\",\n      DataFim: formatarDataChegadaV2(),\n      status: [1, 2, 3, 4, 5, 6]\n    },\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(500);\n  });\n});",
               "err": {},
-              "uuid": "619cf668-6ec8-4215-bf79-46737a98e075",
-              "parentUUID": "af64d10e-d382-4722-b7aa-46376f51e9f5",
+              "uuid": "1a1c0757-d159-466a-9d35-1e5ec333e98a",
+              "parentUUID": "412859e5-f396-4d2e-990e-5a72116fc2f9",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a157e01f-c55f-4a0a-bbfb-eed9d1f99e2e",
-            "a0df8956-13cd-4640-b0e8-f9b8c3a0068b",
-            "f9aaa600-73d8-4c02-bb63-8812604d5b72",
-            "c5cc457a-7f00-4f0b-a77b-cd97109273cd",
-            "619cf668-6ec8-4215-bf79-46737a98e075"
+            "66dcbc2b-731c-439a-9408-ac85d7634615",
+            "4181ff33-8325-427a-bc92-36e7e173cb1f",
+            "20bb201c-ed3b-47df-b256-95c0eea54bfb",
+            "d1d3b152-f002-4abe-93c8-7bddafce153c",
+            "1a1c0757-d159-466a-9d35-1e5ec333e98a"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3865,
+          "duration": 4129,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
