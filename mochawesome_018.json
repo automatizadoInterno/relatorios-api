@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-17T13:35:35.132Z",
-    "end": "2025-10-17T13:35:41.071Z",
-    "duration": 5939,
+    "start": "2025-10-17T14:05:07.824Z",
+    "end": "2025-10-17T14:05:13.701Z",
+    "duration": 5877,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "55bb493a-d227-4ea0-acf0-bc2d68766ac8",
+      "uuid": "3ccdd868-44f4-4f87-afa5-44f0fcab8c6a",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/001.api-acompanhamento-viagem.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/001.api-acompanhamento-viagem.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e713ed0f-5141-4b6d-a34c-8f9faa2821c5",
+          "uuid": "6e2980f2-d222-4180-999a-e93e04325d10",
           "title": "Integração Clientes - API Acompanhamento de viagem",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validação de retorno: Acompanhanmento de viagem com sucesso",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem Validação de retorno: Acompanhanmento de viagem com sucesso",
               "timedOut": null,
-              "duration": 3229,
+              "duration": 3010,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: `${url}&limit=0`,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      CnpjCliente: cnpjCliente,\n      DataInicio: formatarDataV2(),\n      DataFim: formatarDataChegadaV2(),\n      status: [1, 2, 3, 4, 5, 6]\n    },\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(200);\n    expect(r.body).to.be.an(\"array\").and.not.to.be.empty;\n  });\n});",
               "err": {},
-              "uuid": "fbb58aeb-0612-487f-821a-46daafd15aa3",
-              "parentUUID": "e713ed0f-5141-4b6d-a34c-8f9faa2821c5",
+              "uuid": "5763a92c-b095-46c9-9308-1fd5b2858df5",
+              "parentUUID": "6e2980f2-d222-4180-999a-e93e04325d10",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Validação de retorno: Paginação offset e limit funcionando corretamente",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem Validação de retorno: Paginação offset e limit funcionando corretamente",
               "timedOut": null,
-              "duration": 1730,
+              "duration": 1478,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: `${url}&limit=1`,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      CnpjCliente: cnpjCliente,\n      DataInicio: formatarDataV2(),\n      DataFim: formatarDataChegadaV2(),\n      status: [3]\n    },\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(200);\n    expect(r.body.length).to.equal(1);\n  });\n});",
               "err": {},
-              "uuid": "18b2b74d-5f9a-4806-a7d8-4b240cdf6247",
-              "parentUUID": "e713ed0f-5141-4b6d-a34c-8f9faa2821c5",
+              "uuid": "ae51173f-8a9f-43be-864e-73c227ef1803",
+              "parentUUID": "6e2980f2-d222-4180-999a-e93e04325d10",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "fbb58aeb-0612-487f-821a-46daafd15aa3",
-            "18b2b74d-5f9a-4806-a7d8-4b240cdf6247"
+            "5763a92c-b095-46c9-9308-1fd5b2858df5",
+            "ae51173f-8a9f-43be-864e-73c227ef1803"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4959,
+          "duration": 4488,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

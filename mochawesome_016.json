@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-17T13:34:36.901Z",
-    "end": "2025-10-17T13:35:05.876Z",
-    "duration": 28975,
+    "start": "2025-10-17T14:04:09.626Z",
+    "end": "2025-10-17T14:04:38.253Z",
+    "duration": 28627,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "529bd410-4d49-4dfe-8084-6e9435835232",
+      "uuid": "f522af7c-c1af-4e73-9cae-051fc0842dcc",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/006 - API Status Entrega V2/001.api-status-entregaV2-rest.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/006 - API Status Entrega V2/001.api-status-entregaV2-rest.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d31dbb9c-7b8a-4327-89af-1254cc42c06b",
+          "uuid": "9f9d13f0-9c66-496f-bb6d-da2afa9431cc",
           "title": "Integração Clientes - API Status Entrega V2",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validação de retorno: Buscar viagens em andamento",
               "fullTitle": "Integração Clientes - API Status Entrega V2 Validação de retorno: Buscar viagens em andamento",
               "timedOut": null,
-              "duration": 17833,
+              "duration": 17451,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"GET\",\n  url: `${url}?cnpj_cliente=${cnpjCliente}&token=${token}`\n}).then(r => {\n  expect(r.status).to.eq(200);\n  expect(r.body.dados).to.be.an(\"array\").and.not.to.be.empty;\n  expect(r.body.dados[0].inicio_real).to.eq(null);\n  expect(r.body.dados[0].fim_real).to.eq(null);\n});",
               "err": {},
-              "uuid": "7abb408b-201d-4211-b1b7-22c220754d60",
-              "parentUUID": "d31dbb9c-7b8a-4327-89af-1254cc42c06b",
+              "uuid": "5d79ae24-82ac-424c-a0dc-67e1dc27e0cc",
+              "parentUUID": "9f9d13f0-9c66-496f-bb6d-da2afa9431cc",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Validação de retorno: Buscar viagens por SM específica",
               "fullTitle": "Integração Clientes - API Status Entrega V2 Validação de retorno: Buscar viagens por SM específica",
               "timedOut": null,
-              "duration": 3739,
+              "duration": 3730,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "cy.fixture(\"numeroSM\").then(data => {\n  const numeroSM = data.numeroSM;\n  cy.api({\n    method: \"GET\",\n    url: `${url}?cnpj_cliente=${cnpjCliente}&token=${token}&sm=${numeroSM}`\n  }).then(r => {\n    expect(r.status).to.eq(200);\n    expect(r.body.dados).to.be.an(\"array\").and.not.to.be.empty;\n    expect(r.body.dados[0].codigo_sm).to.eq(+numeroSM);\n  });\n});",
               "err": {},
-              "uuid": "a502c04e-59f2-4b1b-9e29-915ebc62d2f4",
-              "parentUUID": "d31dbb9c-7b8a-4327-89af-1254cc42c06b",
+              "uuid": "c2d6c0ea-aa97-4f0b-b345-bc2b6cc8d73f",
+              "parentUUID": "9f9d13f0-9c66-496f-bb6d-da2afa9431cc",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Validação de retorno: Buscar viagens por pedido específico",
               "fullTitle": "Integração Clientes - API Status Entrega V2 Validação de retorno: Buscar viagens por pedido específico",
               "timedOut": null,
-              "duration": 6702,
+              "duration": 6530,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -83,22 +83,22 @@
               "context": null,
               "code": "cy.api({\n  method: \"GET\",\n  url: `${url}?cnpj_cliente=${cnpjCliente}&token=${token}&pedido=45487`\n}).then(r => {\n  expect(r.status).to.eq(200);\n  expect(r.body.dados).to.be.an(\"array\").and.not.to.be.empty;\n  expect(r.body.dados[0].pedido).to.eq(\"45487\");\n});",
               "err": {},
-              "uuid": "8a00e6a2-08e5-4012-a09d-c84c09af81f0",
-              "parentUUID": "d31dbb9c-7b8a-4327-89af-1254cc42c06b",
+              "uuid": "11d781af-2988-4f03-a3bd-f1b847c8b6a7",
+              "parentUUID": "9f9d13f0-9c66-496f-bb6d-da2afa9431cc",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "7abb408b-201d-4211-b1b7-22c220754d60",
-            "a502c04e-59f2-4b1b-9e29-915ebc62d2f4",
-            "8a00e6a2-08e5-4012-a09d-c84c09af81f0"
+            "5d79ae24-82ac-424c-a0dc-67e1dc27e0cc",
+            "c2d6c0ea-aa97-4f0b-b345-bc2b6cc8d73f",
+            "11d781af-2988-4f03-a3bd-f1b847c8b6a7"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 28274,
+          "duration": 27711,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
