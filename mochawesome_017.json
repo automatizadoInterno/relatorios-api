@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 3,
-    "passes": 3,
+    "passes": 2,
     "pending": 0,
-    "failures": 0,
-    "start": "2025-10-20T18:26:59.677Z",
-    "end": "2025-10-20T18:27:13.050Z",
-    "duration": 13373,
+    "failures": 1,
+    "start": "2025-10-20T22:42:40.405Z",
+    "end": "2025-10-20T22:43:19.350Z",
+    "duration": 38945,
     "testsRegistered": 3,
-    "passPercent": 100,
+    "passPercent": 66.66666666666666,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "811f80c8-d622-417b-bf56-ae18e8a7f777",
+      "uuid": "d3ba55db-b768-46b7-99f6-bca7828e5061",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/006 - API Status Entrega V2/002.api-status-entregaV2-rest-erros.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/006 - API Status Entrega V2/002.api-status-entregaV2-rest-erros.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "ce7db425-a608-46e4-a923-be002cf2017a",
+          "uuid": "a1dbf72f-60b4-464b-a140-0756f16c678b",
           "title": "Integração Clientes - Erros, API Status Entrega V2",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validação de Erro: Enviar Requisição com CNPJ  vazio",
               "fullTitle": "Integração Clientes - Erros, API Status Entrega V2 Validação de Erro: Enviar Requisição com CNPJ  vazio",
               "timedOut": null,
-              "duration": 1250,
+              "duration": 1112,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"GET\",\n  url: `${url}?cnpj_cliente=&token=${token}`,\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(401);\n});",
               "err": {},
-              "uuid": "f6b41508-bb2c-49de-9241-1270b5da7e6a",
-              "parentUUID": "ce7db425-a608-46e4-a923-be002cf2017a",
+              "uuid": "30ae5444-9f04-48ca-8021-26a6bc639bff",
+              "parentUUID": "a1dbf72f-60b4-464b-a140-0756f16c678b",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Validação de Erro: Enviar Reqisição com Token vazio",
               "fullTitle": "Integração Clientes - Erros, API Status Entrega V2 Validação de Erro: Enviar Reqisição com Token vazio",
               "timedOut": null,
-              "duration": 1470,
+              "duration": 596,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"GET\",\n  url: `${url}?cnpj_cliente=${cnpjCliente}&token=`,\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(401);\n});",
               "err": {},
-              "uuid": "dc36da61-29c9-42f4-9577-e6215332ed44",
-              "parentUUID": "ce7db425-a608-46e4-a923-be002cf2017a",
+              "uuid": "da1373b2-9fc7-4590-9307-df6b56b391fa",
+              "parentUUID": "a1dbf72f-60b4-464b-a140-0756f16c678b",
               "isHook": false,
               "skipped": false
             },
@@ -74,31 +74,36 @@
               "title": "Validação de Erro: Consultar com SM e pedido divergentes",
               "fullTitle": "Integração Clientes - Erros, API Status Entrega V2 Validação de Erro: Consultar com SM e pedido divergentes",
               "timedOut": null,
-              "duration": 3131,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
+              "duration": 30716,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
               "code": "cy.api({\n  method: \"GET\",\n  url: `${url}?cnpj_cliente=${cnpjCliente}&token=${token}&sm=31692655&pedido=123456`,\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(200);\n  expect(r.body.dados).to.be.an(\"array\").and.to.be.empty;\n});",
-              "err": {},
-              "uuid": "51ee93d5-9f60-448f-80c1-2579a623b813",
-              "parentUUID": "ce7db425-a608-46e4-a923-be002cf2017a",
+              "err": {
+                "message": "CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://tstapi.buonny.com.br/api/v2/viagem/status_entregas?cnpj_cliente=03703854000122&token=91bd84aac4e0f0a2aca6e063c1675921&sm=31692655&pedido=123456\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://tstapi.buonny.com.br/api/v2/viagem/status_entregas?cnpj_cliente=03703854000122&token=91bd84aac4e0f0a2aca6e063c1675921&sm=31692655&pedido=123456\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n    at <unknown> (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:136486:70)\n    at tryCatcher (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at <unknown> (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:4156:41)\n    at tryCatcher (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.ee (webpack://test/./node_modules/cypress-plugin-api/dist/support.js:14:2002)\n    at wrapped (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:141663:43)",
+                "diff": null
+              },
+              "uuid": "78b2b224-b112-4e00-93f4-6f5148507759",
+              "parentUUID": "a1dbf72f-60b4-464b-a140-0756f16c678b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "f6b41508-bb2c-49de-9241-1270b5da7e6a",
-            "dc36da61-29c9-42f4-9577-e6215332ed44",
-            "51ee93d5-9f60-448f-80c1-2579a623b813"
+            "30ae5444-9f04-48ca-8021-26a6bc639bff",
+            "da1373b2-9fc7-4590-9307-df6b56b391fa"
           ],
-          "failures": [],
+          "failures": [
+            "78b2b224-b112-4e00-93f4-6f5148507759"
+          ],
           "pending": [],
           "skipped": [],
-          "duration": 5851,
+          "duration": 32424,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-20T18:19:06.319Z",
-    "end": "2025-10-20T18:19:17.903Z",
-    "duration": 11584,
+    "start": "2025-10-20T22:12:50.692Z",
+    "end": "2025-10-20T22:13:04.160Z",
+    "duration": 13468,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "34bd6100-7a38-491a-8244-c457ad84d942",
+      "uuid": "e7e5b9ba-41d8-41f5-b9e2-3bd84472302f",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/001 - API Ficha Profisssional/001.api-inclusao-ficha-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/001 - API Ficha Profisssional/001.api-inclusao-ficha-soap.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "eaa8a263-b66e-47c6-a74a-9d4e474af128",
+          "uuid": "1a557220-1143-4935-ad41-6005af020bdb",
           "title": "Integração Clientes - API Inclusão de Ficha do Profissional - Casos de Sucesso",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Incluir ficha com sucesso API",
               "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Casos de Sucesso Incluir ficha com sucesso API",
               "timedOut": null,
-              "duration": 11389,
+              "duration": 13023,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: soapPayload,\n  failOnStatusCode: false\n}).then(r => {\n  const mensagem = r.body.match(/ns1:sucesso>([\\s\\S]*?)<\\/ns1:sucesso>/)[1].trim();\n  cy.log(r.body);\n  expect(r.status).to.eq(200);\n  expect(mensagem).to.eq(\"Ficha de Profissional incluida com sucesso\");\n});",
               "err": {},
-              "uuid": "37dfc91d-97dd-4619-98d8-08c158ac794f",
-              "parentUUID": "eaa8a263-b66e-47c6-a74a-9d4e474af128",
+              "uuid": "9cd692cf-c486-4cd1-b04b-51a5626b49b2",
+              "parentUUID": "1a557220-1143-4935-ad41-6005af020bdb",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "37dfc91d-97dd-4619-98d8-08c158ac794f"
+            "9cd692cf-c486-4cd1-b04b-51a5626b49b2"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 11389,
+          "duration": 13023,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
