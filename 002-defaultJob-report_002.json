@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-21T20:11:00.070Z",
+    "end": "2025-10-21T20:11:03.805Z",
+    "duration": 3735,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "25e09fca-7244-4a77-9323-e9aa3842cd4a",
+      "title": "",
+      "fullFile": "cypress/e2e/api/001 - API Core V3/003 - API V3 - Consulta profissional/002.apiV3-consulta-b.check-erros.cy.js",
+      "file": "cypress/e2e/api/001 - API Core V3/003 - API V3 - Consulta profissional/002.apiV3-consulta-b.check-erros.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e5374e61-0be6-426c-bd1e-4328f6da4c00",
+          "title": "API CORE V3 - Consulta profissional Buonny Check - erros",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Consulta com corpo inválido",
+              "fullTitle": "API CORE V3 - Consulta profissional Buonny Check - erros Consulta com corpo inválido",
+              "timedOut": null,
+              "duration": 1612,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: url,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      codigo_cliente: \"\",\n      codigo_usuario_inclusao: \"\",\n      codigo_produto: 1,\n      codigo_corporacao: 1,\n      categoria: 1,\n      codigo_carga_tipo: \"\",\n      codigo_carga_valor: 1,\n      codigo_cidade_destino: \"\",\n      codigo_cidade_origem: 5190,\n      codigo_documento: \"01180160169\",\n      placa_veiculo: \"AKX0E00\",\n      departamento: \"T\"\n    },\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(500);\n  });\n});",
+              "err": {},
+              "uuid": "3e9a87a1-f716-4baa-a369-39162a481a66",
+              "parentUUID": "e5374e61-0be6-426c-bd1e-4328f6da4c00",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Consulta com token inválido",
+              "fullTitle": "API CORE V3 - Consulta profissional Buonny Check - erros Consulta com token inválido",
+              "timedOut": null,
+              "duration": 1477,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  headers: {\n    Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb2RpZ28iOjIzODY1OCwiYXBlbGlkbyI6ImF1dG9tYXRpemFkby5iY2hlY2siLCJjb2RpZ29fY2xpZW50ZSI6NTgwMSwidGlwb191c3VhcmlvIjoiZXh0ZXJubyIsImNvZGlnb19kb2N1bWVudG8iOiIwNjMyNjAyNTAwMDE2NiIsImNvZGlnb19zZWd1cmFkb3JhIjoiMjciLCJjb2RpZ29fY29ycmV0b3JhIjoiNDQzMiIsImNvZGlnb19maWxpYWwiOm51bGwsImRvY3VtZW50b19iYXNlIjoiMDYzMjYwMjUiLCJ0b2tlbiI6ImY3MzNhZTczYjNhYjc5NzJkNjNhYTg5YTQ0NzEwNjk0IiwibnN0ZWNoIjoiIiwiYXR1YWxpemFyIjpmYWxzZSwic2lzdGVtYSI6bnVsbCwiZXhwIjoxNzQyMjQyMzAzfQ.DYb6lE3GzTSgIpq8itbcmHPSHaK1jvxW_-H4k1AWQM0`\n  },\n  body: {\n    codigo_cliente: \"\",\n    codigo_usuario_inclusao: \"\",\n    codigo_produto: 1,\n    codigo_corporacao: 1,\n    categoria: 1,\n    codigo_carga_tipo: \"\",\n    codigo_carga_valor: 1,\n    codigo_cidade_destino: \"\",\n    codigo_cidade_origem: 5190,\n    codigo_documento: \"01180160169\",\n    placa_veiculo: \"AKX0E00\",\n    departamento: \"T\"\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(401);\n});",
+              "err": {},
+              "uuid": "3724e086-3248-4ccc-9622-7212e4fa2d36",
+              "parentUUID": "e5374e61-0be6-426c-bd1e-4328f6da4c00",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3e9a87a1-f716-4baa-a369-39162a481a66",
+            "3724e086-3248-4ccc-9622-7212e4fa2d36"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3089,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-defaultJob-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportFilename": "[name]-defaultJob-report"
+      },
+      "version": "6.3.0"
+    }
+  }
+}

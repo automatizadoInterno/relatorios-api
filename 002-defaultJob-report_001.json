@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-21T20:10:26.638Z",
+    "end": "2025-10-21T20:10:29.304Z",
+    "duration": 2666,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c40122e1-207e-4953-a2ac-db2626233f73",
+      "title": "",
+      "fullFile": "cypress/e2e/api/001 - API Core V3/002 - API V3 -  Inclusão de ficha profissional/002.apiV3-inclusaoFicha-b.check-erros.cy.js",
+      "file": "cypress/e2e/api/001 - API Core V3/002 - API V3 -  Inclusão de ficha profissional/002.apiV3-inclusaoFicha-b.check-erros.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "20ac5c65-1dbb-43ca-8671-acdb762f13a5",
+          "title": "API CORE V3 - Inclusão ficha do profissional BC - erros",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Inclusão de ficha com body inválido",
+              "fullTitle": "API CORE V3 - Inclusão ficha do profissional BC - erros Inclusão de ficha com body inválido",
+              "timedOut": null,
+              "duration": 1150,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: url,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {},\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(400);\n  });\n});",
+              "err": {},
+              "uuid": "dc3bb4e3-e957-43fc-8efc-7c3ab4d7e7f7",
+              "parentUUID": "20ac5c65-1dbb-43ca-8671-acdb762f13a5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Inclusão de ficha com token expirado",
+              "fullTitle": "API CORE V3 - Inclusão ficha do profissional BC - erros Inclusão de ficha com token expirado",
+              "timedOut": null,
+              "duration": 1028,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  headers: {\n    Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb2RpZ28iOjIzODY1OCwiYXBlbGlkbyI6ImF1dG9tYXRpemFkby5iY2hlY2siLCJjb2RpZ29fY2xpZW50ZSI6NTgwMSwidGlwb191c3VhcmlvIjoiZXh0ZXJubyIsImNvZGlnb19kb2N1bWVudG8iOiIwNjMyNjAyNTAwMDE2NiIsImNvZGlnb19zZWd1cmFkb3JhIjoiMjciLCJjb2RpZ29fY29ycmV0b3JhIjoiNDQzMiIsImNvZGlnb19maWxpYWwiOm51bGwsImRvY3VtZW50b19iYXNlIjoiMDYzMjYwMjUiLCJ0b2tlbiI6ImY3MzNhZTczYjNhYjc5NzJkNjNhYTg5YTQ0NzEwNjk0IiwibnN0ZWNoIjoiIiwiYXR1YWxpemFyIjpmYWxzZSwic2lzdGVtYSI6bnVsbCwiZXhwIjoxNzQyNDE3MDc2fQ.QISjNzMNoHEinEkh4VhhqHBu327WQHVh7X6n8gYa8Hk`\n  },\n  body: {},\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(401);\n  expect(r.body).to.include(\"Token Expirado\");\n});",
+              "err": {},
+              "uuid": "744209ec-a412-4a29-868e-32a0b41a7a21",
+              "parentUUID": "20ac5c65-1dbb-43ca-8671-acdb762f13a5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "dc3bb4e3-e957-43fc-8efc-7c3ab4d7e7f7",
+            "744209ec-a412-4a29-868e-32a0b41a7a21"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2178,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-defaultJob-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportFilename": "[name]-defaultJob-report"
+      },
+      "version": "6.3.0"
+    }
+  }
+}

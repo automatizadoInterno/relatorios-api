@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-21T20:09:33.804Z",
+    "end": "2025-10-21T20:09:35.350Z",
+    "duration": 1546,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2152e448-d6db-4aea-8c28-7ddf63fababa",
+      "title": "",
+      "fullFile": "cypress/e2e/api/001 - API Core V3/001 - API V3 - Login Buonny Check/001.apiV3-login-b.check-sucesso.cy.js",
+      "file": "cypress/e2e/api/001 - API Core V3/001 - API V3 - Login Buonny Check/001.apiV3-login-b.check-sucesso.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3ea4f1b1-b6e9-4a6b-960d-4fd8f2e4c8fd",
+          "title": "API CORE V3 - Login Buonny Check - sucesso",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login com sucesso",
+              "fullTitle": "API CORE V3 - Login Buonny Check - sucesso Login com sucesso",
+              "timedOut": null,
+              "duration": 1192,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: {\n    usuario: Cypress.env(\"user_nameBC\"),\n    senha: Cypress.env(\"user_passwordBC\")\n  }\n}).then(r => {\n  expect(r.status).to.eq(200);\n  expect(r.body).to.have.property(\"data\");\n  expect(r.body.data).to.have.property(\"token\").and.not.be.empty;\n});",
+              "err": {},
+              "uuid": "785df8ec-8238-45bf-b74f-033cd1009665",
+              "parentUUID": "3ea4f1b1-b6e9-4a6b-960d-4fd8f2e4c8fd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "785df8ec-8238-45bf-b74f-033cd1009665"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1192,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-defaultJob-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportFilename": "[name]-defaultJob-report"
+      },
+      "version": "6.3.0"
+    }
+  }
+}

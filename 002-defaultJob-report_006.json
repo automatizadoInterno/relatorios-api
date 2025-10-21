@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-21T20:15:12.576Z",
+    "end": "2025-10-21T20:15:54.410Z",
+    "duration": 41834,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d933311e-89d2-43e6-94e7-542f4d88421d",
+      "title": "",
+      "fullFile": "cypress/e2e/api/002 - API Integração Clientes/004 - API Inclusão de SM REST/002.api-inclusao-SM-erros-rest.cy.js",
+      "file": "cypress/e2e/api/002 - API Integração Clientes/004 - API Inclusão de SM REST/002.api-inclusao-SM-erros-rest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1e353340-c74d-4924-84b1-8cf211dc783e",
+          "title": "Integração Clientes - API Inclusão de SM REST erros",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Realizar requisição com corpo vazio",
+              "fullTitle": "Integração Clientes - API Inclusão de SM REST erros Realizar requisição com corpo vazio",
+              "timedOut": null,
+              "duration": 3066,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "return cy.api({\n  method: \"POST\",\n  url: APIclientes.InclusãoSmRest,\n  body: {}\n}).then(r => {\n  expect(r.body.sucesso).to.be.null;\n  expect(r.body.erros).to.include(\"Dados incorretos\");\n});",
+              "err": {},
+              "uuid": "7e9c3868-c4e0-4b32-b973-4e4365654d94",
+              "parentUUID": "1e353340-c74d-4924-84b1-8cf211dc783e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Realizar requisição com Token inválido",
+              "fullTitle": "Integração Clientes - API Inclusão de SM REST erros Realizar requisição com Token inválido",
+              "timedOut": null,
+              "duration": 2680,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "requisicaoPadrao({\n  token: \"123\"\n}).then(r => {\n  expect(r.body.sucesso).to.be.null;\n  expect(r.body.erros).to.include(\"O token informado não confere com o cnpj do cliente\");\n});",
+              "err": {},
+              "uuid": "33ca0cbe-63f5-4ab0-927f-a49851435854",
+              "parentUUID": "1e353340-c74d-4924-84b1-8cf211dc783e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Realizar requisição com CNPJ inválido",
+              "fullTitle": "Integração Clientes - API Inclusão de SM REST erros Realizar requisição com CNPJ inválido",
+              "timedOut": null,
+              "duration": 2429,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "requisicaoPadrao({\n  cnpj: \"123\"\n}).then(r => {\n  expect(r.body.sucesso).to.be.null;\n  expect(r.body.erros).to.include(\"O token informado não confere com o cnpj do cliente\");\n});",
+              "err": {},
+              "uuid": "dfb404fb-511a-4aad-a5b8-3ef4e8fcecd7",
+              "parentUUID": "1e353340-c74d-4924-84b1-8cf211dc783e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Realizar requisição com a previsão de início sendo uma data no passado.",
+              "fullTitle": "Integração Clientes - API Inclusão de SM REST erros Realizar requisição com a previsão de início sendo uma data no passado.",
+              "timedOut": null,
+              "duration": 26340,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "requisicaoPadrao({\n  prevInicio: \"03/01/2025 15:50:00\"\n}).then(r => {\n  expect(r.body.sucesso).to.be.null;\n  expect(r.body.erros).to.include(\"Previsão de início não deve ser menor que a data e hora atual;\\nA diferença entre a previsão de início e de fim não pode ultrapassar 120 dias\");\n});",
+              "err": {},
+              "uuid": "7418641b-fa10-4c38-9b64-9283402bb2df",
+              "parentUUID": "1e353340-c74d-4924-84b1-8cf211dc783e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Realizar requsição com a previsão de chegada sendo uma data no passado.",
+              "fullTitle": "Integração Clientes - API Inclusão de SM REST erros Realizar requsição com a previsão de chegada sendo uma data no passado.",
+              "timedOut": null,
+              "duration": 6267,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "requisicaoPadrao({\n  prevChegada: \"03/01/2025 15:50:00\"\n}).then(r => {\n  expect(r.body.sucesso).to.be.null;\n  expect(r.body.erros).to.include(\"Data de previsão menor que a data de inicio\");\n});",
+              "err": {},
+              "uuid": "e97b2013-89df-44f8-8a89-4346c1d6fa3b",
+              "parentUUID": "1e353340-c74d-4924-84b1-8cf211dc783e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7e9c3868-c4e0-4b32-b973-4e4365654d94",
+            "33ca0cbe-63f5-4ab0-927f-a49851435854",
+            "dfb404fb-511a-4aad-a5b8-3ef4e8fcecd7",
+            "7418641b-fa10-4c38-9b64-9283402bb2df",
+            "e97b2013-89df-44f8-8a89-4346c1d6fa3b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 40782,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-defaultJob-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportFilename": "[name]-defaultJob-report"
+      },
+      "version": "6.3.0"
+    }
+  }
+}

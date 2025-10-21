@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-21T20:12:35.948Z",
+    "end": "2025-10-21T20:12:44.972Z",
+    "duration": 9024,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cff14ab7-55b7-4f53-ae6c-7b23fa47a76d",
+      "title": "",
+      "fullFile": "cypress/e2e/api/002 - API Integração Clientes/002 - API Consulta Profissional/001.api-consulta-profissional-soap.cy.js",
+      "file": "cypress/e2e/api/002 - API Integração Clientes/002 - API Consulta Profissional/001.api-consulta-profissional-soap.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6a156fca-0d1a-4d3c-8fd0-0b29244bdc09",
+          "title": "Integração Clientes - API Consulta de Profissional SOAP",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Realizar consulta com sucesso API",
+              "fullTitle": "Integração Clientes - API Consulta de Profissional SOAP Realizar consulta com sucesso API",
+              "timedOut": null,
+              "duration": 8844,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: soapPayload,\n  timeout: 60000\n}).then(r => {\n  const status = r.body.match(/<status>([\\s\\S]*?)<\\/status>/)[1].trim();\n  expect(r.status).to.eq(200);\n  expect(status).to.be.oneOf([\"PERFIL ADEQUADO AO RISCO\", \"PERFIL ADEQUADO AO RISCO POR PRAZO\", \"PERFIL COM INSUFICIÊNCIA DE DADOS\", \"PERFIL DIVERGENTE\", \"PERFIL EXPIRADO\", \"EM ANALISE\", \"DESCONHECIDO\"]);\n});",
+              "err": {},
+              "uuid": "74d6e71f-db67-4d9f-aaed-2a1b185f2744",
+              "parentUUID": "6a156fca-0d1a-4d3c-8fd0-0b29244bdc09",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "74d6e71f-db67-4d9f-aaed-2a1b185f2744"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8844,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-defaultJob-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportFilename": "[name]-defaultJob-report"
+      },
+      "version": "6.3.0"
+    }
+  }
+}
