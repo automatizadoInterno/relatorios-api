@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2025-10-20T22:14:17.661Z",
-    "end": "2025-10-20T22:15:21.303Z",
-    "duration": 63642,
+    "failures": 0,
+    "start": "2025-10-21T11:22:21.799Z",
+    "end": "2025-10-21T11:22:31.147Z",
+    "duration": 9348,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "a672f958-61bf-4195-a393-e181459ee0d7",
+      "uuid": "b81b9d55-dbb1-42d1-ae39-dadf18b538f2",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/002 - API Consulta Profissional/001.api-consulta-profissional-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/002 - API Consulta Profissional/001.api-consulta-profissional-soap.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "7a385117-307d-4f65-938d-c29234848a09",
+          "uuid": "bcc41dae-5841-4d09-b4bc-49ff6f41c490",
           "title": "Integração Clientes - API Consulta de Profissional SOAP",
           "fullFile": "",
           "file": "",
@@ -38,33 +38,29 @@
               "title": "Realizar consulta com sucesso API",
               "fullTitle": "Integração Clientes - API Consulta de Profissional SOAP Realizar consulta com sucesso API",
               "timedOut": null,
-              "duration": 61505,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 8973,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: soapPayload,\n  timeout: 60000\n}).then(r => {\n  const status = r.body.match(/<status>([\\s\\S]*?)<\\/status>/)[1].trim();\n  expect(r.status).to.eq(200);\n  expect(status).to.be.oneOf([\"PERFIL ADEQUADO AO RISCO\", \"PERFIL ADEQUADO AO RISCO POR PRAZO\", \"PERFIL COM INSUFICIÊNCIA DE DADOS\", \"PERFIL DIVERGENTE\", \"PERFIL EXPIRADO\", \"EM ANALISE\", \"DESCONHECIDO\"]);\n});",
-              "err": {
-                "message": "CypressError: `cy.request()` timed out waiting `60000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: POST\nURL: https://tstapi.buonny.com.br/portal/soap/consulta_profissional_soap\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request",
-                "estack": "CypressError: `cy.request()` timed out waiting `60000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: POST\nURL: https://tstapi.buonny.com.br/portal/soap/consulta_profissional_soap\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n    at <unknown> (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:136486:70)\n    at tryCatcher (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at <unknown> (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:4156:41)\n    at tryCatcher (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.ee (webpack://test/./node_modules/cypress-plugin-api/dist/support.js:14:2002)\n    at wrapped (https://tstportal.buonny.com.br/__cypress/runner/cypress_runner.js:141663:43)",
-                "diff": null
-              },
-              "uuid": "14b95912-2292-496f-97e4-294ec0be2d3c",
-              "parentUUID": "7a385117-307d-4f65-938d-c29234848a09",
+              "err": {},
+              "uuid": "4f167ec5-0328-4215-8482-9bda879b39f0",
+              "parentUUID": "bcc41dae-5841-4d09-b4bc-49ff6f41c490",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "14b95912-2292-496f-97e4-294ec0be2d3c"
+          "passes": [
+            "4f167ec5-0328-4215-8482-9bda879b39f0"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 61505,
+          "duration": 8973,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
