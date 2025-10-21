@@ -5,9 +5,9 @@
     "passes": 5,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-21T13:47:33.428Z",
-    "end": "2025-10-21T13:47:38.490Z",
-    "duration": 5062,
+    "start": "2025-10-21T14:36:39.921Z",
+    "end": "2025-10-21T14:36:44.259Z",
+    "duration": 4338,
     "testsRegistered": 5,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "bb1ccba7-629b-41c5-b333-85861e629a2a",
+      "uuid": "dcf9935f-9c55-4742-bdc6-356322af67b5",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/002.api-acompanhamento-viagem-erros.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/007 - API Acompanhamento de viagem/002.api-acompanhamento-viagem-erros.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a40b2c8f-5143-4151-a525-28462a3c3ccb",
+          "uuid": "e0b86de3-1764-41d7-911a-dbbcd7485df1",
           "title": "Integração Clientes - API Acompanhamento de viagem erros,",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validação de retorno: Buscar acompanhamento com token expirado ou inválido",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem erros, Validação de retorno: Buscar acompanhamento com token expirado ou inválido",
               "timedOut": null,
-              "duration": 770,
+              "duration": 881,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: `${url}&limit=0`,\n  headers: {\n    Authorization: `Bearer 123`\n  },\n  body: {\n    CnpjCliente: cnpjCliente,\n    DataInicio: formatarDataV2(),\n    DataFim: formatarDataChegadaV2(),\n    status: [1, 2, 3, 4, 5, 6]\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(401);\n});",
               "err": {},
-              "uuid": "780f3301-1ddb-4e38-b336-275b6abb9ed2",
-              "parentUUID": "a40b2c8f-5143-4151-a525-28462a3c3ccb",
+              "uuid": "74e2ee4a-e37d-4832-9515-a0330355dd79",
+              "parentUUID": "e0b86de3-1764-41d7-911a-dbbcd7485df1",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Validação de retorno: Buscar acompanhamento com body vazio",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem erros, Validação de retorno: Buscar acompanhamento com body vazio",
               "timedOut": null,
-              "duration": 807,
+              "duration": 757,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: `${url}&limit=1`,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: \"\",\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(415);\n  });\n});",
               "err": {},
-              "uuid": "325fbcf1-6a43-4730-9d2e-c04bfe22f313",
-              "parentUUID": "a40b2c8f-5143-4151-a525-28462a3c3ccb",
+              "uuid": "c81709df-01d8-42c1-bb51-b734cc2b9ad9",
+              "parentUUID": "e0b86de3-1764-41d7-911a-dbbcd7485df1",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Validação de retorno: Buscar acompanhamento com body vazio II",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem erros, Validação de retorno: Buscar acompanhamento com body vazio II",
               "timedOut": null,
-              "duration": 635,
+              "duration": 616,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,8 +83,8 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: `${url}&limit=1`,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {},\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(400);\n  });\n});",
               "err": {},
-              "uuid": "8ba6c1f7-9bee-4bfc-818d-04e1edcb3a3c",
-              "parentUUID": "a40b2c8f-5143-4151-a525-28462a3c3ccb",
+              "uuid": "f648db84-d083-4f29-ba20-fe2e7b3c08ae",
+              "parentUUID": "e0b86de3-1764-41d7-911a-dbbcd7485df1",
               "isHook": false,
               "skipped": false
             },
@@ -92,7 +92,7 @@
               "title": "Validação de retorno: Payload com campos obrigatórios ausentes",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem erros, Validação de retorno: Payload com campos obrigatórios ausentes",
               "timedOut": null,
-              "duration": 1593,
+              "duration": 1248,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -101,8 +101,8 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: `${url}&limit=1`,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      DataInicio: formatarDataV2(),\n      DataFim: formatarDataChegadaV2(),\n      status: [1, 2, 3, 4, 5, 6]\n    },\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(404);\n  });\n});",
               "err": {},
-              "uuid": "a83e8f80-d914-4061-a7e5-1f7a780956f1",
-              "parentUUID": "a40b2c8f-5143-4151-a525-28462a3c3ccb",
+              "uuid": "6636743d-e4c9-4b1b-a953-945a5b2d3b71",
+              "parentUUID": "e0b86de3-1764-41d7-911a-dbbcd7485df1",
               "isHook": false,
               "skipped": false
             },
@@ -110,7 +110,7 @@
               "title": "Validação de retorno: Payload com campos obrigatórios vazios",
               "fullTitle": "Integração Clientes - API Acompanhamento de viagem erros, Validação de retorno: Payload com campos obrigatórios vazios",
               "timedOut": null,
-              "duration": 672,
+              "duration": 428,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -119,24 +119,24 @@
               "context": null,
               "code": "cy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: `${url}&limit=1`,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      DataInicio: \"\",\n      DataFim: formatarDataChegadaV2(),\n      status: [1, 2, 3, 4, 5, 6]\n    },\n    failOnStatusCode: false\n  }).then(r => {\n    expect(r.status).to.eq(500);\n  });\n});",
               "err": {},
-              "uuid": "aa1e5485-34dc-46e4-82f7-5ded530fe1ab",
-              "parentUUID": "a40b2c8f-5143-4151-a525-28462a3c3ccb",
+              "uuid": "f91da715-3186-4c17-8aa2-657f14e1e956",
+              "parentUUID": "e0b86de3-1764-41d7-911a-dbbcd7485df1",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "780f3301-1ddb-4e38-b336-275b6abb9ed2",
-            "325fbcf1-6a43-4730-9d2e-c04bfe22f313",
-            "8ba6c1f7-9bee-4bfc-818d-04e1edcb3a3c",
-            "a83e8f80-d914-4061-a7e5-1f7a780956f1",
-            "aa1e5485-34dc-46e4-82f7-5ded530fe1ab"
+            "74e2ee4a-e37d-4832-9515-a0330355dd79",
+            "c81709df-01d8-42c1-bb51-b734cc2b9ad9",
+            "f648db84-d083-4f29-ba20-fe2e7b3c08ae",
+            "6636743d-e4c9-4b1b-a953-945a5b2d3b71",
+            "f91da715-3186-4c17-8aa2-657f14e1e956"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4477,
+          "duration": 3930,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -159,7 +159,7 @@
     "mochawesome": {
       "options": {
         "quiet": false,
-        "reportFilename": "mochawesome",
+        "reportFilename": "[name]-report",
         "saveHtml": true,
         "saveJson": true,
         "consoleReporter": "spec",
@@ -171,9 +171,10 @@
     "marge": {
       "options": {
         "reportDir": "cypress/results",
-        "overwrite": true,
+        "overwrite": false,
         "html": true,
-        "json": true
+        "json": true,
+        "reportFilename": "[name]-report"
       },
       "version": "6.3.0"
     }
