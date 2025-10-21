@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-21T16:41:16.036Z",
+    "end": "2025-10-21T16:41:19.132Z",
+    "duration": 3096,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3ba56f50-2389-4bf7-9552-532e1323c668",
+      "title": "",
+      "fullFile": "cypress/e2e/api/001 - API Core V3/001 - API V3 - Login Buonny Check/002.apiV3-login-b.check-erros.cy.js",
+      "file": "cypress/e2e/api/001 - API Core V3/001 - API V3 - Login Buonny Check/002.apiV3-login-b.check-erros.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b569843d-edf3-40b4-9698-2a1c36c84a26",
+          "title": "API CORE V3 - Login Buonny Check - validação de erros ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login senha inválida",
+              "fullTitle": "API CORE V3 - Login Buonny Check - validação de erros  Login senha inválida",
+              "timedOut": null,
+              "duration": 1091,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: {\n    usuario: Cypress.env(\"user_nameBC\"),\n    senha: \"123\"\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(404);\n  expect(r.body).to.have.nested.property(\"message.Usuario._warning\", \"Usuário ou senha inválidos.\");\n});",
+              "err": {},
+              "uuid": "c005042a-5685-4045-bdd1-b2384a698796",
+              "parentUUID": "b569843d-edf3-40b4-9698-2a1c36c84a26",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login usuário inexistente",
+              "fullTitle": "API CORE V3 - Login Buonny Check - validação de erros  Login usuário inexistente",
+              "timedOut": null,
+              "duration": 847,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: {\n    usuario: \"/\",\n    senha: Cypress.env(\"user_passwordBC\")\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(404);\n  expect(r.body).to.have.nested.property(\"message.Usuario._warning\", \"Usuário não encontrado.\");\n});",
+              "err": {},
+              "uuid": "6266a768-bcc8-4d27-913a-233e5fba1496",
+              "parentUUID": "b569843d-edf3-40b4-9698-2a1c36c84a26",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com usuário vazio",
+              "fullTitle": "API CORE V3 - Login Buonny Check - validação de erros  Login com usuário vazio",
+              "timedOut": null,
+              "duration": 329,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: {\n    usuario: \"\",\n    senha: Cypress.env(\"user_passwordBC\")\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(400);\n  expect(r.body).to.have.nested.property(\"message.usuario._error\", \"Usuario precisam ser preenchido.\");\n});",
+              "err": {},
+              "uuid": "d2676017-ae87-4a05-83d0-026acae91019",
+              "parentUUID": "b569843d-edf3-40b4-9698-2a1c36c84a26",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com senha vazia",
+              "fullTitle": "API CORE V3 - Login Buonny Check - validação de erros  Login com senha vazia",
+              "timedOut": null,
+              "duration": 312,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: {\n    usuario: Cypress.env(\"user_nameBC\"),\n    senha: \"\"\n  },\n  failOnStatusCode: false\n}).then(r => {\n  expect(r.status).to.eq(400);\n  expect(r.body).to.have.nested.property(\"message.senha._error\", \"Senha precisa ser prenchida.\");\n});",
+              "err": {},
+              "uuid": "c968586e-9166-461b-ac69-d0cbc6f02c9e",
+              "parentUUID": "b569843d-edf3-40b4-9698-2a1c36c84a26",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c005042a-5685-4045-bdd1-b2384a698796",
+            "6266a768-bcc8-4d27-913a-233e5fba1496",
+            "d2676017-ae87-4a05-83d0-026acae91019",
+            "c968586e-9166-461b-ac69-d0cbc6f02c9e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2579,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportFilename": "[name]-report"
+      },
+      "version": "6.3.0"
+    }
+  }
+}
