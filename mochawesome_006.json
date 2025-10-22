@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-22T14:25:26.809Z",
-    "end": "2025-10-22T14:25:39.048Z",
-    "duration": 12239,
+    "start": "2025-10-22T14:31:53.845Z",
+    "end": "2025-10-22T14:32:07.986Z",
+    "duration": 14141,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "ef56da0b-60ce-4640-aa00-e4a6148bc2ca",
+      "uuid": "a817fa81-95b4-451f-9f8e-210639b0a5f9",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/001 - API Ficha Profisssional/001.api-inclusao-ficha-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/001 - API Ficha Profisssional/001.api-inclusao-ficha-soap.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b17f20c9-9b4b-4718-84dd-1c89d6a217b4",
+          "uuid": "2cad8539-3152-4686-8f37-2968fe82435d",
           "title": "Integração Clientes - API Inclusão de Ficha do Profissional - Casos de Sucesso",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Incluir ficha com sucesso API",
               "fullTitle": "Integração Clientes - API Inclusão de Ficha do Profissional - Casos de Sucesso Incluir ficha com sucesso API",
               "timedOut": null,
-              "duration": 11937,
+              "duration": 13346,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: soapPayload,\n  failOnStatusCode: false\n}).then(r => {\n  const mensagem = r.body.match(/ns1:sucesso>([\\s\\S]*?)<\\/ns1:sucesso>/)[1].trim();\n  cy.log(r.body);\n  expect(r.status).to.eq(200);\n  expect(mensagem).to.eq(\"Ficha de Profissional incluida com sucesso\");\n});",
               "err": {},
-              "uuid": "9cfdb14f-30b1-4e0b-bcb6-a2dcf2d26756",
-              "parentUUID": "b17f20c9-9b4b-4718-84dd-1c89d6a217b4",
+              "uuid": "df33a504-483b-4b88-8f65-31543f98f400",
+              "parentUUID": "2cad8539-3152-4686-8f37-2968fe82435d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "9cfdb14f-30b1-4e0b-bcb6-a2dcf2d26756"
+            "df33a504-483b-4b88-8f65-31543f98f400"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 11937,
+          "duration": 13346,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -84,7 +84,7 @@
       "options": {
         "quiet": false,
         "reportFilename": "mochawesome",
-        "saveHtml": false,
+        "saveHtml": true,
         "saveJson": true,
         "consoleReporter": "spec",
         "useInlineDiffs": false,
@@ -96,7 +96,7 @@
       "options": {
         "reportDir": "cypress/results",
         "overwrite": false,
-        "html": false,
+        "html": true,
         "json": true
       },
       "version": "6.3.0"

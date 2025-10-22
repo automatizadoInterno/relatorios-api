@@ -5,9 +5,9 @@
     "passes": 4,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-22T14:32:06.483Z",
-    "end": "2025-10-22T14:32:47.730Z",
-    "duration": 41247,
+    "start": "2025-10-22T14:37:50.554Z",
+    "end": "2025-10-22T14:38:30.931Z",
+    "duration": 40377,
     "testsRegistered": 4,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "0324c4c5-60c0-48e1-9f9e-9e3c37f49da3",
+      "uuid": "44c5c951-d324-4968-8788-dcf74d233443",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/005 - API Inclusão de SM SOAP/002.api-inclusao-SM-erros-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/005 - API Inclusão de SM SOAP/002.api-inclusao-SM-erros-soap.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "91e41379-3a1a-4d5d-817a-6ab570c39ece",
+          "uuid": "e4958f5c-4e12-42d6-a746-175859f50998",
           "title": "Integração Clientes - Inclusão de SM via SOAP - Validações de erro",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Requisição com corpo vazio",
               "fullTitle": "Integração Clientes - Inclusão de SM via SOAP - Validações de erro Requisição com corpo vazio",
               "timedOut": null,
-              "duration": 3324,
+              "duration": 2731,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: APIclientes.InclusãoSmSoap,\n  body: \"\",\n  headers: {\n    \"Content-Type\": \"text/xml;charset=UTF-8\",\n    SOAPAction: \"https://tstapi.buonny.com.br/portal/wsdl/buonny/viagem\"\n  },\n  timeout: 120000,\n  failOnStatusCode: false\n}).then(r => {\n  cy.log(r.body);\n  expect(r.status).to.eq(500);\n  expect(r.body).to.contain(\">Bad Request<\");\n});",
               "err": {},
-              "uuid": "da4f18d9-f2b6-4d33-a4be-62b1377ea7da",
-              "parentUUID": "91e41379-3a1a-4d5d-817a-6ab570c39ece",
+              "uuid": "8d37f045-9a70-42bf-af9d-722756033aab",
+              "parentUUID": "e4958f5c-4e12-42d6-a746-175859f50998",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Requisição com token inválido",
               "fullTitle": "Integração Clientes - Inclusão de SM via SOAP - Validações de erro Requisição com token inválido",
               "timedOut": null,
-              "duration": 2511,
+              "duration": 2554,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "const payloadTokenInvalido = payload.replace(/<token>.*?<\\/token>/, \"<token></token>\");\ncy.api({\n  method: \"POST\",\n  url: APIclientes.InclusãoSmSoap,\n  body: payloadTokenInvalido,\n  headers: {\n    \"Content-Type\": \"text/xml;charset=UTF-8\",\n    SOAPAction: \"https://tstapi.buonny.com.br/portal/wsdl/buonny/viagem\"\n  },\n  timeout: 120000,\n  failOnStatusCode: false\n}).then(r => {\n  cy.log(r.body);\n  expect(r.body).to.contain(\"O token informado não confere com o cnpj do cliente\");\n});",
               "err": {},
-              "uuid": "6dc1549f-c2a7-4562-9551-36ecba6acc7b",
-              "parentUUID": "91e41379-3a1a-4d5d-817a-6ab570c39ece",
+              "uuid": "7deb3bce-fc23-47bb-8143-edee1757bfdb",
+              "parentUUID": "e4958f5c-4e12-42d6-a746-175859f50998",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Requisição com data de início no passado",
               "fullTitle": "Integração Clientes - Inclusão de SM via SOAP - Validações de erro Requisição com data de início no passado",
               "timedOut": null,
-              "duration": 26700,
+              "duration": 26920,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -83,8 +83,8 @@
               "context": null,
               "code": "const payloadDataPassado = payload.replace(/<data_previsao_inicio>.*?<\\/data_previsao_inicio>/, \"<data_previsao_inicio>03/01/2025 15:50:00</data_previsao_inicio>\");\ncy.api({\n  method: \"POST\",\n  url: APIclientes.InclusãoSmSoap,\n  body: payloadDataPassado,\n  headers: {\n    \"Content-Type\": \"text/xml;charset=UTF-8\",\n    SOAPAction: \"https://tstapi.buonny.com.br/portal/wsdl/buonny/viagem\"\n  },\n  timeout: 120000,\n  failOnStatusCode: false\n}).then(r => {\n  cy.log(r.body);\n  expect(r.body).to.contain(\"Previsão de início não deve ser menor que a data e hora atual\");\n});",
               "err": {},
-              "uuid": "2929e92d-c881-4925-abab-5db22004dcc3",
-              "parentUUID": "91e41379-3a1a-4d5d-817a-6ab570c39ece",
+              "uuid": "536aa9c7-1b1f-4f55-bb0f-043e6e24f5a3",
+              "parentUUID": "e4958f5c-4e12-42d6-a746-175859f50998",
               "isHook": false,
               "skipped": false
             },
@@ -92,7 +92,7 @@
               "title": "Requisição com data de chegada no passado",
               "fullTitle": "Integração Clientes - Inclusão de SM via SOAP - Validações de erro Requisição com data de chegada no passado",
               "timedOut": null,
-              "duration": 8040,
+              "duration": 7417,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -101,23 +101,23 @@
               "context": null,
               "code": "const payloadDataPassado = payload.replace(/<previsao_de_chegada>.*?<\\/previsao_de_chegada>/, \"<previsao_de_chegada>03/01/2025 15:50:00</previsao_de_chegada>\");\ncy.api({\n  method: \"POST\",\n  url: APIclientes.InclusãoSmSoap,\n  body: payloadDataPassado,\n  headers: {\n    \"Content-Type\": \"text/xml;charset=UTF-8\",\n    SOAPAction: \"https://tstapi.buonny.com.br/portal/wsdl/buonny/viagem\"\n  },\n  timeout: 120000,\n  failOnStatusCode: false\n}).then(r => {\n  cy.log(r.body);\n  expect(r.body).to.contain(\"Data de previsão menor que a data de inicio\");\n});",
               "err": {},
-              "uuid": "f83b3d25-b7b6-44c5-82cb-66f6eb0fa7fc",
-              "parentUUID": "91e41379-3a1a-4d5d-817a-6ab570c39ece",
+              "uuid": "a60958e8-6f8e-4289-8bfc-0f3c402af82f",
+              "parentUUID": "e4958f5c-4e12-42d6-a746-175859f50998",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "da4f18d9-f2b6-4d33-a4be-62b1377ea7da",
-            "6dc1549f-c2a7-4562-9551-36ecba6acc7b",
-            "2929e92d-c881-4925-abab-5db22004dcc3",
-            "f83b3d25-b7b6-44c5-82cb-66f6eb0fa7fc"
+            "8d37f045-9a70-42bf-af9d-722756033aab",
+            "7deb3bce-fc23-47bb-8143-edee1757bfdb",
+            "536aa9c7-1b1f-4f55-bb0f-043e6e24f5a3",
+            "a60958e8-6f8e-4289-8bfc-0f3c402af82f"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 40575,
+          "duration": 39622,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -141,7 +141,7 @@
       "options": {
         "quiet": false,
         "reportFilename": "mochawesome",
-        "saveHtml": false,
+        "saveHtml": true,
         "saveJson": true,
         "consoleReporter": "spec",
         "useInlineDiffs": false,
@@ -153,7 +153,7 @@
       "options": {
         "reportDir": "cypress/results",
         "overwrite": false,
-        "html": false,
+        "html": true,
         "json": true
       },
       "version": "6.3.0"
