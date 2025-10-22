@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-22T13:26:36.786Z",
-    "end": "2025-10-22T13:26:43.994Z",
-    "duration": 7208,
+    "start": "2025-10-22T13:53:13.652Z",
+    "end": "2025-10-22T13:53:20.692Z",
+    "duration": 7040,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "4a29dfe1-ba7e-4147-9d97-e6fd36826a5f",
+      "uuid": "737ee5e5-9a5c-40d3-ba27-b1f2608ae04d",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/003 - API Consulta entrega/001.api-consulta-entrega-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/003 - API Consulta entrega/001.api-consulta-entrega-soap.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "0a240c52-450d-4c1a-851c-5e22cb8b8292",
+          "uuid": "7dc42f8f-fb0a-4621-acc6-fed623200d27",
           "title": "Integração Clientes - API Consulta entrega SOAP",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Consulta entrega com sucesso",
               "fullTitle": "Integração Clientes - API Consulta entrega SOAP Consulta entrega com sucesso",
               "timedOut": null,
-              "duration": 6933,
+              "duration": 6586,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: payload\n}).then(r => {\n  const viagem = r.body.match(/<status_viagem>([\\s\\S]*?)<\\/status_viagem>/)[1].trim();\n  const latitude = r.body.match(/<origem_latitude>([\\s\\S]*?)<\\/origem_latitude>/)[1].trim();\n  const longitude = r.body.match(/<origem_longitude>([\\s\\S]*?)<\\/origem_longitude>/)[1].trim();\n  expect(r.status).to.eq(200);\n  expect(viagem).to.be.oneOf([\"agendado\", \"Cancelado\"]);\n  expect(latitude).to.exist;\n  expect(latitude).to.not.be.empty;\n  expect(longitude).to.exist;\n  expect(longitude).to.not.be.empty;\n});",
               "err": {},
-              "uuid": "1723d07a-85f3-4436-86f2-98f736b72081",
-              "parentUUID": "0a240c52-450d-4c1a-851c-5e22cb8b8292",
+              "uuid": "af47256b-0fb5-41da-b5d3-74172ee02cde",
+              "parentUUID": "7dc42f8f-fb0a-4621-acc6-fed623200d27",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "1723d07a-85f3-4436-86f2-98f736b72081"
+            "af47256b-0fb5-41da-b5d3-74172ee02cde"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6933,
+          "duration": 6586,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
