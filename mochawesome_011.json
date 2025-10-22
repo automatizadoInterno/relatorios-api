@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-22T12:29:38.490Z",
-    "end": "2025-10-22T12:29:44.523Z",
-    "duration": 6033,
+    "start": "2025-10-22T13:26:52.930Z",
+    "end": "2025-10-22T13:27:01.238Z",
+    "duration": 8308,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "04595b49-8fd7-4208-9de5-de82a6b56011",
+      "uuid": "41b36fa1-0905-4e88-8b2d-a31665d36b87",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/003 - API Consulta entrega/002.api-consulta-entrega-erros-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/003 - API Consulta entrega/002.api-consulta-entrega-erros-soap.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "cfacc613-271e-4713-9bb8-f4836e30a673",
+          "uuid": "0c407aa7-f1a1-43d2-96f9-1ea3b589144f",
           "title": "Integração Clientes - API Consulta entrega erros SOAP",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Requisição com corpo vazio",
               "fullTitle": "Integração Clientes - API Consulta entrega erros SOAP Requisição com corpo vazio",
               "timedOut": null,
-              "duration": 1292,
+              "duration": 2425,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: ``,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"SOAP-ENV:Client\");\n  expect(faultstring).to.eq(\"Bad Request\");\n});",
               "err": {},
-              "uuid": "eb3cb7c5-3326-4191-b63a-94502e422564",
-              "parentUUID": "cfacc613-271e-4713-9bb8-f4836e30a673",
+              "uuid": "0a5750d9-b186-4650-9fdd-83c0c9f09abe",
+              "parentUUID": "0c407aa7-f1a1-43d2-96f9-1ea3b589144f",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Requisição com token vazio",
               "fullTitle": "Integração Clientes - API Consulta entrega erros SOAP Requisição com token vazio",
               "timedOut": null,
-              "duration": 2060,
+              "duration": 3041,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: `<x:Envelope\nxmlns:x=\"http://schemas.xmlsoap.org/soap/envelope/\"\nxmlns:sta=\"https://tstapi.buonny.com.br/portal/wsdl/status_entrega\">\n<x:Header/>\n<x:Body>\n    <sta:consulta>\n        <sta:autenticacao>\n            <sta:token></sta:token>\n        </sta:autenticacao>\n        <sta:cnpj_cliente>${cnpjCliente}</sta:cnpj_cliente>\n        <sta:alvo></sta:alvo>\n        <sta:nota_fiscal></sta:nota_fiscal>\n        <sta:pedido_nota_fiscal></sta:pedido_nota_fiscal>\n        <sta:placa>${placa}</sta:placa>\n        <sta:pedido_cliente></sta:pedido_cliente>\n    </sta:consulta>\n</x:Body>\n</x:Envelope>`,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"1\");\n  expect(faultstring).to.eq(\"Informe o token\");\n});",
               "err": {},
-              "uuid": "07837d2d-316f-46df-a597-f3f7ebbc3688",
-              "parentUUID": "cfacc613-271e-4713-9bb8-f4836e30a673",
+              "uuid": "e3f981d1-31d7-4b16-aac7-d8ce879286d1",
+              "parentUUID": "0c407aa7-f1a1-43d2-96f9-1ea3b589144f",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Requisição com CNPJ vazio",
               "fullTitle": "Integração Clientes - API Consulta entrega erros SOAP Requisição com CNPJ vazio",
               "timedOut": null,
-              "duration": 2389,
+              "duration": 2394,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,22 +83,22 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: `<x:Envelope\nxmlns:x=\"http://schemas.xmlsoap.org/soap/envelope/\"\nxmlns:sta=\"https://tstapi.buonny.com.br/portal/wsdl/status_entrega\">\n<x:Header/>\n<x:Body>\n    <sta:consulta>\n        <sta:autenticacao>\n            <sta:token>${token}</sta:token>\n        </sta:autenticacao>\n        <sta:cnpj_cliente></sta:cnpj_cliente>\n        <sta:alvo></sta:alvo>\n        <sta:nota_fiscal></sta:nota_fiscal>\n        <sta:pedido_nota_fiscal></sta:pedido_nota_fiscal>\n        <sta:placa>${placa}</sta:placa>\n        <sta:pedido_cliente></sta:pedido_cliente>\n    </sta:consulta>\n</x:Body>\n</x:Envelope>`,\n  failOnStatusCode: false\n}).then(r => {\n  const faultcode = r.body.match(/<faultcode>([\\s\\S]*?)<\\/faultcode/)[1].trim();\n  const faultstring = r.body.match(/<faultstring>([\\s\\S]*?)<\\/faultstring>/)[1].trim();\n  expect(r.status).to.eq(500);\n  expect(faultcode).to.eq(\"1\");\n  expect(faultstring).to.eq(\"Informe o Cnpj\");\n});",
               "err": {},
-              "uuid": "7099efe5-25a8-41fd-8b61-5667ed4edf37",
-              "parentUUID": "cfacc613-271e-4713-9bb8-f4836e30a673",
+              "uuid": "98dff044-6795-4ad2-b94c-de36161c9dde",
+              "parentUUID": "0c407aa7-f1a1-43d2-96f9-1ea3b589144f",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "eb3cb7c5-3326-4191-b63a-94502e422564",
-            "07837d2d-316f-46df-a597-f3f7ebbc3688",
-            "7099efe5-25a8-41fd-8b61-5667ed4edf37"
+            "0a5750d9-b186-4650-9fdd-83c0c9f09abe",
+            "e3f981d1-31d7-4b16-aac7-d8ce879286d1",
+            "98dff044-6795-4ad2-b94c-de36161c9dde"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5741,
+          "duration": 7860,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -122,7 +122,7 @@
       "options": {
         "quiet": false,
         "reportFilename": "mochawesome",
-        "saveHtml": true,
+        "saveHtml": false,
         "saveJson": true,
         "consoleReporter": "spec",
         "useInlineDiffs": false,
@@ -134,7 +134,7 @@
       "options": {
         "reportDir": "cypress/results",
         "overwrite": false,
-        "html": true,
+        "html": false,
         "json": true
       },
       "version": "6.3.0"

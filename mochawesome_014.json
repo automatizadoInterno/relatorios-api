@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-22T12:31:42.696Z",
-    "end": "2025-10-22T12:32:42.769Z",
-    "duration": 60073,
+    "start": "2025-10-22T13:29:06.955Z",
+    "end": "2025-10-22T13:30:01.809Z",
+    "duration": 54854,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "ed5af3e1-5b0f-46f8-a451-76c3a14279c4",
+      "uuid": "5b3331ee-c783-4d89-85eb-2ec52018823d",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/005 - API Inclusão de SM SOAP/001.api-inclusao-sm-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/005 - API Inclusão de SM SOAP/001.api-inclusao-sm-soap.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e802d748-77ab-48f1-af62-92a4dc21703b",
+          "uuid": "90b428f4-d81d-4d6f-84d1-bfe6e0b9a1f6",
           "title": "Integração Clientes - Inclusão de SM via SOAP",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validação de retorno 200 OK e sucesso da criação da SM",
               "fullTitle": "Integração Clientes - Inclusão de SM via SOAP Validação de retorno 200 OK e sucesso da criação da SM",
               "timedOut": null,
-              "duration": 59790,
+              "duration": 54663,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: APIclientes.InclusãoSmSoap,\n  body: payload,\n  headers: {\n    \"Content-Type\": \"text/xml;charset=UTF-8\",\n    SOAPAction: \"https://tstapi.buonny.com.br/portal/wsdl/buonny/viagem\"\n  },\n  timeout: 120000,\n  failOnStatusCode: false\n}).then(response => {\n  var _response$body$match;\n  cy.log(\"Resposta completa:\", response.body);\n  expect(response.status).to.eq(200);\n  const codigoSM = (_response$body$match = response.body.match(/<codigo_sm>(\\d+)<\\/codigo_sm>/)) === null || _response$body$match === void 0 ? void 0 : _response$body$match[1];\n  expect(codigoSM, \"Valida chave <codigo_sm>\").to.match(/^\\d{8}$/);\n});",
               "err": {},
-              "uuid": "4e03ce5d-7918-41b7-9d89-10dea7787dbf",
-              "parentUUID": "e802d748-77ab-48f1-af62-92a4dc21703b",
+              "uuid": "92124cba-2370-4a2b-87e6-f6ed437c2857",
+              "parentUUID": "90b428f4-d81d-4d6f-84d1-bfe6e0b9a1f6",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4e03ce5d-7918-41b7-9d89-10dea7787dbf"
+            "92124cba-2370-4a2b-87e6-f6ed437c2857"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 59790,
+          "duration": 54663,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -84,7 +84,7 @@
       "options": {
         "quiet": false,
         "reportFilename": "mochawesome",
-        "saveHtml": true,
+        "saveHtml": false,
         "saveJson": true,
         "consoleReporter": "spec",
         "useInlineDiffs": false,
@@ -96,7 +96,7 @@
       "options": {
         "reportDir": "cypress/results",
         "overwrite": false,
-        "html": true,
+        "html": false,
         "json": true
       },
       "version": "6.3.0"

@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-22T12:27:03.192Z",
-    "end": "2025-10-22T12:27:09.653Z",
-    "duration": 6461,
+    "start": "2025-10-22T13:23:44.486Z",
+    "end": "2025-10-22T13:23:55.962Z",
+    "duration": 11476,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "a3073d5d-b628-41f7-8fc0-f200bc0d016e",
+      "uuid": "0a4cc900-43f7-47bc-b0f9-6423a7746dff",
       "title": "",
       "fullFile": "cypress/e2e/api/001 - API Core V3/003 - API V3 - Consulta profissional/001.apiV3-consulta-b.check.cy.js",
       "file": "cypress/e2e/api/001 - API Core V3/003 - API V3 - Consulta profissional/001.apiV3-consulta-b.check.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1753d293-0ece-4274-ade2-4b8a92d7231b",
+          "uuid": "83422eff-bec7-4f02-87b8-d8819d395f0e",
           "title": "API CORE V3 - Consulta profissional Buonny Check - sucesso",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "Consulta com sucesso",
               "fullTitle": "API CORE V3 - Consulta profissional Buonny Check - sucesso Consulta com sucesso",
               "timedOut": null,
-              "duration": 6285,
+              "duration": 11125,
               "state": "passed",
-              "speed": "medium",
+              "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "const codigoCliente = 87906;\nconst documentoMotorista = \"646.146.860-95\";\nconst placa = \"TST1A23\";\ncy.get(\"@tokenBC\").then(token => {\n  cy.api({\n    method: \"POST\",\n    url: url,\n    headers: {\n      Authorization: `Bearer ${token}`\n    },\n    body: {\n      codigo_cliente: codigoCliente,\n      codigo_usuario_inclusao: 238658,\n      codigo_produto: 2,\n      codigo_corporacao: 1,\n      categoria: 1,\n      codigo_carga_tipo: 32,\n      codigo_carga_valor: 1,\n      codigo_cidade_destino: 5190,\n      codigo_cidade_origem: 5190,\n      codigo_documento: documentoMotorista,\n      placa_veiculo: placa,\n      departamento: \"T\"\n    }\n  }).then(r => {\n    expect(r.status).to.eq(200);\n    expect(r.body.data.fichas.Ficha.observacao).to.eq(\"Profissional sem cadastro com o veículo. Enviar ficha para análise\");\n  });\n});",
               "err": {},
-              "uuid": "71676ce6-03a3-4881-94af-7bc08e7e6cec",
-              "parentUUID": "1753d293-0ece-4274-ade2-4b8a92d7231b",
+              "uuid": "8da7f32c-a781-40ca-90cf-5f802e753cab",
+              "parentUUID": "83422eff-bec7-4f02-87b8-d8819d395f0e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "71676ce6-03a3-4881-94af-7bc08e7e6cec"
+            "8da7f32c-a781-40ca-90cf-5f802e753cab"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6285,
+          "duration": 11125,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -84,7 +84,7 @@
       "options": {
         "quiet": false,
         "reportFilename": "mochawesome",
-        "saveHtml": true,
+        "saveHtml": false,
         "saveJson": true,
         "consoleReporter": "spec",
         "useInlineDiffs": false,
@@ -96,7 +96,7 @@
       "options": {
         "reportDir": "cypress/results",
         "overwrite": false,
-        "html": true,
+        "html": false,
         "json": true
       },
       "version": "6.3.0"
