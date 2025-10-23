@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-22T17:55:52.345Z",
-    "end": "2025-10-22T17:56:59.225Z",
-    "duration": 66880,
+    "start": "2025-10-23T14:34:49.727Z",
+    "end": "2025-10-23T14:35:49.470Z",
+    "duration": 59743,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "8dcd2d02-9c84-413c-a8fe-e621ac79f19e",
+      "uuid": "c4bd7f2f-66fe-4657-addf-0143da550826",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/005 - API Inclusão de SM SOAP/001.api-inclusao-sm-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/005 - API Inclusão de SM SOAP/001.api-inclusao-sm-soap.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "3d7a18c6-d920-4f50-9358-c03599325e05",
+          "uuid": "9882c3e6-a9b0-4b47-9aaa-18e1e2f4409b",
           "title": "Integração Clientes - Inclusão de SM via SOAP",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validação de retorno 200 OK e sucesso da criação da SM",
               "fullTitle": "Integração Clientes - Inclusão de SM via SOAP Validação de retorno 200 OK e sucesso da criação da SM",
               "timedOut": null,
-              "duration": 66655,
+              "duration": 59399,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: APIclientes.InclusãoSmSoap,\n  body: payload,\n  headers: {\n    \"Content-Type\": \"text/xml;charset=UTF-8\",\n    SOAPAction: \"https://tstapi.buonny.com.br/portal/wsdl/buonny/viagem\"\n  },\n  timeout: 120000,\n  failOnStatusCode: false\n}).then(response => {\n  var _response$body$match;\n  cy.log(\"Resposta completa:\", response.body);\n  expect(response.status).to.eq(200);\n  const codigoSM = (_response$body$match = response.body.match(/<codigo_sm>(\\d+)<\\/codigo_sm>/)) === null || _response$body$match === void 0 ? void 0 : _response$body$match[1];\n  expect(codigoSM, \"Valida chave <codigo_sm>\").to.match(/^\\d{8}$/);\n});",
               "err": {},
-              "uuid": "2278db3a-a825-45c0-bc8d-7ce1cfbcdbe1",
-              "parentUUID": "3d7a18c6-d920-4f50-9358-c03599325e05",
+              "uuid": "211aaa81-5dc3-40a2-86bf-cba67214e16e",
+              "parentUUID": "9882c3e6-a9b0-4b47-9aaa-18e1e2f4409b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "2278db3a-a825-45c0-bc8d-7ce1cfbcdbe1"
+            "211aaa81-5dc3-40a2-86bf-cba67214e16e"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 66655,
+          "duration": 59399,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
