@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-10-23T14:31:37.631Z",
-    "end": "2025-10-23T14:31:47.390Z",
-    "duration": 9759,
+    "start": "2025-10-24T18:53:55.668Z",
+    "end": "2025-10-24T18:54:05.371Z",
+    "duration": 9703,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c3685ec9-be64-49b5-ba8e-72ee25bbcb45",
+      "uuid": "386ebf82-4bc6-448b-9c2e-9929716e7b11",
       "title": "",
       "fullFile": "cypress/e2e/api/002 - API Integração Clientes/002 - API Consulta Profissional/001.api-consulta-profissional-soap.cy.js",
       "file": "cypress/e2e/api/002 - API Integração Clientes/002 - API Consulta Profissional/001.api-consulta-profissional-soap.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d96a0b11-d287-4c89-9583-017362f11df6",
+          "uuid": "e249cf94-1754-4d75-8f23-16e966aa6771",
           "title": "Integração Clientes - API Consulta de Profissional SOAP",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Realizar consulta com sucesso API",
               "fullTitle": "Integração Clientes - API Consulta de Profissional SOAP Realizar consulta com sucesso API",
               "timedOut": null,
-              "duration": 9493,
+              "duration": 9235,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.api({\n  method: \"POST\",\n  url: url,\n  body: soapPayload,\n  timeout: 60000\n}).then(r => {\n  const status = r.body.match(/<status>([\\s\\S]*?)<\\/status>/)[1].trim();\n  expect(r.status).to.eq(200);\n  expect(status).to.be.oneOf([\"PERFIL ADEQUADO AO RISCO\", \"PERFIL ADEQUADO AO RISCO POR PRAZO\", \"PERFIL COM INSUFICIÊNCIA DE DADOS\", \"PERFIL DIVERGENTE\", \"PERFIL EXPIRADO\", \"EM ANALISE\", \"DESCONHECIDO\"]);\n});",
               "err": {},
-              "uuid": "d1bb7118-8aeb-41f7-9f13-891e1855ec0c",
-              "parentUUID": "d96a0b11-d287-4c89-9583-017362f11df6",
+              "uuid": "a925a0bf-c90e-470c-9f28-91d541865a5b",
+              "parentUUID": "e249cf94-1754-4d75-8f23-16e966aa6771",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d1bb7118-8aeb-41f7-9f13-891e1855ec0c"
+            "a925a0bf-c90e-470c-9f28-91d541865a5b"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 9493,
+          "duration": 9235,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
